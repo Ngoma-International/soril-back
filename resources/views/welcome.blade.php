@@ -1,496 +1,350 @@
 @extends('layouts.appss')
 
 @section('title')
-    Irma - Accueil
+    Soril - Home
 @endsection
 
 @section('content')
-    <div class="">
-        <div id="slider_wrapper"
-             class="rev_slider_wrapper fullscreen-container"
-             data-alias="photography1" style="background-color:transparent;padding:0px;">
-            <!-- START REVOLUTION SLIDER 5.0.7 fullscreen mode -->
-            <div id="slider" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.0.7">
-                <ul>	<!-- SLIDE  -->
-                    <li data-index="rs-214" class="dark" data-transition="fade"
-                        data-slotamount="7"  data-easein="default"
-                        data-easeout="default" data-masterspeed="300"
-                        data-rotate="0"  data-saveperformance="off"  data-title="Slide"
-                        data-description="">
-                        <!-- MAIN IMAGE -->
-                        <img src="assets/images/sliders/rev/bg-03.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                        <!-- LAYERS -->
+    <header class="header-2">
+        <div class="page-header min-vh-100" style="background-image: url('https://www.esa.int/var/esa/storage/images/about_us/business_with_esa/19716975-3-eng-GB/Business_with_ESA_pillars.jpg');">
+            <div class="container">
+                <div class="col-lg-7 text-center mx-auto">
+                    <p class="lead text-white mt-0" style="text-shadow: 2px 2px 4px black;">
+                        <img src="./assets/img/logos/soril.png" style="filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);"
+                             class="w-70 border-radius-xl position-relative z-index-5" alt=""> <br>
+                        MAKING AFRICAN ORGANISATIONS AND INSTITUTIONS<br>
+                        MORE EFFECTIVE AND RESILIENT THROUGH RISK LEADERSHIP
 
-                        <div class="tp-caption Sports-Display uppercase tp-resizeme rs-parallaxlevel-0"
-                             id="slide-214-layer-1"
-                             data-x="['left','left','left','left']"
-                             data-hoffset="['30','30','30','30']"
-                             data-y="['top','top','top','top']"
-                             data-voffset="['40','40','40','20']"
-                             data-fontsize="['30','30','30','20']"
-                             data-lineheight="['30','30','30','20']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                             data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                             data-start="500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             style="z-index: 5; white-space: nowrap;color:#fff;letter-spacing:3px">ELEVEZ
-                        </div>
+                        <br>
 
-                        <!-- LAYER NR. 1 -->
-                        <div class="tp-caption Sports-Display uppercase tp-resizeme rs-parallaxlevel-0"
-                             id="slide-214-layer-1"
-                             data-x="10"
-                             data-hoffset="['30','30','30','30']"
-                             data-y="0"
-                             data-voffset="['40','40','40','20']"
-                             data-fontsize="['30','30','30','20']"
-                             data-lineheight="['30','30','30','20']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="x:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
-                             data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                             data-start="500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             style="z-index: 5; white-space: nowrap;color:#fff;letter-spacing:3px">
-                        </div>
-
-                        <!-- LAYER NR. 2 -->
-                        <div class="tp-caption main-color uppercase heavy-font tp-resizeme rs-parallaxlevel-0"
-                             id="slide-214-layer-2"
-                             data-x="['left','left','left','left']" data-hoffset="['30','30','30','30']"
-                             data-y="['top','top','top','top']" data-voffset="['70','70','70','40']"
-                             data-fontsize="['80','80','80','60']"
-                             data-lineheight="['80','80','80','60']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_in="x:[-105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
-                             data-start="750"
-                             data-splitin="chars"
-                             data-splitout="none"
-                             data-elementdelay="0.05"
-                             data-responsive_offset="on"
-                             style="z-index: 6;
-                             font-family: Arial;white-space: nowrap; font-weight: normal!important;">
-                            Votre Carrière
-                        </div>
-
-                        <!-- LAYER NR. 3 -->
-                        <div class="tp-caption sfb tp-resizeme gry-sep" data-x="20" data-y="160" data-start="1500"
-                             data-speed="600"
-                             data-easing="easeOutQuad"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.01"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             data-endeasing="Power4.easeIn">
-                        </div>
-
-                        <div class="tp-caption customin ltl lg-list-item tp-resizeme white"
-                             data-x="70" data-y="230" data-start="2400"
-                             data-transform_idle="o:1;"
-                             data-transform_in="x:-50px;skX:100px;opacity:0;s:1000;e:Power4.easeInOut;"
-                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.01"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             data-endeasing="Power4.easeIn">
-                            <a style="color: inherit" href="{{ route('dev-continu') }}">
-                                <i class="fa fa-leaf main-color"></i>
-                                Développement Professionel Continu
-                            </a>
-                        </div>
-
-                        <div class="tp-caption ltl tp-resizeme gry-sep"
-                             data-x="70" data-y="280" data-start="2400"
-                             data-transform_in="x:-50px;skX:100px;opacity:0;s:1000;e:Power4.easeInOut;"
-                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-easing="easeOutQuad"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.01"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             data-endeasing="Power4.easeIn">
-                        </div>
-
-                        <div class="tp-caption customin ltl lg-list-item tp-resizeme white"
-                             data-x="120" data-y="300" data-start="2700"
-                             data-transform_in="x:-50px;skX:100px;opacity:0;s:1000;e:Power4.easeInOut;"
-                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-easing="Back.easeOut"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.01"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             data-endeasing="Power4.easeIn">
-                            <a style="color: inherit" href="{{ route('professional') }}">
-                                <i class="fa fa-recycle main-color"></i>Normes Professionnelles
-                            </a>
-                        </div>
-
-                        <div class="tp-caption customin ltl tp-resizeme gry-sep"
-                             data-x="120" data-y="370" data-start="2700"
-                             data-transform_in="x:-50px;skX:100px;opacity:0;s:1000;e:Power4.easeInOut;"
-                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-speed="600"
-                             data-easing="easeOutQuad"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.01"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             data-endeasing="Power4.easeIn">
-                        </div>
-
-                        <div class="tp-caption customin ltl lg-list-item tp-resizeme white"
-                             data-x="170" data-y="400" data-start="3000"
-                             data-transform_in="x:-50px;skX:100px;opacity:0;s:1000;e:Power4.easeInOut;"
-                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-speed="600"
-                             data-easing="Back.easeOut"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.01"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             data-endeasing="Power4.easeIn">
-                            <a style="color: inherit" href="{{ route('ethique') }}">
-                                <i class="fa fa-puzzle-piece main-color"></i>
-                                Code d'Ethique
-                            </a>
-                        </div>
-
-                        <div class="tp-caption customin ltl tp-resizeme gry-sep"
-                             data-x="170" data-y="460" data-start="3000"
-                             data-transform_in="x:-50px;skX:100px;opacity:0;s:1000;e:Power4.easeInOut;"
-                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-speed="600"
-                             data-easing="easeOutQuad"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.01"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             data-endeasing="Power4.easeIn">
-                        </div>
-
-                        <div class="tp-caption customin ltl lg-list-item tp-resizeme white"
-                             data-x="220" data-y="490" data-start="3300"
-                             data-transform_in="x:-50px;skX:100px;opacity:0;s:1000;e:Power4.easeInOut;"
-                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-speed="600"
-                             data-easing="Back.easeOut"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.01"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             data-endeasing="Power4.easeIn">
-                            <a style="color: inherit" href="{{ route('emplois') }}">
-                                <i class="fa fa-search main-color"></i>
-                                Offres D'Emploi
-                            </a>
-                        </div>
-
-                        <div class="tp-caption customin ltl tp-resizeme gry-sep"
-                             data-x="220" data-y="540" data-start="3300"
-                             data-transform_in="x:-50px;skX:100px;opacity:0;s:1000;e:Power4.easeInOut;"
-                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-speed="600"
-                             data-easing="easeOutQuad"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.01"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             data-endeasing="Power4.easeIn">
-                        </div>
-
-                        <div class="tp-caption customin ltl tp-resizeme uppercase"
-                             data-x="340" data-y="580" data-start="3600"
-                             data-transform_in="x:-50px;skX:100px;opacity:0;s:1000;e:Power4.easeInOut;"
-                             data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-speed="600"
-                             data-easing="Back.easeOut"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-elementdelay="0.01"
-                             data-endelementdelay="0.1"
-                             data-endspeed="1000"
-                             data-endeasing="Power4.easeIn"><a class="btn btn-xl main-bg round" style="white-space:nowrap" href="{{route('membre')}}">Adhérez Aujourd'hui</a>
-                        </div>
-
-
-                    </li>
-                    <li data-index="rs-163" data-transition="slideoververtical" data-slotamount="7" class="dark"  data-easein="default" data-easeout="default" data-masterspeed="1500" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off"  data-title="Intro" data-description="">
-                        <!-- MAIN IMAGE -->
-                        <img src="assets/images/sliders/rev/bg-04.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-
-                        <div class="tp-caption main-color uppercase tp-resizeme text-center"
-                             id="slide-163-layer-3"
-                             data-x="['middle','middle','middle','middle']"
-                             data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-voffset="['-10','-10','-10','-10']"
-                             data-fontsize="['30','30','30','20']"
-                             data-lineheight="['45','45','45','45']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="10"
-                             data-transform_idle="o:1;"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;"
-                             data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
-                             data-start="1000"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-responsive_offset="on"
-                             style="z-index: 6; white-space: nowrap">
-                            l'IRMA est une organisation <br> de développement professionel <br>des
-                            personnes œuvrant dans les métiers <br>du risque liés aux assurances et
-                            <br>au risk management en <br>République Démocratique du Congo.
-                        </div>
-
-                        <!-- LAYER NR. 4 -->
-                        <div class="tp-caption rev-btn rev-maxround rev-bordered  "
-                             id="slide-163-layer-6"
-                             data-x="['middle','middle','middle','middle']"
-                             data-hoffset="['0','0','0','0']"
-                             data-y="['middle','middle','middle','middle']"
-                             data-voffset="['180','180','180','180']"
-                             data-width="none"
-                             data-height="none"
-                             data-whitespace="nowrap"
-                             data-transform_idle="o:1;"
-                             data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power3.easeOut;"
-                             data-style_hover="c:rgba(255, 255, 255, 1.00);bc:rgba(255, 255, 255, 1.00);"
-                             data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
-                             data-transform_out="y:[175%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
-                             data-mask_out="x:inherit;y:inherit;"
-                             data-start="1500"
-                             data-splitin="none"
-                             data-splitout="none"
-                             data-actions='[{"event":"click","action":"jumptoslide","slide":"rs-164","delay":""}]'
-                             data-responsive_offset="on"
-                             data-responsive="off"
-                             style="z-index: 8; white-space: nowrap; font-size: 15px; line-height: 15px; font-weight: 600; color: darkolivegreen;font-family:Raleway;background-color:rgba(0, 0, 0, 0);padding:13px 35px 13px 35px;border-color:rgba(255, 255, 255, 0.25);border-style:solid;border-width:1px;border-radius:30px 30px 30px 30px;letter-spacing:1px;">
-                            <a href="{{route('about')}}">LIRE PLUS</a>
-                        </div>
-                    </li>
-                </ul>
-                <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-        <div>
-            <div class="heading full-heading alter-gry" style="background-image:url('assets/images/patterns/bg2.jpg')">
-                <h4 class="inner-head" style="font-weight: 200;">
-                    A la Poursuite <span class="main-color light-font">de l'Excellence</span>
-                </h4>
-                <h4 class="small-heading"><span class="main-color">
-                            dans les Assurances et le Risk Management</span>  en R.D.Congo
-                </h4>
-            </div>
-
-            <div style="margin: 50px">
-                <p class="heading-desc centered">
-                    L’IRMA crée un cheminement de carrière pour les
-                    professionnels des assurances et du risk management
-                    en leur offrant des cadres de connaissances,
-                    des compétences et des comportements dont ils
-                    ont besoin d'aujourd'hui pour répondre aux exigences
-                    d'un environnement global du risque de plus en plus complexe et interconnecté.
-                </p>
-                <div class="row">
-                    <div class="col-md-3 zindx-1">
-                        <div class="fx" data-animate="fadeInLeft" data-animation-delay="200">
-                            <div class="icons-style-2 t-right">
-                                <i class="icons icons-basic-alarm"></i>
-                                <span class="tri-line"></span>
-                                <h4 class="bold uppercase heading">Conférence Annuelle</h4>
-                                <p>
-                                    Un véritable terreau de réflexion, d’échanges et de diffusion des bonnes pratiques pour les professionels des assurances et du Risk Management
-                                </p>
-                            </div>
-                        </div>
-                        <div class="fx" data-animate="fadeInLeft" data-animation-delay="400">
-                            <div class="icons-style-2 t-right">
-                                <i class="icons icons-basic-lock"></i>
-                                <span class="tri-line bottom-tri"></span>
-                                <h4 class="bold uppercase heading">
-                                    <a href="events.php">
-                                        Séminaires
-                                    </a>
-                                </h4>
-                                <p>
-                                    Intercatifs et animés par des experts de renom sur des thèmes d’actualité répondant aux besoins de connaissances practiques des particiapnts.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 t-center zindx-0">
-                        <img class="fx" data-animate="fadeInUp" alt="" src="assets/images/desktop.png" />
-                    </div>
-                    <div class="col-md-3 zindx-1">
-                        <div class="fx" data-animate="fadeInRight" data-animation-delay="800">
-                            <div class="icons-style-2">
-                                <i class="icons icons-basic-pencil-ruler"></i>
-                                <span class="tri-line left"></span>
-                                <h4 class="bold uppercase heading">Formations Certifiantes</h4>
-                                <p>
-                                    Des cours qui menent à l’obtention des titres professionnels vous permettant d’augmenter votre employabilité et votre autorité professionelle.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="fx" data-animate="fadeInRight" data-animation-delay="1000">
-                            <div class="icons-style-2">
-                                <i class="icons icons-basic-home"></i>
-                                <span class="tri-line left bottom-tri" style=""></span>
-                                <h4 class="bold uppercase heading">Formations Qualifiantes</h4>
-                                <p>
-                                    Des cours qui vous permettent de vous initier, vous perfectionner ou vous spécialiser rapidement dans une expertise particulière.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                        <a href="./cmembership.php">
+                            <button type="button" class="btn btn-light w-auto">Join as a Corporate Member</button>
+                        </a>
+                        <a href="./pmembership.php">
+                            <button type="button" class="btn bg-gradient-info w-auto">Join as a Individual Member</button>
+                        </a>
+                    </p>
                 </div>
             </div>
+            <div class="position-absolute w-100 z-index-1 bottom-0">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="moving-waves">
+                        <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)" />
+                        <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)" />
+                        <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)" />
+                        <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95" />
+                    </g>
+                </svg>
+            </div>
         </div>
-    </div>
-    </div>
-
-    <div class="container-fluid" style="background-image:url('assets/images/people.jpg'); padding: 20px!important"
-         data-stellar-background-ratio="0.4">
-        <div class="heading full-heading main-bg">
-            <h3 style="font-weight: normal!important;" class="inner-head white">Message du président</h3>
-
-        </div>
+    </header>
+    <section class="pt-6 pb-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-6">
-                    <br>
-                    <article class="fx feature-img" data-animate="fadeInUp" data-animation-delay="">
-                        <figure class="shape">
-                            <img alt="" src="assets/images/mimile.png" />
-                        </figure>
-                        <div class="feature-details-hidden">
-                            <h5 class="bold feature-head main-color">Mimile MAISHA MUKUNA</h5>
-                            <p>
-                                Président
-                            </p>
-                            <button type="button"
-                                    class="btn main-bg btn-lg shape"
-                                    data-toggle="modal"
-                                    data-target=".bs-example-modal-lg">LIRE PLUS
-                            </button>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-9 col-7">
-                    @forelse($message->slice(0,2) as $mes)
+                <div class="col-lg-9 z-index-2 border-radius-xl mt-n10 mx-auto py-3 blur shadow-blur">
                     <div class="row">
-                        <div class="my-info shape">
-                            <ul class="list">
-                                <li><i class="fa fa-check main-color"></i>
-                                    {{$mes->titreMessage}}
-                                </li>
-                                <li><i class="fa fa-calendar main-color"></i>
-                                    {{$mes->date}}
-                                    <i class="fa fa-microphone main-color"></i>
-                                    {{$mes->prenom . ' ' . $mes->nom}}
-                                </li>
-                                <li><i class="fa fa-download main-color"></i>
-                                    <a href="{{route('message', ['id'=>$mes->id])}}">
-                                        Découvrir
-                                    </a></li>
-                            </ul>
+                        <div class="col-md-6 position-relative">
+                            <div class="col-lg-12 ms-auto mt-lg-0 mt-2">
+                                <div class="card shadow-lg">
+                                    <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
+                                        <div class="d-block blur-shadow-image">
+                                            <img src="assets/img/logo_illustration.jpg"
+                                                 alt="img-blur-shadow" class="img-fluid shadow rounded-3">
+                                        </div>
+                                        <div class="colored-shadow" style="background-image: url(&quot;assets/img/logo_illustration.jpg&quot;);"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="vertical dark">
+                        </div>
+
+                        <div class="col-md-6 position-relative">
+                            <div class="col-lg-12 ms-auto mt-lg-0 mt-2">
+                                <div class="card shadow-lg">
+                                    <div class="card-body">
+                                        <a href="javascript:;">
+                                            <h5 class="mt-0">
+                                                THE CERTIFIED AFRICAN RISK LEADER
+                                            </h5>
+                                        </a>
+                                        <p class="text-sm mb-0" style="color: black">
+                                            The Certified African Risk Leader course (CARL)
+                                            is designed to equip participants with the knowledge
+                                            and skillset required to become risk leaders in their organisations.
+                                            The course is will immerse you in dynamic case studies,
+                                            tail-risk stress tests, scenario planning, and wargaming exercises,
+                                            as you explore how to make informed risk management decisions.
+                                        </p>
+
+                                        <br>
+
+                                        <a href="./carl.php"><span class="badge bg-gradient-info">EXPLORE</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="vertical dark">
                         </div>
                     </div>
-                    @empty
-                        <spam>Aucun membre</spam>
-                    @endforelse
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="modal fade bs-example-modal-lg"
-             tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header t-left">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="gridSystemModalLabel">Mimile MAISHA MUKUNA</h4>
-                    </div>
-                    <div class="modal-body">
-                        <h4>Président d'IRMA CONGO</h4>
-                        <p>
-                            M. Mimile Mukuna Maisha est un expert en droit international des affaires et gestion internationale des risques et assurances des affaire. Depuis 2013, il est Directeur Général de First Continental Legal and Risk Consulting, basé a Londres et Johannesburg, où il conseille toutes les catégories d'investisseurs internationaux et de gouvernements africains sur les traités d'investissement internationaux, la gestion des risques des Investissements Directs Etrangers et sur les transactions de financement internationales.
-                        </p>
-
-                        <p>
-                            M. Maisha a débuté sa carrière professionnelle en 1994 à la Munich Reinsurance comme que directeur adjoint puis directeur des marchés des pays francophones et lusophones en Africain. Durant ses fonctions a la Munich Re, M. Maisha sera conseiller aux gouvernement Mozambicain et Rwandais pour les libéralisation des marchés des assurances dans leurs pays respectifs et sera le Consultant principal pour la création de la première société d'assurance en Guinée Equatoriale. Il rejoint en 1997 Maritime Brokers and Consultants en tant que Directeur responsable des classes d'assurance hors-transport et du Département Afrique. Puis, en 1999, il a fera partie du groupe d'experts sud-africains de renom qui créerons à Londres et Johannesburg la société de consultance en Financement/Transfert Alternatif des Risques Eikos Risk Applications où il a conseillé des multinationales et des SPV sur les solutions de Financement des Alternatif des Risques et de financement structuré. En 2001, il sera nommé directeur général de l'assureur mozambicain Compania Geral de Seguros da Mozambique (CGSM) et, en 2003, il retournera en Afrique du Sud pour rejoindre, en tant que Directeur Général, Phoenix Risk Solutions, un courtier de réassurance et Consultance en Transfert Alternatif des risques pour lequel il a ouvert des bureaux de représentation à Dakar, Kinshasa et Lagos.
-                        </p>
-
-                        <p>
-                            Depuis 2019, M. Maisha est Président de l’African Risk Management Society (ARiMaS). Il intervient régulièrement lors de conférences et séminaires en Afrique sur la gestion des risques commerciaux et le droit des investissements internationaux et est l'auteur du livre populaire sur la gestion des risques des affaires en Afrique «Why Risk so Much for so Little?»
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <section class="my-0 py-0">
+        <div class="container">
+            <div class="row">
+                <div class="row justify-content-center text-center my-sm-5">
+                    <div class="col-lg-6">
+                        <h2 class="text-dark mb-0">Upcoming Events</h2>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container mt-sm-5 mt-1">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
 
-    </div>
+                        @forelse($events as $event)
+                            <div class="col-md-4 mt-md-2">
+                                <div>
+                                    <div class="card card-background card-background-mask-{{$color[$loop->index]}} tilt" data-tilt>
+                                        <div class="full-background"
+                                             style="background-image: url('https://perspectives-cblacp.eu/wp-content/uploads/2020/10/Aerial-view-of-Kigali-Convention-Centre-1-1024x492.jpg')"></div>
+                                        <div class="card-body pt-3 text-center">
+                                            <h4 class="text-white">{{$event->titre}}</h4>
 
-    <div class="container-fluid" style="margin: 20px!important;">
-        <div class="padding-vertical-40 text-center">
-            <h2>NOS PARTENAIRES</h2>
+                                            <p style="font-size: 75%; color: white; font-weight: bold">
+                                                <i class="fa fa-calendar me-1"></i> {{ Carbon\Carbon::parse($event->date)->format('F, d Y') }}
+                                            </p>
+
+                                            <p style="color: white; font-weight: bold">
+                                                <i class="fa fa-map-marker me-1"></i> {{$event->lieu}} | {{$event->ville}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
+                        @endforelse
+
+                    </div>
+
+                    <br>
+                    <div class="text-center">
+                        <a href="./all-events.php">
+                            <button type="button" class="btn bg-gradient-info w-auto me-1 mb-0">View More ...</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ms-auto me-auto p-lg-4 mt-lg-0 mt-4">
+                    <div class="card card-background card-background-mask-dark tilt" data-tilt>
+                        <div class="full-background"
+                             style="background-image: url('https://perspectives-cblacp.eu/wp-content/uploads/2020/10/Aerial-view-of-Kigali-Convention-Centre-1-1024x492.jpg')"></div>
+                        <div class="card-body pt-7 text-center">
+                            <h2 class="text-white up mb-0">Rising to <br />the Challenge</h2>
+
+                            <p style="color: white; font-weight: bold">
+                                Rwanda - Kigali
+                            </p>
+
+                            <p style="color: white; font-weight: bold">
+                                28 - 02 November 2021
+                            </p>
+
+                            <br>
+
+                            <h4 class="text-white">
+                                What it takes for African companies, societies and economies to meet the changing global risk landscape.
+                            </h4>
+                            <a href="./conference/" target="_blank"
+                               class="btn btn-outline-white mt-5 up btn-round">View More ...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="clients horizontal-slider"
-             data-slides_count="{{ count($partenaires) }}"
-             data-scroll_amount="{{ count($partenaires) }}" data-slider-speed="300"
-             data-slider-infinite="1" data-slider-dots="0"
-             data-slider-arrows="1">
-             @forelse ($partenaires as $partenaire)
+    </section>
 
-             <div>
-                 <a href="">
-                     <img style="height: 79px; width: 170px; object-fit:scale-down; border: 2px solid #000000" src="{{ $partenaire->image }}" alt="">
-                 </a>
-             </div>
 
-             @empty
-
-             <span>Aucun partenaire</span>
-
-             @endforelse
+    <section class="py-sm-3 py-3">
+        <div class="container mt-sm-5">
+            <div class="page-header min-vh-50 my-sm-3 mb-5 border-radius-xl" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/desktop.jpg');">
+                <span class="mask bg-gradient-dark"></span>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 ms-lg-0 text-center">
+                            <h1 class="text-white mb-0">The african journal</h1>
+                            <h1 class="text-white">of risk management</h1>
+                            <p class="lead text-white opacity-8">
+                                The African Journal of Risk Management (AJRM) publishes quarterty Africa-focused
+                                risk management articles from submissions of original and review papers, studies,
+                                technical reports, book reviews, news and notes commentaries on business,
+                                organisational, social, political, and economic risk management issues and developments.
+                            </p>
+                            <a href="" class="text-white icon-move-right">
+                                Explore
+                                <i class="fas fa-arrow-right text-sm ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
+
+
+    <section class="py-sm-1 py-1 position-relative">
+
+        <div class="row">
+            <div class="row justify-content-center text-center my-sm-0">
+                <div class="col-lg-6">
+                    <h2 class="text-dark mb-0">The President's Briefings</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mx-auto">
+                    <div class="row py-lg-3 py-6">
+                        <div class="col-lg-3 col-md-5 position-relative my-auto">
+                            <img class="img border-radius-lg max-width-200 w-100 position-relative z-index-2"
+                                 src="assets/img/bruce-mars.jpg" alt="bruce">
+                        </div>
+                        <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mt-sm-0 mt-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="mb-0" style="color: black">MIMILE MUKUNA Maisha</h4>
+                                <div class="d-block">
+                                    <button type="button"
+                                            data-bs-toggle="modal" data-bs-target="#biographieModal"
+                                            class="btn bg-gradient-info w-auto me-1 mb-0">
+                                        View Bio
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-lg mb-0" style="color: black">
+                                The Significance of Risk Leadership in Helping People Deal with Uncertainty
+                                <br>
+                                11-04-2020
+                                <br>
+                                <em>Mimile Mukuna Maisha</em>
+                                <br><a href="javascript:;" class="text-info icon-move-right" data-bs-toggle="modal" data-bs-target="#messageModal">Read Full Message
+                                    <i class="fas fa-arrow-right text-sm ms-1"></i>
+                                </a>
+                            </p>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="biographieModal" tabindex="-1" aria-labelledby="biographieModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">MIMILE MUKUNA Maisha</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Mimile is an expert in International Business Law and International Business Risk Management.
+                                        Since 2013, he has been CEO of First Continental Legal and Risk Consulting where he advises on
+                                        International Business Law, International Business Risk Management and on international financing
+                                        transactions.
+                                        His expertise has been sought by transnational companies, governments and professional bodies.
+                                        He previously spent 20 years in the insurance/risk finance industry where he occupied executive
+                                        positions in various companies in different African countries.
+                                        He is a regular speaker at conferences and seminars on International Business Risk Management
+                                        and international investment/trade law topics and has made it his mission to promote the principle
+                                        and practice of risk leadership in the business world. he is the author of the book titled "Why
+                                        Risk so Much For so Little published in 2011.
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn bg-gradient-info w-auto me-1 mb-0" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Modal 2 -->
+                        <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Message of the President</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div>
+                                            <h6 class="mb-0">The Significance of Risk Leadership in
+                                                Helping People Deal with Uncertainty.</h6>
+                                        </div>
+                                        <em>11-04-2020</em>
+                                        <br>
+                                        <br>
+
+                                        <p class="text-sm mb-0">
+                                            In his play, An Enemy of the People, written in 1882,
+                                            Henrik Ibsen shows that being truthful to people about a
+                                            problem was essential even when this is unpopular.
+                                            The crucial issue in the play emerges when Doctor Thomas Stockmann,
+                                            a medical officer charged with inspecting the public baths on which
+                                            the prosperity of his native town depends, receives a laboratory report
+                                            confirming his suspicions that the water supply for the public baths is
+                                            contaminated by the local tannery. Jubilant that he has detected the contamination
+                                            in time to prevent a disastrous epidemic, he is however unable to get his message
+                                            across through the press. He then calls a public meeting where he intends to expose
+                                            the fact that the whole town’s prosperity is rooted in a lie and to prove to people
+                                            that he has an unpopular but necessary duty and shut down the baths. His opponents
+                                            take charge of the meeting, however, and rule all discussion of the baths out of order
+                                            and declare him "an enemy of the people".
+                                            <br>
+                                            <br>
+
+                                            Today, just as in An Enemy of the People, some leaders claim that the Corona Virus pandemic is overblown especially if the required restrictions affect their popularity and some people decry such restrictions on their “freedom”. But not telling people the truth about a bad situation the may face is simple, while telling people things they would not want to hear is difficult, and, as a result, a test of risk leadership. Indeed, Risk Leadership is not about taking actions that are popular in uncertain times, but as I have defined it, it is the ability of a leader to take risks or to deal with uncertainty in a manner that is good for everyone involved in and affected by the leader’s actions. We can better understand the essence of risk leadership if we situate, for instance, the uncertainty that the coronavirus poses within the Tame-Wicked-Critical problems framework.
+
+                                            <br>
+                                            <br>
+                                            Tame problems are complicated, known (likely to have occurred before) problems with known solutions that are within the purview of experts. They are to a large extent characterise by certainty and thus are associated with Management. To solve the problem, the management’s role, therefore, is to provide the appropriate processes – or standard operating procedure (SOP). Covid-19 testing can be put in this category—we know how to do it, provided the means and knowhow are available.
+
+                                            <br>
+                                            <br>
+                                            Wicked Problems are complex beyond being complicated. They do not have right or wrong solutions, but good or bad developments and, therefore, have no definition of success. Put differently, there is a great degree of uncertainty in Wicked Problems, both in terms of their causes and effects besides, as I have just said, in terms of the solutions they required. If we knew what their exact causes and effects were and how to fix them, they would be Tame Problems, not Wicked Problems. Leadership is often mistakenly associated with the exact opposite - the ability to solve problems, to act decisively, and to know what to do. This, actually, is what management is about. Managers deal with certainty. They embrace the process, seek stability and control, and instinctively try to solve problems quickly, sometimes before they fully understand the importance of a problem. Leaders, on the other hand, deal with uncertainty. They embrace chaos and lack of structure and are willing to delay closure in order to better understand the issues. In this way, true leaders have much more in common with artists and other creative thinkers. Taking one''s good management skills for leadership creates pressure to act decisively and therefore often leads to trying (and failing) to solve Wicked Problems as if they were Tame Problems. For Instance, when Global Warming first emerged as a problem, some of the responses focused on solving the problem through science (a Tame response), manifested in the development of biofuels; but we now know that biofuels seem to rob the world of important food resources, so what looked like a solution has become another problem. Again, this is typical of what happens when we try to solve Wicked Problems; other problems arise to make the original problem worse.
+
+                                            <br>
+                                            <br>
+                                            Additionally, Wicked Problems are usually intractable so that we must learn to endure them, often in a divided fashion on the basis of conflicting convictions. What I am suggesting is that, since Wicked Problems are partly characterised by the absence of a solution, the leader’s responsibility is therefore to ask the right questions rather than to provide the right answers because the answers may not be compelling and will require a collaborative process to mitigate the impact of the problem. The leader then must engage the collective in solving the problem and to rally the community to help itself whenever possible and to cope with the new reality. This is, today, similar to the call for social distancing, quarantine and mutual assistance.
+
+                                            <br>
+
+                                            Critical problems are crises, that is, risks that have materialised. They require urgent action. The individual having authority acts as the Commander and dictates the response to the situation. Here, there is no uncertainty as to what needs to be done although there may be some uncertainty (which does not immediately matter) as to the cause of the problem. There is no need nor time to initiate processes (Management) or ask questions (Leadership). The success of a commander’s action depends solely on his leadership skills and qualities. But, all kinds of problems arise when the Commander sees himself as a god who thinks they can do as they wish with people. Evidently, the Commander may in private remain uncertain as to whether their action is appropriate or whether the reframing of the problem as a crisis is convincing, but this uncertainty is unlikely to be evident to people. Ordering the closure of schools, businesses, restaurants and places of worship for the foreseeable future would be an example of tackling a critical problem.
+
+                                            <br>
+                                            <br>
+                                            It often happens that the same person in position of authority switches between management, leadership and command approaches according to how they perceive or establish the problem as Tame, Wicked or Critical, or as a problem moves across these confines. The perception or establishment of a problem may lead to a dangerous mismatch between the approach and the problem. Indeed, if we approach the problem from the wrong angle, then we risk making it worse. Therefore, indecision on what to do and the search for collective ideas when uncertainty has materialised such as the pandemic we are going through right now, is exercising Leadership when command is required. Equally, requiring for example businesses to shut down without considering or caring about the wider impact on the community as people are losing their income, is to confuse the importance of leadership with suitability of command. But unless one takes expert advice on what to do, one can be decisively wrong, and ignoring experts in order to promote self-interest or the interest of a minority group, is just as likely to lead to chaos.
+
+                                            <br>
+                                            <br>
+                                            That Risk Leadership is similar to any other form of leadership but just applied to the risk or uncertainty explains both its importance and paradox. It is the most vital approach vital in today''s world which made of complex and interconnected uncertainties, yet, it remains one of the three approaches which most individual in position of authority will try to stay away from because it entails that: (1) they do not have the answer to the problem, (2) their mission is to have people assume their responsibilities and adapt to the reality of the problem, ( 3) that it will require a long time to build the “answer” to the problem and that this answer will only lessen the effects of the problem, not solve it, and (4) that it will require constant efforts to maintain the answer, although its greatest advantage is that it will allow people to collectively adapt to the problem or to live with it. It requires the risk leader to have the ability to inspire people to give up some their privileges and to be compassionate with one another. Obviously, it is much easier to opt for either a management approach - engaging a proven and reliable process - or a command approach - imposing the response on people. This and because of the realities of the world we live in today explains the need to equip the leaders in our organisations and institutions with Risk Leadership capabilities.
+                                        </p>
+
+                                    </div>
+                                    <div class="modal-footer justify-content-between">
+                                        <button type="button" class="btn bg-gradient-info w-auto me-1 mb-0" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

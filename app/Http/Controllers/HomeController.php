@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\TestMail;
 use App\Models\Candidat;
 use App\Models\Emploi;
+use App\Models\Evenement;
 use App\Models\MessagePresident;
 use App\Models\Partenaire;
 use Illuminate\Http\Request;
@@ -18,13 +19,20 @@ class HomeController extends Controller
 
     public function home(){
 
-        $message = MessagePresident::all();
-
+        $events = Evenement::orderBy('date')->take(9)->get();
+        $color = [
+            'black',
+            'primary',
+            'secondary',
+            'info',
+            'danger',
+            'success'
+        ];
         $partenaire = Partenaire::all();
 
         return view('welcome', [
-            'message' => $message,
-            'partenaires' => $partenaire
+            'events' => $events,
+            'color' => $color
         ]);
     }
 
