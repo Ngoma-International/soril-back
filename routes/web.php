@@ -36,10 +36,10 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', function (){
-    return redirect('home');
+    return redirect('home'); //Use in soril
 });
 
-Route::get('home', [HomeController::class, 'home'])->name('home');
+Route::get('home', [HomeController::class, 'home'])->name('home'); // Use in soril
 
 Route::get('message', [HomeController::class, 'message'])->name('message');
 
@@ -78,15 +78,15 @@ Route::post('add_collective', [MembreController::class, 'add_collective'])
 /*
  * Evenements
  */
-Route::get('evenementss', [EvenementController::class, 'home'])
-    ->name('evenementss');
+Route::get('all-events', [EvenementController::class, 'home'])
+    ->name('evenementss'); //Use in soril
 Route::get('event_details', [EvenementController::class, 'detail'])
     ->name('evenementDetail');
 Route::get('register_evenement', [EvenementController::class, 'regEvent'])
     ->name('regEvent');
 Route::post('register_evenement_post', [EvenementController::class, 'regEventPost']);
 Route::get('conference/{id}', [EvenementController::class, 'conference'])
-    ->name('conference');
+    ->name('conference'); //Use in soril
 /*
  * Dashboard Route
  */

@@ -19,7 +19,8 @@ class HomeController extends Controller
 
     public function home(){
 
-        $events = Evenement::orderBy('date')->take(9)->get();
+        $events = Evenement::orderBy('date', 'desc')->take(9)->get();
+        $annual = Evenement::where('typeEvent', 'annual')->first();
         $color = [
             'black',
             'primary',
@@ -28,11 +29,11 @@ class HomeController extends Controller
             'danger',
             'success'
         ];
-        $partenaire = Partenaire::all();
 
         return view('welcome', [
             'events' => $events,
-            'color' => $color
+            'color' => $color,
+            'annual'=>$annual
         ]);
     }
 

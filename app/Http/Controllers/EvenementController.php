@@ -13,13 +13,21 @@ class EvenementController extends Controller
     //
     public function home(){
 
-        $events = Evenement::paginate(2);
-
+        $events = Evenement::orderBy('date', 'desc')->take(9)->get();
         $annual = Evenement::where('typeEvent', 'annual')->firstOrFail();
+        $color = [
+            'black',
+            'primary',
+            'secondary',
+            'info',
+            'danger',
+            'success'
+        ];
 
         return view('evenement.home', [
             'events'=>$events,
-            'annual'=>$annual
+            'annual'=>$annual,
+            'color'=>$color
         ]);
     }
 

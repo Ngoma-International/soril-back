@@ -112,7 +112,7 @@
 
                         @forelse($events as $event)
                             <div class="col-md-4 mt-md-2">
-                                <div>
+                                <a href="{{route('conference', $event->id)}}">
                                     <div class="card card-background card-background-mask-{{$color[$loop->index]}} tilt" data-tilt>
                                         <div class="full-background"
                                              style="background-image: url('https://perspectives-cblacp.eu/wp-content/uploads/2020/10/Aerial-view-of-Kigali-Convention-Centre-1-1024x492.jpg')"></div>
@@ -128,7 +128,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         @empty
                         @endforelse
@@ -137,8 +137,9 @@
 
                     <br>
                     <div class="text-center">
-                        <a href="./all-events.php">
-                            <button type="button" class="btn bg-gradient-info w-auto me-1 mb-0">View More ...</button>
+                        <a href="{{route('evenementss')}}">
+                            <button type="button"
+                                    class="btn bg-gradient-info w-auto me-1 mb-0">View More ...</button>
                         </a>
                     </div>
                 </div>
@@ -148,22 +149,24 @@
                         <div class="full-background"
                              style="background-image: url('https://perspectives-cblacp.eu/wp-content/uploads/2020/10/Aerial-view-of-Kigali-Convention-Centre-1-1024x492.jpg')"></div>
                         <div class="card-body pt-7 text-center">
-                            <h2 class="text-white up mb-0">Rising to <br />the Challenge</h2>
+                            <h1 class="text-white up mb-0">{{$annual->titre}}</h1>
 
                             <p style="color: white; font-weight: bold">
-                                Rwanda - Kigali
+                                {{$annual->lieu}} | {{$annual->ville}}
                             </p>
 
                             <p style="color: white; font-weight: bold">
-                                28 - 02 November 2021
+                                {{ Carbon\Carbon::parse($annual->date)->format('F, d Y') }}
+                                <br>
+                                Durée : {{$annual->duree}} jour(s)
                             </p>
 
                             <br>
 
                             <h4 class="text-white">
-                                What it takes for African companies, societies and economies to meet the changing global risk landscape.
+                                {{$annual->description}}
                             </h4>
-                            <a href="./conference/" target="_blank"
+                            <a href="{{route('conference', $annual->id)}}" target="_blank"
                                class="btn btn-outline-white mt-5 up btn-round">View More ...</a>
                         </div>
                     </div>

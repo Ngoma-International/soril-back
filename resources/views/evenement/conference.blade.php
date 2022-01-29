@@ -1,291 +1,427 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- Mirrored from preview.colorlib.com/theme/eventcon/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Jan 2022 08:39:21 GMT -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Irma Conférence Anuelle</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
+    <link rel="icon" type="image/png" href="{{asset('assets/img/logos/icon.png')}}">
+    <title>
+        Home - SORIL
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="{{asset('assets/css/nucleo-icons.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/css/nucleo-svg.css')}}" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="{{asset('assets/css/nucleo-svg.css')}}" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="{{asset('assets/css/soft-design-system.css?v=1.0.5')}}" rel="stylesheet" />
+</head>
 
-    <link rel="shortcut icon" href="{{asset('favicon.png')}}">
+<body class="index-page">
 
+    <div class="container position-sticky z-index-sticky top-0">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg  blur top-0 z-index-fixed justify-content-center shadow position-absolute my-3 py-2 start-0 end-0 mx-0">
+                    <div class="container-fluid">
+                        <!--<a class="navbar-brand font-weight-bolder ms-sm-3"
+                          href="index.html"
+                          rel="tooltip" title="Go To Home" data-placement="bottom"
+                          target="_blank"
+                          >
+                          SORIL
+                        </a>-->
+                        <button class="navbar-toggler shadow-none ms-2" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation"
+                                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon mt-2">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
+            </span>
+                        </button>
+                        <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
+                            <ul class="navbar-nav  justify-content-center navbar-nav-hover col-12 ps-lg-1 w-100">
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                                       id="dropdownMenuPages" href="{{route('home')}}"
+                                       style="color: black; font-weight: bold;"
+                                    >
+                                        Back To Arimas
+                                    </a>
+                                </li>
 
-    <link rel="stylesheet"
-          href="{{asset('conference/css/A.bootstrap.min.css%2bowl.carousel.min.css%2bmagnific-popup.css%2bfont-awesome.min.css%2bthemify-icons.css%2bgijgo.css%2bnice-select.css%2banimate.css%2bflaticon.css')}}" />
-    <link rel="stylesheet" href="{{asset('conference/css/A.style.css.pagespeed.cf.a5Og8aBLl6.css')}}">
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                                       id="dropdownMenuPages" href="#home"
+                                       style="color: black; font-weight: bold;"
+                                    >
+                                        Home
+                                    </a>
+                                </li>
 
-    <script>(function(w,d){!function(e,t,r,a,s){e[r]=e[r]||{},e[r].executed=[],e.zaraz={deferred:[]};var n=t.getElementsByTagName("title")[0];e[r].c=t.cookie,n&&(e[r].t=t.getElementsByTagName("title")[0].text),e[r].w=e.screen.width,e[r].h=e.screen.height,e[r].j=e.innerHeight,e[r].e=e.innerWidth,e[r].l=e.location.href,e[r].r=t.referrer,e[r].k=e.screen.colorDepth,e[r].n=t.characterSet,e[r].o=(new Date).getTimezoneOffset(),//
-            e[s]=e[s]||[],e.zaraz._preTrack=[],e.zaraz.track=(t,r)=>e.zaraz._preTrack.push([t,r]),e[s].push({"zaraz.start":(new Date).getTime()});var i=t.getElementsByTagName(a)[0],o=t.createElement(a);o.defer=!0,o.src="../../cdn-cgi/zaraz/sd41d.js?"+new URLSearchParams(e[r]).toString(),i.parentNode.insertBefore(o,i)}(w,d,"zarazData","script","dataLayer");})(window,document);</script></head>
-<body>
-<!--[if lte IE 9]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-<![endif]-->
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                                       id="dropdownMenuPages" href="#schedule"
+                                       style="color: black; font-weight: bold;">
+                                        Schedules
+                                    </a>
+                                </li>
 
-<header>
-    <div class="header-area ">
-        <div id="sticky-header" class="main-header-area">
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                                       id="dropdownMenuPages" href="#registration"
+                                       style="color: black; font-weight: bold;">
+                                        Registration
+                                    </a>
+                                </li>
+
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                                       id="dropdownMenuPages" href="#sponsosrs"
+                                       style="color: black; font-weight: bold;">
+                                        Sponsors
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <header id="home" class="header-2">
+        <div class="page-header min-vh-100 dark"
+             style="background-image: url('{{asset('assets/img/bg.jpg')}}');">
             <div class="container">
-                <div class="header_bottom_border">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-lg-3">
-                        </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="main-menu  d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a href="#about">Information</a>
-                                        </li>
-                                        <li><a href="#programme">Programme</a>
-                                        </li>
-                                        <li><a href="#sponsors">Sponsors</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                            <div class="buy_tkt">
-                                <div class="book_btn d-none d-lg-block">
-                                    <a href="{{route('evenementss')}}">Retour à Irma</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+                <div class="col-lg-7 text-center mx-auto">
 
-
-<div class="slider_area" id="animateur">
-    <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-xl-12">
-                    <div class="slider_text text-center">
-                        <div class="shape_1 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                            <img src="img/shape/shape_1.svg" alt="">
-                        </div>
-                        <div class="shape_2 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s">
-                            <img src="img/shape/shape_2.svg" alt="">
-                        </div>
-                        <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-                            {{Carbon\Carbon::parse($annual->date)->format('F, d, Y') }}
-                        </span>
-                        <h3 class="fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">{{$annual->titre}}</h3>
-                        <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">{{$annual->ville}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="performar_area black_bg" id="animateur">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section_title mb-80">
-                    <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">Animateur</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="single_performer wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                            <div data-tilt class="thumb">
-                                <img src="{{asset($anim->image)}}" alt="">
-                            </div>
-                            <div class="performer_heading">
-                                <h4>{{$anim->prenom . ' ' . $anim->nom}}</h4>
-                                <span>{{$anim->organisation . ' / ' . $anim->position}}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="about_area black_bg" id="about">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="section_title text-center mb-80">
-                    <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">Informations</h3>
-                    <p class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">
-                        Aperçu de l'evenement : {{$annual->apercu}}
-                        <br>
-                        Prérequis : {{$annual->prerequis}}
-                        <br>
-                        Prix : {{$annual->prix}} $
-                        <br>
-                        Description : {{$annual->description}}
+                    <h1 class="text-white mb-0 mt-2">
+                        {{$annual->titre}}
+                    </h1>
+                    <br>
+                    <p class="lead text-white mt-0" style="text-shadow: 2px 2px 4px black;">
+                        {{$annual->description}}
                     </p>
+                    <p class="lead text-white mt-0" style="text-shadow: 2px 2px 4px black;">
+                        <i class="fa fa-map-marker"></i> {{$annual->lieu}} | {{$annual->ville}}
+                    <p class="lead text-white mt-0" style="text-shadow: 2px 2px 4px black;">
+                        <i class="fa fa-calendar"></i>
+                        {{ Carbon\Carbon::parse($annual->date)->format('F, d Y') }}
+                        <br>
+                        Durée : {{$annual->duree}} day (s)
+                    </p>
+                    <br>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </header>
 
-<div class="program_details_area detials_bg_1 overlay2" id="programme">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section_title text-center mb-80  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
-                    <h3>Programmes</h3>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="card mt-5 my-5">
+                    <h3 class="text-gradient text-dark mb-0 mt-2">
+                        Description
+                    </h3>
+
+                    <p style="color:black">
+                        {{$annual->description}}
+                    </p>
+                    <hr class="dark horizontal">
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-4 col-12">
+                            <h4 style="color:black">Certification</h4>
+                            <p style="margin-left: 20px;">{{$annual->certification}}</p>
+
+                            <h4 style="color:black">Prerequisites</h4>
+                            <p style="margin-left: 20px;">{{$annual->prerequis}}</p>
+
+                            <h4 style="color:black">Sponsorship</h4>
+                            <p style="margin-left: 20px;">Opportunity</p>
+
+                            <a href="sponsorship.html">
+                                <button type="button" class="btn bg-gradient-dark w-auto me-1 mb-0">View More</button>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <img src="{{asset($anim->image)}}"
+                                 class="w-100 border-radius-xl my-4" alt="">
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <h2>Keynote Speaker</h2>
+                            <h5>{{$anim->prenom . ' ' . $anim->nom}}</h5>
+                            <h6>{{$anim->organisation . ' - ' . $anim->position}}</h6>
+                            <h6>{{\App\Models\Country::where('code', $anim->pays)->first()->name}}</h6>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="program_detail_wrap">
-                    @forelse($programs as $program)
-                        @if($loop->index % 2 == 0)
-                            <div class="single_propram">
-                                <div class="inner_wrap">
-                                    <div class="circle_img"></div>
-                                    <div class="porgram_top">
-                                        <span class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
-                                            {{ Carbon\Carbon::parse($program->date)->format('F, d, Y') }}
-                                        </span>
-                                        <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".4s">
-                                            {{ Carbon\Carbon::parse($program->time)->format('g:i A') }}
-                                        </h4>
-                                        <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".6s">{{$program->header}}</h4>
-                                        <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".6s">Titre : {{$program->title}}</h4>
-                                        @forelse($anims as $anim)
-                                            @if($program->facilitator == $anim->id)
-                                                <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".6s">Animateur : {{$anim->prenom . ' ' . $anim->nom}}</h4>
-                                            @endif
-                                        @empty
-                                        @endforelse
-                                    </div>
-                                </div>
-                            </div>
-                        @else
-                            <div class="single_propram">
-                                <div class="inner_wrap">
-                                    <div class="circle_img"></div>
-                                    <div class="porgram_top">
-                                        <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">
-                                            {{ Carbon\Carbon::parse($program->date)->format('F, d, Y') }}
-                                        </span>
-                                        <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-                                            {{ Carbon\Carbon::parse($program->time)->format('g:i A') }}
-                                        </h4>
-                                        <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">{{$program->header}}</h4>
-                                        <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">Titre : {{$program->title}}</h4>
-                                        @forelse($anims as $anim)
-                                            @if($program->facilitator == $anim->id)
-                                                <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">Animateur : {{$anim->prenom . ' ' . $anim->nom}}</h4>
-                                            @endif
-                                        @empty
-                                        @endforelse
-                                    </div>
+    </section>
 
+    <hr>
+
+    <section id="schedule" class="my-6">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <h2>PROGRAM</h2>
+
+                <div class="card">
+                    <div class="table-responsive">
+                        <table class="table align-items-center mb-0">
+                            <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Program</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Facilitator</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date and Time</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder">Activity</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($programs as $program)
+                                    <tr>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">{{$program->header}}</p>
+                                        </td>
+                                        <td>
+                                            @forelse($anims as $anim)
+                                                @if($program->facilitator == $anim->id)
+                                                <div class="d-flex px-2 py-1">
+                                                    <div>
+                                                        <img src="{{asset($anim->image)}}"
+                                                             class="avatar avatar-sm me-3">
+                                                    </div>
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-xs">{{$anim->prenom . ' ' . $anim->nom}}</h6>
+                                                        <p class="text-xs text-secondary mb-0">{{$anim->email}}</p>
+                                                    </div>
+                                                </div>
+                                                @endif
+                                            @empty
+                                            @endforelse
+                                        </td>
+                                        <td>
+                                            <p class="text-xs font-weight-bold mb-0">
+                                                {{ Carbon\Carbon::parse($program->date)->format('F, d Y') }} -
+                                                {{ Carbon\Carbon::parse($program->time)->format('h:i A') }}
+                                            </p>
+                                        </td>
+                                        <td class="align-middle text-center text-sm">
+                                            <p class="text-xs font-weight-bold mb-0">{{$program->title}}</p>
+                                        </td>
+                                    </tr>
+                                @empty
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="horizontal dark my-6">
+
+    <section id="schedule" class="my-6">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <h2>REGISTRATION</h2>>
+
+                <section class="py-sm-1">
+                    <div class="bg-gradient-dark position-relative m-3 border-radius-xl overflow-hidden">
+                        <img src="../assets/img/shapes/waves-white.svg" alt="pattern-lines" class="position-absolute start-0 top-md-0 w-100 opacity-6">
+                        <div class="container py-2 postion-relative z-index-2 position-relative">
+                            <div class="row">
+                                <div class="col-md-7 mx-auto text-center">
+                                    <h1 class="text-white">Price : {{$annual->prix}} $</h1>
+                                    <a href=""
+                                       class="btn btn-white btn-lg mb-3 mb-sm-0">REGISTER NOW</a>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <hr class="horizontal dark my-4">
+
+    <section class="pt-4 pb-6" id="sponsosrs">
+        <div class="container text-center">
+            <h2>SPONSORS</h2>
+            <br>
+            <div class="row mb-7">
+                @forelse(\App\Models\SponsorEvent::all() as $spon)
+                    @forelse(\App\Models\Sponsor::all() as $spons)
+                        @if($spon->sponsor_id == $spons->id)
+                            @if($spon->evenement_id == $annual->id)
+                                <div class="col-lg-2 col-md-4 col-6 mb-4">
+                                    <img class="w-100 opacity-7" src="{{asset($spons->image)}}" alt="logo">
+                                    <p>{{$spons->organisation}}</p>
+                                </div>
+                            @endif
                         @endif
                     @empty
                     @endforelse
-                </div>
+                @empty
+                @endforelse
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-<div class="brand_area black_bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section_title text-center mb-80">
-                    <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">SPONSORS</h4>
-                    <br>
-                    <a href="#" class="boxed-btn3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">Devenir Sponsors</a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="brand_wrap">
-                    <div class="brand_active owl-carousel">
-                        <div class="single_brand text-center">
-                            <img src="img/brand/1.png" alt="">
-                        </div>
-                        <div class="single_brand text-center">
-                            <img src="img/brand/2.png" alt="">
-                        </div>
-                        <div class="single_brand text-center">
-                            <img src="img/brand/x3.png.pagespeed.ic.NCRAQHR1lN.png" alt="">
-                        </div>
-                        <div class="single_brand text-center">
-                            <img src="img/brand/4.png" alt="">
-                        </div>
-                        <div class="single_brand text-center">
-                            <img src="img/brand/5.png" alt="">
-                        </div>
-                        <div class="single_brand text-center">
-                            <img src="img/brand/1.png" alt="">
-                        </div>
-                        <div class="single_brand text-center">
-                            <img src="img/brand/2.png" alt="">
-                        </div>
+<!-- -------   END PRE-FOOTER 2 - simple social line w/ title & 3 buttons    -------- -->
+<div class="container">
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="LoginLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div>
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">Soril Administration</h6>
+                    </div>
+                    <div class="modal-body">
+                        <a href="./login-form.php?type=administration?stype=null">
+                            <button type="button" class="btn btn-outline-dark mb-0">Manager</button>
+                        </a>
                     </div>
                 </div>
+
+                <div>
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">Soril Event</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-outline-dark mb-0">Manager</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">Soril MemberShip</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-outline-dark mb-0">Members Manager</button>
+
+                        <button type="button" class="btn btn-outline-dark mb-0">Individual Members</button>
+
+                        <button type="button" class="btn btn-outline-dark mb-0">Corporate Members</button>
+
+                        <button type="button" class="btn btn-outline-dark mb-0">Members Associations</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">The Journal</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-outline-dark mb-0">Managers</button>
+
+                        <button type="button" class="btn btn-outline-dark mb-0">Authors</button>
+
+                        <button type="button" class="btn btn-outline-dark mb-0">Subscriber</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">BookShop</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-outline-dark mb-0">Manager</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="modal-header">
+                        <h6 class="modal-title" id="exampleModalLabel">A CRMP COURSE</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-outline-dark mb-0">Staff</button>
+
+                        <button type="button" class="btn btn-outline-dark mb-0">Participant</button>
+                    </div>
+                </div>
+
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-gradient-info" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-
-<script src="js/vendor/modernizr-3.5.0.min.js"></script>
-<script src="js/vendor/jquery-1.12.4.min.js"></script>
-<script src="js/popper.min.js%2bbootstrap.min.js.pagespeed.jc.VqPKjPX3rN.js"></script><script>eval(mod_pagespeed_L0mWNSTykm);</script>
-<script>eval(mod_pagespeed_TZ9Ugx6twQ);</script>
-<script src="js/owl.carousel.min.js%2bisotope.pkgd.min.js%2bajax-form.js%2bwaypoints.min.js%2bjquery.counterup.min.js.pagespeed.jc.S2NU-biZkA.js"></script><script>eval(mod_pagespeed_3Q_5M6wpDX);</script>
-<script>eval(mod_pagespeed_se9qbc2170);</script>
-<script>eval(mod_pagespeed_DEhImhP1J$);</script>
-<script>eval(mod_pagespeed_IOc_vI2Ude);</script>
-<script>eval(mod_pagespeed_ERX39iaHGq);</script>
-<script src="js/imagesloaded.pkgd.min.js%2bscrollIt.js%2bjquery.scrollUp.min.js%2bwow.min.js.pagespeed.jc.WYvJ7upwau.js"></script><script>eval(mod_pagespeed_xI9_Hl9q1h);</script>
-<script>eval(mod_pagespeed_d$kXQMCT68);</script>
-<script>eval(mod_pagespeed_nbUml4ZXFI);</script>
-<script>eval(mod_pagespeed_OF07M_wx94);</script>
-<script src="js/gijgo.min.js"></script>
-<script src="js/nice-select.min.js%2bjquery.slicknav.min.js%2bjquery.magnific-popup.min.js.pagespeed.jc.HgUy_anYPa.js"></script><script>eval(mod_pagespeed_RLa7eW4tX7);</script>
-<script>eval(mod_pagespeed_dvzZbrdATg);</script>
-<script>eval(mod_pagespeed_aaJNsdI0pj);</script>
-<script src="js/tilt.jquery.js"></script>
-<script src="js/plugins.js%2bcontact.js%2bjquery.ajaxchimp.min.js%2bjquery.form.js%2bjquery.validate.min.js%2bmail-script.js%2bmain.js.pagespeed.jc.ZGnNW0me2-.js"></script><script>eval(mod_pagespeed_iR2a3$4XrZ);</script>
-
-<script>eval(mod_pagespeed_d4EgQBKlko);</script>
-<script>eval(mod_pagespeed__N6bOTPbAt);</script>
-<script>eval(mod_pagespeed_XrDNQYt$_p);</script>
-<script>eval(mod_pagespeed_UUz59EKlwG);</script>
-<script>eval(mod_pagespeed_ppxZmKYMsg);</script>
-<script>eval(mod_pagespeed_Zvp6Q66M7T);</script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-23581568-13');
+<!--   Core JS Files   -->
+<script src="{{asset('assets/js/core/popper.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/js/core/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
+<!--  Plugin for TypedJS, full documentation here: https://github.com/inorganik/CountUp.js -->
+<script src="{{asset('assets/js/plugins/countup.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/choices.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/prism.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins/highlight.min.js')}}"></script>
+<!--  Plugin for Parallax, full documentation here: https://github.com/dixonandmoe/rellax -->
+<script src="{{asset('assets/js/plugins/rellax.min.js')}}"></script>
+<!--  Plugin for TiltJS, full documentation here: https://gijsroge.github.io/tilt.js/ -->
+<script src="{{asset('assets/js/plugins/tilt.min.js')}}"></script>
+<!--  Plugin for Selectpicker - ChoicesJS, full documentation here: https://github.com/jshjohnson/Choices -->
+<script src="{{asset('assets/js/plugins/choices.min.js')}}"></script>
+<!--  Plugin for Parallax, full documentation here: https://github.com/wagerfield/parallax  -->
+<script src="{{asset('assets/js/plugins/parallax.min.js')}}"></script>
+<!-- Control Center for Soft UI Kit: parallax effects, scripts for the example pages etc -->
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
+<script src="{{asset('assets/js/soft-design-system.min.js?v=1.0.5')}}" type="text/javascript"></script>
+<script type="text/javascript">
+    if (document.getElementById('state1')) {
+        const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+        if (!countUp.error) {
+            countUp.start();
+        } else {
+            console.error(countUp.error);
+        }
+    }
+    if (document.getElementById('state2')) {
+        const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+        if (!countUp1.error) {
+            countUp1.start();
+        } else {
+            console.error(countUp1.error);
+        }
+    }
+    if (document.getElementById('state3')) {
+        const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+        if (!countUp2.error) {
+            countUp2.start();
+        } else {
+            console.error(countUp2.error);
+        };
+    }
 </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6cb496b5fd204f6f","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
 </body>
 
-<!-- Mirrored from preview.colorlib.com/theme/eventcon/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Jan 2022 08:39:22 GMT -->
 </html>
