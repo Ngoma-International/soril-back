@@ -5,368 +5,261 @@
 @endsection
 
 @section('content')
-    <div id="contentWrapper">
+    <!-- -------- START HEADER 7 w/ text and video ------- -->
+    <header class="bg-gradient-dark">
+        <div class="page-header min-vh-50" style="background-image: url('assets/img/office-dark.jpg');">
+            <span class="mask bg-gradient-dark opacity-8"></span>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center mx-auto my-auto">
+                        <h1 class="text-white">Member Associations</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="position-absolute w-100 z-index-1 bottom-0">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="moving-waves">
+                        <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)" />
+                        <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)" />
+                        <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)" />
+                        <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,1" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </header>
+    <!-- -------- END HEADER 7 w/ text and video ------- -->
 
-        <div class="pageContent">
+    <section class="py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="text-gradient text-danger mb-0 mt-2">
+                        Who is Our Associate Member?
+                    </h2>
+                    <p style="color: black">
+                        National risk management associations are at the heart of our community. This is evident in their missions and activities to advance the discipline of risk management, to represent, defend and equip African risk management professionals and in their support for businesses and industries in their countries.
+                        <br><br>
+                        National associations are any association, legally established, with a minimum of ten members (individual or legal entities), concerned with the defence of the interests of risk managers and risk management solutions or services operating within the national boundary of an African country.
+                    </p>
+                </div>
+                <div class="col-lg-4 ms-auto mt-lg-0 mt-4">
+                    <h2 class="text-gradient text-danger mb-0 mt-2">
+                        Membership Fee
+                    </h2>
 
-            <div class="page-title title-1">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="page-title title-5"
-                             style="background:url('assets/images/page-titles/title-light.jpg') no-repeat 0% 0"
-                             data-stellar-background-ratio="0.65">
-                            <div class="heading main-heading centered">
-                                <br><br><br><br>
-                                <h4 class="sub-title">
-                                    Adhésions
-                                    <span class="main-color">
-                                            </span>
-                                </h4>
-                                <div class="heading-separator"><span class="main-bg"></span><span class="dark-bg"></span></div>
-                                <br><br>
-                            </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Members</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 text-center">Fee / member</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck"></h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$25</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">0-50</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$20</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">51-150</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$17.5</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">151-300</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$15</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">301-450</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$12.5</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">451-Above</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">Free</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
+            <br>
+            <div class="row text-center">
+                <div class="col-lg-12 ms-auto mt-lg-0 mt-4">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <a href="javascript:;">
+                                <h5 class="mt-3">
+                                    Payment methods
+                                </h5>
+                            </a>
+                            <p>
+                                Once you have sent your application form, you will automatically receive an invoice from ARiMaS. The invoice is payable by Bank transfer or online debit card.
+                                <br>
+                                All bank charges for all payments by any method will be borne by the remitter.
+                            </p>
 
-            <div style="padding: 20px">
-                <div class="container-fluid">
-                    <div class="row">
-
-                        <div class="col-md-7">
-                            <div class="icons-style-1">
-                                <p>
-                                    Etre un affilié de l'IRMA témoigne de votre bonne conduite et indique que vous avez suivi une formation approfondie en assurance ou en risk management et que vous avez l'expérience nécessaire à des différents niveaux.
-                                    <br><br>
-                                    Mais aussi, être un affilié éxige que vous accepter de respecter
-                                    <a href="">nos normes professionnelles</a> et de souscrire à notre
-                                    <a href="">Code d’Ethique.</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-1"></div>
-
-                        <div class="col-md-4">
-                            <div>
-                                <h4 style="margin: 0px!important;">Etes-vous déjà membre?</h4>
-                                Inscrivez-vous aux Commissions Techniques?
-                                <a href="{{route('techniques')}}" class="btn main-bg shape new-angle">S'INSCRIRE</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="row parallax"
-                     style="background-image:url('assets/images/people.jpg')"
-                     data-stellar-background-ratio="0.4">
-                    <div class="heading full-heading main-bg">
-                        <h3 class="inner-head white" style="font-weight: normal!important;">Categories des membres</h3>
-                    </div>
-                    <div class="container-fluid">
-                        <div class="testimonials testimonials-4 horizontal-slider"
-                             data-slides_count="3" data-scroll_amount="1"
-                             data-slider-speed="300" data-slider-infinite="1"
-                             data-slider-dots="1" data-slider-arrows="0">
-                            <div>
-                                <div class="testimonials-bg white shape lg">
-                                    <h3>Membres Ordinaires</h3>
-                                    <ul style="list-style: disc !important; margin-left: 4rem; margin-bottom: 20px">
-                                        <li class="fx"
-                                            style="list-style: disc;"
-                                            data-animate="fadeInUp">
-
-                                            Personnes ayant un minimum d'une année d'expérience
-                                            dans le secteur des assurances ou dans le domaine du risk management;
-                                        </li>
-                                        <li class="fx"
-                                            style="list-style: disc;"
-                                            data-animate="fadeInUp"
-                                            data-animation-delay="100">
-                                            Avoir réussi aux Examens CQARM1/Détenteur
-                                            d'un Certificat d'Aptitude dans les Assurances
-                                            et le Risk Management;
-                                        </li>
-                                        <li class="fx"
-                                            style="list-style: disc;"
-                                            data-animate="fadeInUp"
-                                            data-animation-delay="200">
-                                            Avoir un niveau académique CQ Niveau 2;
-                                        </li>
-                                        <li class="fx"
-                                            style="list-style: disc;"
-                                            data-animate="fadeInUp"
-                                            data-animation-delay="200">
-                                            Payer les frais d'affiliation de 100$/Pers
-                                            (du 1er janvier au 31 décembre) ou 50$
-                                            affiliation au 2ème semestre (à partir du 1er juillet).
-                                        </li>
-                                    </ul>
-                                    <br>
-                                    <div class="row justify-content-center text-center">
-                                        <a class="btn btn-md btn-3d btn-white"
-                                           href="{{route('individual', ['type'=>'Ordinaire', 'amount'=>'100'])}}">
-                                            <i class="fa fa-gear"></i>
-                                            Membre Individuelle
-                                        </a>
-                                        <br> <br>
-                                        <a class="btn btn-md btn-3d btn-white"
-                                           href="{{route('collective')}}">
-                                            <i class="fa fa-gear"></i>
-                                            Membre Collective
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="testimonials-bg white shape lg">
-                                    <h3>Membres Associés</h3>
-                                    <ul style="list-style: disc !important; margin-left: 4rem; margin-bottom: 20px">
-                                        <li class="fx"
-                                            style="list-style: disc;"
-                                            data-animate="fadeInUp">
-                                            Personnes ayant entre deux ans et 5 ans d'expérience dans
-                                            le secteur des assurances ou dans le domaine du risk management;
-                                        </li>
-                                        <li class="fx"
-                                            style="list-style: disc;"
-                                            data-animate="fadeInUp"
-                                            data-animation-delay="100">
-                                            Avoir réussi aux Examens CQARM2/Détenteur
-                                            d'un Certificat d'Aptitude dans les Assurances et le Risk Management
-                                        </li>
-                                        <li class="fx"
-                                            style="list-style: disc;"
-                                            data-animate="fadeInUp"
-                                            data-animation-delay="200">
-                                            Avoir un niveau académique CQ Niveau 3
-                                        </li>
-                                        <li class="fx"
-                                            style="list-style: disc;"
-                                            data-animate="fadeInUp"
-                                            data-animation-delay="200">
-                                            Payer les frais d'affiliation de 150$/Pers
-                                            (du 1er janvier au 31 décembre) ou
-                                            75$ affiliation au 2ème semestre (à partir du 1er juillet)
-                                        </li>
-                                    </ul>
-                                    <br>
-                                    <div class="row justify-content-center text-center">
-                                        <a class="btn btn-md btn-3d btn-white"
-                                           href="{{route('individual', ['type'=>'Associés', 'amount'=>'150'])}}">
-                                            <i class="fa fa-gear"></i>
-                                            Membre Individuelle
-                                        </a>
-                                        <br> <br>
-                                        <a class="btn btn-md btn-3d btn-white"
-                                           href="{{route('collective')}}">
-                                            <i class="fa fa-gear"></i>
-                                            Membre Collective
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="testimonials-bg white shape lg">
-                                    <h3>Affiliés Fellows</h3>
-                                    <ul style="list-style: disc !important; margin-left: 4rem; margin-bottom: 20px">
-                                        <li class="fx"
-                                            style="list-style: disc;"
-                                            data-animate="fadeInUp">
-                                            Personnes ayant plus de cinq années
-                                            d'expérience dans le secteur des assurances
-                                            ou dans le domaine du risk management;
-                                        </li>
-                                        <li class="fx"
-                                            data-animate="fadeInUp"
-                                            style="list-style: disc;"
-                                            data-animation-delay="100">
-                                            Avoir réussi aux Examins CQARM3/Détenteur
-                                            d'un Certificat d'Aptitude dans les
-                                            Assurances et le Risk Management;
-                                        </li>
-                                        <li class="fx"
-                                            data-animate="fadeInUp"
-                                            style="list-style: disc;"
-                                            data-animation-delay="200">
-                                            Avoir un niveau académique CQ Niveau 4;
-                                        </li>
-                                        <li class="fx"
-                                            data-animate="fadeInUp"
-                                            style="list-style: disc;"
-                                            data-animation-delay="200">
-                                            Payer les frais d'affiliation de 200$/Pers
-                                            (du 1er janvier au 31 décembre) ou 100$
-                                            affiliation au 2ème semestre (à partir du 1er juillet).
-                                        </li>
-                                    </ul>
-                                    <br>
-                                    <div class="row justify-content-center text-center">
-                                        <a class="btn btn-md btn-3d btn-white"
-                                           href="{{route('individual', ['type'=>'Fellows', 'amount'=>'200'])}}">
-                                            <i class="fa fa-gear"></i>
-                                            Membre Individuelle
-                                        </a>
-                                        <br> <br>
-                                        <a class="btn btn-md btn-3d btn-white"
-                                           href="{{route('collective')}}">
-                                            <i class="fa fa-gear"></i>
-                                            Membre Collective
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row text-center">
-                            <button type="button"
-                                    class="btn main-bg btn-lg shape"
-                                    data-toggle="modal"
-                                    data-target=".bs-example-modal-lg">
-                                Lire Plus Sur les Examens CQARM
-                            </button>
-                            <div style="padding: 5px; display: inline"></div>
-                            <button type="button"
-                                    class="btn main-bg btn-lg shape"
-                                    data-toggle="modal"
-                                    data-target=".bs-example-modal-lg-2">
-                                Lire Plus Sur les Niveaux CQ
-                            </button>
-                        </div>
-                        <br>
-                    </div>
-                </div>
-
-                <div class="modal fade bs-example-modal-lg"
-                     tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header t-left">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="gridSystemModalLabel">
-                                    LES EXAMENS CQARM
-                                </h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>
-                                    Les Examens CQARM permettent de garantir
-                                    qu'une norme nationale est maintenue en
-                                    termes de compétences et de connaissances requises
-                                    pour les affiliés d'IRMA d'occuper différents
-                                    niveaux de fonctions ou prester certains types de
-                                    service dans le secteur des assurances et dans le
-                                    domaine du risk management en R.D. Congo.
-                                    L'admission à une particulière affiliation
-                                    d'IRMA (Ordinaire, Associée ou Fellow) est donc
-                                    conditionnée entre autres par la réussite à
-                                    l'Examen CQARM correspondant.
-                                </p>
-                                <hr>
-
-                                <h4>Aperçu des Examens</h4>
-                                <p>
-                                    Conteenu d'apercu
-                                </p>
-
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal fade bs-example-modal-lg-2"
-                     tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header t-left">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="gridSystemModalLabel">
-                                    LES NIVEAUX CQ
-                                </h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>
-                                    Le CQ est un ensemble des niveaux appliqués par IRMA pour catégorisser et uniformiser les qualifications des personnes œuvrant dans les métiers du risque liés aux assurances et au risk management en République Démocratique du Congo ou celles des personnes désireuses d'y travailler.
-                                    <br><br>
-                                    Le CQ se compose de 6 niveaux. Les qualifications à caractère non-manuel, aritistique, sportif ou réligieux ne sont pas prises en considération.
-                                </p>
-                                <hr>
-
-                                <h4>Niveau de qualification</h4>
-                                <ul style="list-style: disc !important; margin-left: 4rem;">
-                                    <li style="list-style: disc;">Niveau 1: Diplôme d’Etat plus formation courte ou cours spécialisés </li>
-                                    <li style="list-style: disc;">Niveau 2 : Diplôme d’institut Supérieur </li>
-                                    <li style="list-style: disc;">Niveau 3 : Diplôme de 1er Cycle/Graduat d'une université ou d'un institut supérieur </li>
-                                    <li style="list-style: disc;">Niveau 4 : Diplôme de licence d'une université agréée ou d'un institut supérieur agréé </li>
-                                    <li style="list-style: disc;">Niveau 5 : Diplôme de Maîtrise</li>
-                                    <li style="list-style: disc;">Niveau 6 : Diplôme de docteur</li>
-
-                                </ul>
-
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-fluid">
-                <div class="row">
-                    <div style="padding: 50px!important;">
-                        <div class="heading sub-head">
-                            <h3 class="head-4"><span class="main-color">
-                                            Avantages </span><span class="bold">d'être Membre</span></h3>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="icon-box-small">
-                                    <i class="main-bg filled shape md-icon">1</i>
-                                    <div class="icon-sm-desc md-desc">
-                                        <p>
-                                            Accessibilité à un réseau national et international des experts en assurances et risk management incluant des activités de réseautage en compagnie de vos pairs ainsi que divers experts du milieu du risk managemen et des assurances.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="icon-box-small">
-                                    <i class="main-bg filled shape md-icon">2</i>
-                                    <div class="icon-sm-desc md-desc">
-                                        <p>
-                                            Le droit de collaborer à des sous-comités liés à plusieurs portefeuilles dont l'éducation, l'organisation d'événements et le développement.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="icon-box-small">
-                                    <i class="main-bg filled shape md-icon">3</i>
-                                    <div class="icon-sm-desc md-desc">
-                                        <p>Développer vos connaissances et vos compétences en bénéficiant des travaux des Commissions Techniques et de nombreuses publications (livres blancs, rapports techniques, études des cas, enquêtes...).</p>
-                                    </div>
-                                </div>
-                                <div class="icon-box-small">
-                                    <i class="main-bg filled shape md-icon">4</i>
-                                    <div class="icon-sm-desc md-desc">
-                                        <p>
-                                            Propulser votre carrière en ayant accès aux tarifs réduits, aux formations qualifiantes et formations certifiantes, à des séminaires ainsi qu'à la Conférence Annuelle IRMA.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            <button type="button" class="btn btn-dark w-auto me-1 mb-0">Apply</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
+    <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
+
+
+    <script>
+        // get the element to animate
+        var element = document.getElementById('count-stats');
+        var elementHeight = element.clientHeight;
+
+        // listen for scroll event and call animate function
+
+        document.addEventListener('scroll', animate);
+
+        // check if element is in view
+        function inView() {
+            // get window height
+            var windowHeight = window.innerHeight;
+            // get number of pixels that the document is scrolled
+            var scrollY = window.scrollY || window.pageYOffset;
+            // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+            var scrollPosition = scrollY + windowHeight;
+            // get element position (distance from the top of the page to the bottom of the element)
+            var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
+
+            // is scroll position greater than element position? (is element in view?)
+            if (scrollPosition > elementPosition) {
+                return true;
+            }
+
+            return false;
+        }
+
+        var animateComplete = true;
+        // animate element when it is in view
+        function animate() {
+
+            // is element in view?
+            if (inView()) {
+                if (animateComplete) {
+                    if (document.getElementById('state1')) {
+                        const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+                        if (!countUp.error) {
+                            countUp.start();
+                        } else {
+                            console.error(countUp.error);
+                        }
+                    }
+                    if (document.getElementById('state2')) {
+                        const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+                        if (!countUp1.error) {
+                            countUp1.start();
+                        } else {
+                            console.error(countUp1.error);
+                        }
+                    }
+                    if (document.getElementById('state3')) {
+                        const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+                        if (!countUp2.error) {
+                            countUp2.start();
+                        } else {
+                            console.error(countUp2.error);
+                        };
+                    }
+                    animateComplete = false;
+                }
+            }
+        }
+
+        if (document.getElementById('typed')) {
+            var typed = new Typed("#typed", {
+                stringsElement: '#typed-strings',
+                typeSpeed: 90,
+                backSpeed: 90,
+                backDelay: 200,
+                startDelay: 500,
+                loop: true
+            });
+        }
+    </script>
+    <script>
+        if (document.getElementsByClassName('page-header')) {
+            window.addEventListener('scroll', function() {
+                var scrollPosition = window.pageYOffset;
+                var bgParallax = document.querySelector('.page-header');
+                var limit = bgParallax.offsetTop + bgParallax.offsetHeight;
+                if (scrollPosition > bgParallax.offsetTop && scrollPosition <= limit) {
+                    bgParallax.style.backgroundPositionY = (50 - 10 * scrollPosition / limit * 3) + '%';
+                } else {
+                    bgParallax.style.backgroundPositionY = '50%';
+                }
+            });
+        }
+    </script>
 @endsection

@@ -49,8 +49,8 @@ Route::get('normesProfessionnels', [HomeController::class, 'professional'])->nam
 
 Route::get('codeEthique', [HomeController::class, 'ethique'])->name('ethique');
 
-Route::get('offresEmploi', [HomeController::class, 'emplois'])->name('emplois');
-Route::get('detailsEmploi', [HomeController::class, 'detailEmploi'])->name('detailsEmplois');
+Route::get('offresEmploi', [HomeController::class, 'emplois'])->name('emplois'); //Use in soril
+Route::get('detailsEmploi', [HomeController::class, 'detailEmploi'])->name('detailsEmplois'); //Use in soril
 Route::post('candidat', [HomeController::class, 'addCandidate'])->name('candidat');
 
 /*
@@ -64,13 +64,13 @@ Route::get('about', [About::class, 'home'])->name('about');
  * Membre Route
  */
 Route::get('membre', [MembreController::class, 'home'])
-    ->name('membre');
+    ->name('membre'); //Use in soril
 Route::get('individual', [MembreController::class, 'individual'])
-    ->name('individual');
+    ->name('individual'); //Use in soril
 Route::post('add_individual', [MembreController::class, 'add_individual'])
     ->name('add_individual');
 Route::get('collective', [MembreController::class, 'collective'])
-    ->name('collective');
+    ->name('collective'); //Use in soril
 Route::post('add_collective', [MembreController::class, 'add_collective'])
     ->name('add_collective');
 
@@ -121,8 +121,8 @@ Route::get('update-status', [AbonneController::class, 'updates'])
 /*
  * Conseils Techniques et de Qualifications
  */
-Route::get('conseils-techniques', [ConseilController::class, 'techniques'])
-    ->name('techniques');
+Route::get('certifications', [ConseilController::class, 'techniques'])
+    ->name('certification'); //Use in soril
 Route::get('conseils-qualifications', [ConseilController::class, 'qualifications'])
     ->name('qualifications');
 

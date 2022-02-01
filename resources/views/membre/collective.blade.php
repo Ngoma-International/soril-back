@@ -5,620 +5,356 @@
 @endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-6">
-
-                    <div class="heading centered padding-vertical-20">
-                        <i class="fa fa-info- tbl main-color"></i>
-                        <h5 class="uppercase  bold">Information de l'Organisation</h5>
+    <!-- -------- START HEADER 7 w/ text and video ------- -->
+    <header class="bg-gradient-dark">
+        <div class="page-header min-vh-50" style="background-image: url('assets/img/office-dark.jpg');">
+            <span class="mask bg-gradient-dark opacity-8"></span>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center mx-auto my-auto">
+                        <h1 class="text-white">Corporate MemberShip</h1>
                     </div>
                 </div>
-                <div class="col-lg-3"></div>
             </div>
-            <form action="{{route('add_collective')}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="row">
+            <div class="position-absolute w-100 z-index-1 bottom-0">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="moving-waves">
+                        <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)" />
+                        <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)" />
+                        <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)" />
+                        <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,1" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </header>
+    <!-- -------- END HEADER 7 w/ text and video ------- -->
 
-                    <div class="form-group col-md-5">
-                        <label>
-                            Nom de l'Organisation 	<span class="red">*</span></label>
-                        <input type="text" class="form-control shape" required="" name="name">
-                    </div>
+    <section class="py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="text-gradient text-danger mb-0 mt-2">
+                        Why Become a Corporate Member?
+                    </h2>
+                    <p style="color: black">
+                        Taking up a corporate membership is an economical but effective way for organisations to derive maximum benefits and value for their employees through ARiMaS’ varied services, programmes and seminars.
+                        <br><br>
+                        <b>Eligibility</b>
+                        <br>
+                        <br>
 
-                    <div class="form-group col-md-5">
-                        <label>
-                            Numéro d'Enregistrement <span class="red">*</span></label>
-                        <input type="text" class="form-control shape" required="" name="regno">
-                    </div>
+                        Corporate Membership is open to all corporations, institutions, societies, statutory bodies and government agencies.
+                        <br>
+                        However, the acceptance of Corporate Membership is at the sole discretion of ARiMaS.
+                        <br>
+                        Through the group scheme your organisation will benefit from:
+                        <br>
+                    <ul style="color: black">
+                        <li>
+                            Use of the description ‘ARiMaS’ Member’ and use of the ARiMaS’ logo on website, stationery and publications
+                        </li>
 
-                    <div class="form-group col-md-5">
-                        <label>
-                            Secteur<span class="red">*</span></label>
-                        <select class=" shape" style="color: #fff; background-color:#54585c;" name="industry">
-                            <option>Administrations Publiques</option>
-                            <option>Aéronautique, Espace</option>
-                            <option>Agriculture, foresterie, pêche et chasse</option>
-                            <option>Agroalimentaire</option>
-                            <option>Artisanat</option>
-                            <option>Audiovisuel, Spectacle Cinéma</option>
-                            <option>Audit, Comptabilité, Conseil</option>
-                            <option>Automobile</option>
-                            <option>Banques, Assurances</option>
-                            <option>BTP / Matériaux de construction</option>
-                            <option>Biologie, Chimie, Pharmacie</option>
-                            <option>Bois / Papier / Carton / Imprimerie</option>
-                            <option>Commerce, Distribution</option>
-                            <option>Communication</option>
-                            <option>Création, Métiers D'art</option>
-                            <option>Culture, Patrimoine</option>
-                            <option>Défense, Sécurité, Armée</option>
-                            <option>Documentation, Bibliothèque</option>
-                            <option>Droit, Services Juridiques</option>
-                            <option>Edition, Livres</option>
-                            <option>Electronique / Electricité</option>
-                            <option>Enseignement, Recherches</option>
-                            <option>Entretien, Propreté</option>
-                            <option>Environnement</option>
-                            <option>Ferroviaire</option>
-                            <option>Foires, Salons Et Congrès</option>
-                            <option>Fonction Publique</option>
-                            <option>Hôtellerie, Restauration, Tourisme</option>
-                            <option>Humanitaire</option>
-                            <option>Immobilier</option>
-                            <option>Informatique, Numérique et Réseaux</option>
-                            <option>Machines, Equipements</option>
-                            <option>Matériaux, Transformations</option>
-                            <option>Marketing, publicité, Communication</option>
-                            <option>Mécanique</option>
-                            <option>Métallurgie / Travail du métal</option>
-                            <option>Médias</option>
-                            <option>Mines, Carrières, Pétrole, Gaz</option>
-                            <option>Paramédical</option>
-                            <option>Plastique / Caoutchouc</option>
-                            <option>Propreté Et Services Associés</option>
-                            <option>Ressources Humaines</option>
-                            <option>Santé, Médical</option>
-                            <option>Social, Services à la personne</option>
-                            <option>Sport et Loisir</option>
-                            <option>Télécommunications</option>
-                            <option>Textile / Habillement / Chaussure</option>
-                            <option>Transport, Logistique, Entreposage</option>
-                            <option>Administrations Publiques</option>
-                            <option>Aéronautique, Espace</option>
-                            <option>Agriculture, foresterie, pêche et chasse</option>
-                            <option>Agroalimentaire</option>
-                            <option>Artisanat</option>
-                            <option>Audiovisuel, Spectacle Cinéma</option>
-                            <option>Audit, Comptabilité, Conseil</option>
-                            <option>Automobile</option>
-                            <option>Banques, Assurances</option>
-                            <option>BTP / Matériaux de construction</option>
-                            <option>Biologie, Chimie, Pharmacie</option>
-                            <option>Bois / Papier / Carton / Imprimerie</option>
-                            <option>Commerce, Distribution</option>
-                            <option>Communication</option>
-                            <option>Création, Métiers D'art</option>
-                            <option>Culture, Patrimoine</option>
-                            <option>Défense, Sécurité, Armée</option>
-                            <option>Documentation, Bibliothèque</option>
-                            <option>Droit, Services Juridiques</option>
-                            <option>Edition, Livres</option>
-                            <option>Electronique / Electricité</option>
-                            <option>Enseignement, Recherches</option>
-                            <option>Entretien, Propreté</option>
-                            <option>Environnement</option>
-                            <option>Ferroviaire</option>
-                            <option>Foires, Salons Et Congrès</option>
-                            <option>Fonction Publique</option>
-                            <option>Hôtellerie, Restauration, Tourisme</option>
-                            <option>Humanitaire</option>
-                            <option>Immobilier</option>
-                            <option>Informatique, Numérique et Réseaux</option>
-                            <option>Machines, Equipements</option>
-                            <option>Matériaux, Transformations</option>
-                            <option>Marketing, publicité, Communication</option>
-                            <option>Mécanique</option>
-                            <option>Métallurgie / Travail du métal</option>
-                            <option>Médias</option>
-                            <option>Mines, Carrières, Pétrole, Gaz</option>
-                            <option>Paramédical</option>
-                            <option>Plastique / Caoutchouc</option>
-                            <option>Propreté Et Services Associés</option>
-                            <option>Ressources Humaines</option>
-                            <option>Santé, Médical</option>
-                            <option>Social, Services à la personne</option>
-                            <option>Sport et Loisir</option>
-                            <option>Télécommunications</option>
-                            <option>Textile / Habillement / Chaussure</option>
-                            <option>Transport, Logistique, Entreposage</option>
+                        <li>
+                            Free company listing in the ARiMaS’ Corporate Members Directory
+                        </li>
 
+                        <li>
+                            Priority access to exhibition and sponsorship opportunities
+                        </li>
 
+                        <li>
+                            Priority involvement in ARiMaS’ projects and activities
+                        </li>
 
+                        <li>
+                            Stand for election to the Board of Directors
+                        </li>
 
-                        </select>
-                    </div>
+                        <li>
+                            Free access to the African Journal of Risk Management
+                        </li>
 
+                        <li>
+                            Savings on ARiMaS’ events and training courses
+                        </li>
 
-                    <div class="form-group col-md-5">
-                        <label>
-                            Pays<span class="red">*</span></label>
-                        <select id="country" name="country" class="form-control">
-                            <option value="Afghanistan">Afghanistan </option>
-                            <option value="Afrique Centrale">Afrique Centrale </option>
-                            <option value="Afrique du sud">Afrique du Sud </option>
-                            <option value="Albanie">Albanie </option>
-                            <option value="Algérie">Algérie </option>
-                            <option value="Allemagne">Allemagne </option>
-                            <option value="Andorre">Andorre </option>
-                            <option value="Angola">Angola </option>
-                            <option value="Anguilla">Anguilla </option>
-                            <option value="Arabie Saoudite">Arabie Saoudite </option>
-                            <option value="Argentine">Argentine </option>
-                            <option value="Arménie">Arménie </option>
-                            <option value="Australie">Australie </option>
-                            <option value="Autriche">Autriche </option>
-                            <option value="Azerbaïdjan">Azerbaïdjan </option>
-                            <option value="Bahamas">Bahamas </option>
-                            <option value="Bangladesh">Bangladesh </option>
-                            <option value="Barbade">Barbade </option>
-                            <option value="Bahreïn">Bahreïn </option>
-                            <option value="Belgique">Belgique </option>
-                            <option value="Belize">Belize </option>
-                            <option value="Benin">Benin </option>
-                            <option value="Bermudes">Bermudes </option>
-                            <option value="Biélorussie">Biélorussie </option>
-                            <option value="Bolivie">Bolivie </option>
-                            <option value="Botswana">Botswana </option>
-                            <option value="Bhoutan">Bhoutan </option>
-                            <option value="Bosnie-Herzégovine">Bosnie-Herzégovine </option>
-                            <option value="Brésil">Brésil </option>
-                            <option value="Brunei">Brunei </option>
-                            <option value="Bulgarie">Bulgarie </option>
-                            <option value="Burkina-Faso">Burkina-Faso </option>
-                            <option value="Burundi">Burundi </option>
-                            <option value="Caïman">Caïman </option>
-                            <option value="Cambodge">Cambodge </option>
-                            <option value="Cameroun">Cameroun </option>
-                            <option value="Canada">Canada </option>
-                            <option value="Canaries">Canaries </option>
-                            <option value="Cap-Vert">Cap-Vert </option>
-                            <option value="Chili">Chili </option>
-                            <option value="Chine">Chine </option>
-                            <option value="Chypre">Chypre </option>
-                            <option value="Colombie">Colombie </option>
-                            <option value="Comores">Colombie </option>
-                            <option value="Congo ((République du) ">Congo ((République du) </option>
-                            <option value="(République Démocratique) ">Congo (République Démocratique) </option>
-                            <option value="Cook">Cook </option>
-                            <option value="Corée du Nord">Corée du Nord </option>
-                            <option value="Corée du Sud"> Corée du Sud </option>
-                            <option value="Costa-Rica">Costa-Rica </option>
-                            <option value="Côte-d’Ivoire">Côte-d’Ivoire </option>
-                            <option value="Croatie">Croatie </option>
-                            <option value="Cuba">Cuba </option>
-                            <option value="Danemark">Danemark </option>
-                            <option value="Djibouti">Djibouti </option>
-                            <option value="Dominique">Dominique </option>
-                            <option value="Egypte">Egypte </option>
-                            <option value="Emirats Arabes Unis">Emirats Arabes Unis </option>
-                            <option value="Equateur">Equateur </option>
-                            <option value="Erythrée">Erythrée </option>
-                            <option value="Espagne">Espagne </option>
-                            <option value="Estonie">Estonie </option>
-                            <option value="Etats-Unis">Etats-Unis </option>
-                            <option value="Ethiopie">Ethiopie </option>
-                            <option value="Falkland">Falkland </option>
-                            <option value="Féroé">Féroé </option>
-                            <option value="Fidji">Fidji </option>
-                            <option value="Finlande">Finlande </option>
-                            <option value="France">France </option>
-                            <option value="Gabon">Gabon </option>
-                            <option value="Gambie">Gambie </option>
-                            <option value="Géorgie">Géorgie </option>
-                            <option value="Ghana">Ghana </option>
-                            <option value="Gibraltar">Gibraltar </option>
-                            <option value="Grèce">Grèce </option>
-                            <option value="Grenade">Grenade </option>
-                            <option value="Groenland">Groenland </option>
-                            <option value="Guadeloupe">Guadeloupe </option>
-                            <option value="Guam">Guam </option>
-                            <option value="Guatemala">Guatemala</option>
-                            <option value="Guernesey">Guernesey </option>
-                            <option value="Guinée">Guinée </option>
-                            <option value="Guinée Bissau">Guinée Bissau </option>
-                            <option value="Guinée Equatoriale">Guinée Equatoriale </option>
-                            <option value="Guyana">Guyana </option>
-                            <option value="Guyane Française ">Guyane Française </option>
-                            <option value="Haïti">Haïti </option>
-                            <option value="Hawaii">Hawaii </option>
-                            <option value="Honduras">Honduras </option>
-                            <option value="Hongkong">Hongkong </option>
-                            <option value="Hongrie">Hongrie </option>
-                            <option value="Inde">Inde </option>
-                            <option value="Indonésie">Indonésie </option>
-                            <option value="Iran">Iran </option>
-                            <option value="Iraq">Iraq </option>
-                            <option value="Irlande">Irlande </option>
-                            <option value="Islande">Islande </option>
-                            <option value="Israël">Israël </option>
-                            <option value="Italie">Italie </option>
-                            <option value="Jamaïque">Jamaïque </option>
-                            <option value="Jan Mayen">Jan Mayen </option>
-                            <option value="Japon">Japon </option>
-                            <option value="Jersey">Jersey </option>
-                            <option value="Jordanie">Jordanie </option>
-                            <option value="Kazakhstan">Kazakhstan </option>
-                            <option value="Kenya">Kenya </option>
-                            <option value="Kirghizstan">Kirghizistan </option>
-                            <option value="Kiribati">Kiribati </option>
-                            <option value="Koweït">Koweït </option>
-                            <option value="Laos">Laos </option>
-                            <option value="Lesotho">Lesotho </option>
-                            <option value="Lettonie">Lettonie </option>
-                            <option value="Liban">Liban </option>
-                            <option value="Liberia">Liberia </option>
-                            <option value="Liechtenstein">Liechtenstein </option>
-                            <option value="Lituanie">Lituanie </option>
-                            <option value="Luxembourg">Luxembourg </option>
-                            <option value="Lybie">Lybie </option>
-                            <option value="Macao">Macao </option>
-                            <option value="Macédoine">Macédoine </option>
-                            <option value="Madagascar">Madagascar </option>
-                            <option value="Madère">Madère </option>
-                            <option value="Malaisie">Malaisie </option>
-                            <option value="Malawi">Malawi </option>
-                            <option value="Maldives">Maldives </option>
-                            <option value="Mali">Mali </option>
-                            <option value="Malte">Malte </option>
-                            <option value="Man">Man </option>
-                            <option value="Mariannes du Nord">Mariannes du Nord </option>
-                            <option value="Maroc">Maroc </option>
-                            <option value="Marshall">Marshall </option>
-                            <option value="Martinique">Martinique </option>
-                            <option value="Maurice">Maurice </option>
-                            <option value="Mauritanie">Mauritanie </option>
-                            <option value="Mayotte">Mayotte </option>
-                            <option value="Mexique">Mexique </option>
-                            <option value="Micronésie">Micronésie </option>
-                            <option value="Midway">Midway </option>
-                            <option value="Moldavie">Moldavie </option>
-                            <option value="Monaco">Monaco </option>
-                            <option value="Mongolie">Mongolie </option>
-                            <option value="Montserrat">Montserrat </option>
-                            <option value="Mozambique">Mozambique </option>
-                            <option value="Namibie">Namibie </option>
-                            <option value="Nauru">Nauru </option>
-                            <option value="Népal">Népal </option>
-                            <option value="Nicaragua">Nicaragua </option>
-                            <option value="Niger">Niger </option>
-                            <option value="Nigeria">Nigeria </option>
-                            <option value="Niue">Niue </option>
-                            <option value="Norfolk">Norfolk </option>
-                            <option value="Norvège">Norvège </option>
-                            <option value="Nouvelle-Calédonie">Nouvelle-Calédonie </option>
-                            <option value="Nouvelle-Zélande">Nouvelle-Zélande </option>
-                            <option value="Oman">Oman </option>
-                            <option value="Ouganda">Ouganda </option>
-                            <option value="Ouzbékistan">Ouzbékistan </option>
-                            <option value="Pakistan">Pakistan </option>
-                            <option value="Palau">Palau </option>
-                            <option value="Palestine">Palestine </option>
-                            <option value="Panama">Panama </option>
-                            <option value="Papouasie-Nouvelle-Guinée">Papouasie-Nouvelle-Guinée </option>
-                            <option value="Paraguay">Paraguay </option>
-                            <option value="Pays-Bas">Pays-Bas </option>
-                            <option value="Pérou">Pérou </option>
-                            <option value="Philippines">Philippines </option>
-                            <option value="Pologne">Pologne </option>
-                            <option value="Polynésie">Polynésie </option>
-                            <option value="Porto Rico">Porto Rico </option>
-                            <option value="Portugal">Portugal </option>
-                            <option value="Qatar">Qatar </option>
-                            <option value="République Dominicaine">République Dominicaine </option>
-                            <option value="République Tchèque">République Tchèque </option>
-                            <option value="Réunion">Réunion </option>
-                            <option value="Roumanie">Roumanie </option>
-                            <option value="Royaume-Uni">Royaume-Uni </option>
-                            <option value="Russie">Russie </option>
-                            <option value="Rwanda">Rwanda </option>
-                            <option value="Sahara Occidental">Sahara Occidental </option>
-                            <option value="Sainte-Lucie">Sainte-Lucie </option>
-                            <option value="Saint-Marin">Saint-Marin </option>
-                            <option value="Salomon">Salomon </option>
-                            <option value="Salvador">Salvador </option>
-                            <option value="Samoa Occidentales">Samoa Occidentales</option>
-                            <option value="Samoa Américaine">Samoa Américaine </option>
-                            <option value="Sao Tomé et Principe">Sao Tomé et Principe </option>
-                            <option value="Sénégal">Sénégal </option>
-                            <option value="Seychelles">Seychelles </option>
-                            <option value="Sierra Leone">Sierra Leone </option>
-                            <option value="Singapour">Singapour </option>
-                            <option value="Slovaquie">Slovaquie </option>
-                            <option value="Slovénie">Slovénie</option>
-                            <option value="Somalie">Somalie </option>
-                            <option value="Soudan">Soudan </option>
-                            <option value="Sri Lanka">Sri Lanka </option>
-                            <option value="Suède">Suède </option>
-                            <option value="Suisse">Suisse </option>
-                            <option value="Surinam">Surinam </option>
-                            <option value="Swaziland">Swaziland </option>
-                            <option value="Syrie">Syrie </option>
-                            <option value="Tadjikistan">Tadjikistan </option>
-                            <option value="Taiwan">Taiwan </option>
-                            <option value="Tonga">Tonga </option>
-                            <option value="Tanzanie">Tanzanie </option>
-                            <option value="Tchad">Tchad </option>
-                            <option value="Thaïlande">Thaïlande </option>
-                            <option value="Tibet">Tibet </option>
-                            <option value="Timor-Oriental">Timor-Oriental </option>
-                            <option value="Togo">Togo </option>
-                            <option value="Trinité-et-Tobago">Trinité-et-Tobago </option>
-                            <option value="Tristan da Cunha">Tristan de Cunha </option>
-                            <option value="Tunisie">Tunisie </option>
-                            <option value="Turkménistan">Turkménistan </option>
-                            <option value="Turquie">Turquie </option>
-                            <option value="Ukraine">Ukraine </option>
-                            <option value="Uruguay">Uruguay </option>
-                            <option value="Vanuatu">Vanuatu </option>
-                            <option value="Vatican">Vatican </option>
-                            <option value="Venezuela">Venezuela </option>
-                            <option value="Vierges Américaines">Vierges Américaines </option>
-                            <option value="Vierges Britanniques">Vierges Britanniques </option>
-                            <option value="Vietnam">Vietnam </option>
-                            <option value="Wake">Wake </option>
-                            <option value="Wallis et Futuma">Wallis et Futuma </option>
-                            <option value="Yémen">Yémen </option>
-                            <option value="Yougoslavie">Yougoslavie </option>
-                            <option value="Zambie">Zambie </option>
-                            <option value="Zimbabwe">Zimbabwe </option>
+                        <li>
+                            Access to Talent: Free job posting on ARiMaS Job Offers page.
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="col-lg-4 ms-auto mt-lg-0 mt-4">
+                    <h2 class="text-gradient text-danger mb-0 mt-2">
+                        Annual Fee Structure
+                    </h2>
 
-                        </select>
-                    </div>
+                    <div class="card">
+                        <div class="table-responsive">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Members</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 text-center">Fees</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">1</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$255</h6>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                    <div class="form-group col-md-5">
-                        <label>
-                            position<span class="red">*</span></label>
-                        <input type="text" class="form-control shape" required="" name="position">
-                    </div>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">2</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$510</h6>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                    <div class="form-group col-md-5">
-                        <label>
-                            Ville <span class="red">*</span></label>
-                        <input type="text" class="form-control shape" required="" name="city">
-                    </div>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">3</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$765</h6>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                    <div class="form-group col-md-5">
-                        <label>
-                            Province <span class="red">*</span></label>
-                        <input type="text" class="form-control shape" required="" name="province">
-                    </div>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">4</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$960</h6>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                    <div class="form-group col-md-5">
-                        <label>
-                            Site Internet<span class="red"></span></label>
-                        <input type="text" class="form-control shape"  name="website">
-                    </div>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">5</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$1200</h6>
+                                        </div>
+                                    </td>
+                                </tr>
 
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">6</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$1440</h6>
+                                        </div>
+                                    </td>
+                                </tr>
 
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">7</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$1575</h6>
+                                        </div>
+                                    </td>
+                                </tr>
 
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">8</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$1800</h6>
+                                        </div>
+                                    </td>
+                                </tr>
 
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">9</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$2160</h6>
+                                        </div>
+                                    </td>
+                                </tr>
 
-
-
-                    <div class="col-lg-12" style="margin-top: 3rem;">
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <h5 class="uppercase bold" style="margin-left: 6rem;">Contacts Principaux</h5>
-                            <div class="col-md-3"></div>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">10</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex flex-column justify-content-center text-center">
+                                            <h6 class="mb-0" style="color: balck">$2250</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
+            </div>
+            <br>
+            <div class="row text-center">
+                <div class="col-lg-12 ms-auto mt-lg-0 mt-4">
+                    <div class="card shadow-lg">
+                        <div class="card-body">
+                            <a href="javascript:;">
+                                <h5 class="mt-3">
+                                    Membership Application
+                                </h5>
+                            </a>
+                            <p>
+                                Corporate Membership is open to all corporations, institutions, societies, statutory bodies and government agencies.
+                                <br>
+                                Upon approval your will be able to add Corporate Representatives to the system who will be granted access to the members area.
+                                <br>
+                                However, the acceptance of Corporate Membership is at the sole discretion of ARiMaS.
+                            </p>
 
-
-                <div class="form-group col-md-5">
-                    <label>
-                        Prénom <span class="red">*</span></label>
-                    <input type="text" class="form-control shape" required="" name="firstName">
-                </div>
-
-                <div class="form-group col-md-5">
-                    <label>
-                        Nom de Famille <span class="red">*</span></label>
-                    <input type="text" class="form-control shape" required="" name="lastName">
-                </div>
-
-                <div class="form-group col-md-5">
-                    <label>
-                        Email<span class="red">*</span></label>
-                    <input type="email" class="form-control shape" required="" name="email">
-                </div>
-
-                <div class="form-group col-md-5">
-                    <label>
-                        Portable<span class="red">*</span></label>
-                    <input type="tel" class="form-control shape" required="" name="phone">
-                </div>
-                <div class="form-group col-md-5">
-                    <label>
-                        Titre<span class="red">*</span></label>
-                    <input type="text" class="form-control shape" required="" name="jobtitle">
-                </div>
-
-
-                <div class="col-sm-10">
-                    <div class="">
-                        <label for="exampleSelect1">Nombre des Membres Délégués</label>
-                        <select class="form-control" id="form-" name="representatives">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                            <option>11</option>
-                            <option>12</option>
-                            <option>13</option>
-                            <option>14</option>
-                            <option>15</option>
-                            <option>16</option>
-                            <option>17</option>
-                            <option>18</option>
-                            <option>19</option>
-                            <option>20</option>
-                        </select>
+                            <button type="button" class="btn btn-dark w-auto me-1 mb-0">Register</button>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="col-sm-10">
+    <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
 
-                    <p>
-                        Après approbation, vous pourrez ajouter des délégués au système qui auront accès à la zone des membres.
-                    </p>
-                    <h4 style="font-size: 13px;" class="header-small{
-                                                        ">Logo de l'Organisation</h4>
-                    <p>
-                        Alternativement, si vous souhaitez que le logo de votre organisation apparaisse sur le site Web de l'AARMCO, veuillez téléchargerici une version haute résolution. Vous pouvez également envoyer le logo par courrier électronique à membres@aarmco.org.
-                    </p>
-                    <p>
-                        Formats Aceptés: JPG, PNG, TIFF
-                    </p>
-                    <p>
-                        Taille Maximale: 5Mb
-                    </p>
+    <script>
+        // get the element to animate
+        var element = document.getElementById('count-stats');
+        var elementHeight = element.clientHeight;
 
+        // listen for scroll event and call animate function
 
+        document.addEventListener('scroll', animate);
 
+        // check if element is in view
+        function inView() {
+            // get window height
+            var windowHeight = window.innerHeight;
+            // get number of pixels that the document is scrolled
+            var scrollY = window.scrollY || window.pageYOffset;
+            // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+            var scrollPosition = scrollY + windowHeight;
+            // get element position (distance from the top of the page to the bottom of the element)
+            var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
 
-                </div>
-                <div class="col-md-12">
-
-                    <div class="file-upload-wrapper ">
-                        <center> <label>Télécharger le Logo</label></center>
-                        <input type="file" id="input-file-now"
-                               class="file-upload" name="file">
-                    </div>
-                </div>
-
-
-
-
-
-
-
-                <div class="col-lg-12" style="margin-top: 3rem;">
-
-                    <div class="row">
-                        <div class="col-md-4"></div>
-                        <h5 class="uppercase bold" style="margin-left: 6rem;">Contacts pour Facturation</h5>
-                        <div class="col-md-3"></div>
-                    </div>
-                </div>
-
-
-                <div class="form-group col-md-5">
-                    <label>
-                        Prénom <span class="red">*</span></label>
-                    <input type="text" class="form-control shape" required="" name="fFirstName">
-                </div>
-
-                <div class="form-group col-md-5">
-                    <label>
-                        Nom de Famille <span class="red">*</span></label>
-                    <input type="text" class="form-control shape" required="" name="fLastName">
-                </div>
-
-                <div class="form-group col-md-5">
-                    <label>
-                        Email<span class="red">*</span></label>
-                    <input type="email" class="form-control shape" required="" name="fEmail">
-                </div>
-
-                <div class="form-group col-md-5">
-                    <label>
-                        Téléphone<span class="red">*</span></label>
-                    <input type="tel" class="form-control shape" required="" name="fPhone">
-                </div>
-                <div class="form-group col-md-5">
-                    <label>
-                        Titre<span class="red">*</span></label>
-                    <input type="text" class="form-control shape" required="" name="fJobtitle">
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <div class="col-lg-12 mt-5" style="margin-top: 3rem;">
-
-                    <div class="row">
-                        <div class="col-md-4"></div>
-                        <h5 class="uppercase  bold" style="margin-left: 6rem;">Authorisation</h5>
-                        <div class="col-md-3"></div>
-                    </div>
-                </div>
-                <div class="col-md-10">
-                    <p>
-                        Par la présente, nous postulons pour devenir une organisation membre de l'AAMRCO et acceptons que nous serons facturés pour la première année les frais d'adhésion en fonction du nombre de délégués que nous inscrivons, y compris les frais annuels d'administration, dès réception par nous de ce demande remplie.
-
-                    </p><p> L'AAMRCO se réserve le droit de demander ou d'utiliser toute information supplémentaire comme critères d'acceptation ou de rejet candidat à l'adhésion corporative soit lors de l'application initiale, soit au renouvellement.
-                    </p>
-                </div>
-
-
-
-                <div class="form-group col-md-5">
-                    <label>
-                        Nom Complet<span class="red">*</span></label>
-                    <input type="text" class="form-control shape" required="" name="fullname">
-                </div>
-                <div class="form-group col-md-5">
-                    <label>Titre<span class="red">*</span></label>
-                    <input type="text" class="
-                               form-control shape" required="" name="positions">
-
-                </div>
-
-                <div class="form-group col-md-5">
-                    <input type="checkbox" id="checkme" class="shape" required="" name="agree">
-                    <label>Veuillez pour Accepter et pour Soumettre le Formulaire<span class="red">*</span></label>
-                </div>
-                <div class="col-md-3"></div>
-                <div class="form-group margin-top-20 clearfix col-md-5">
-                    <input type="submit" name="sendNewSms" id="sendNewSms" class="btn btn-lg main-bg btn-block shape"
-                           value="Soumettre" disabled="">
-                </div>
-                <div class="col-md-3"></div>
-            </form></div>
-
-    </div>
-
-    <script type="text/javascript">
-        var checker = document.getElementById('checkme');
-        var sendbtn = document.getElementById('sendNewSms');
-
-        checker.onchange = function(){
-            if(this.checked){
-                sendbtn.disabled = false;
-            } else {
-                sendbtn.disabled = true;
+            // is scroll position greater than element position? (is element in view?)
+            if (scrollPosition > elementPosition) {
+                return true;
             }
 
+            return false;
+        }
+
+        var animateComplete = true;
+        // animate element when it is in view
+        function animate() {
+
+            // is element in view?
+            if (inView()) {
+                if (animateComplete) {
+                    if (document.getElementById('state1')) {
+                        const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+                        if (!countUp.error) {
+                            countUp.start();
+                        } else {
+                            console.error(countUp.error);
+                        }
+                    }
+                    if (document.getElementById('state2')) {
+                        const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+                        if (!countUp1.error) {
+                            countUp1.start();
+                        } else {
+                            console.error(countUp1.error);
+                        }
+                    }
+                    if (document.getElementById('state3')) {
+                        const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+                        if (!countUp2.error) {
+                            countUp2.start();
+                        } else {
+                            console.error(countUp2.error);
+                        };
+                    }
+                    animateComplete = false;
+                }
+            }
+        }
+
+        if (document.getElementById('typed')) {
+            var typed = new Typed("#typed", {
+                stringsElement: '#typed-strings',
+                typeSpeed: 90,
+                backSpeed: 90,
+                backDelay: 200,
+                startDelay: 500,
+                loop: true
+            });
+        }
+    </script>
+    <script>
+        if (document.getElementsByClassName('page-header')) {
+            window.addEventListener('scroll', function() {
+                var scrollPosition = window.pageYOffset;
+                var bgParallax = document.querySelector('.page-header');
+                var limit = bgParallax.offsetTop + bgParallax.offsetHeight;
+                if (scrollPosition > bgParallax.offsetTop && scrollPosition <= limit) {
+                    bgParallax.style.backgroundPositionY = (50 - 10 * scrollPosition / limit * 3) + '%';
+                } else {
+                    bgParallax.style.backgroundPositionY = '50%';
+                }
+            });
         }
     </script>
 @endsection

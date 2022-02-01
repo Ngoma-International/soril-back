@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
     <link rel="icon" type="image/png" href="{{asset('assets/img/logos/icon.png')}}">
     <title>
-        Home - SORIL
+        SORIL
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -80,24 +80,24 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-animation dropdown-md p-3 border-radius-lg mt-0 mt-lg-3" aria-labelledby="dropdownMenuPages">
                                     <div class="d-none d-lg-block">
-                                        <a href="./pmembership.php" class="dropdown-item border-radius-md">
+                                        <a href="{{route('individual')}}" class="dropdown-item border-radius-md">
                                             <span class="ps-3">individual Membership</span>
                                         </a>
-                                        <a href="./cmembership.php" class="dropdown-item border-radius-md">
+                                        <a href="{{route('collective')}}" class="dropdown-item border-radius-md">
                                             <span class="ps-3">Coorporate Membership</span>
                                         </a>
-                                        <a href="./memberAssociation.php" class="dropdown-item border-radius-md">
+                                        <a href="{{route('membre')}}" class="dropdown-item border-radius-md">
                                             <span class="ps-3">Member Associations</span>
                                         </a>
                                     </div>
                                     <div class="d-lg-none">
-                                        <a href="./pmembership.php" class="dropdown-item border-radius-md">
+                                        <a href="{{route('individual')}}" class="dropdown-item border-radius-md">
                                             <span class="ps-3">individual Membership</span>
                                         </a>
-                                        <a href="./cmembership.php" class="dropdown-item border-radius-md">
+                                        <a href="{{route('collective')}}" class="dropdown-item border-radius-md">
                                             <span class="ps-3">Coorporate Membership</span>
                                         </a>
-                                        <a href="./memberAssociation.php" class="dropdown-item border-radius-md">
+                                        <a href="{{route('membre')}}" class="dropdown-item border-radius-md">
                                             <span class="ps-3">Member Associations</span>
                                         </a>
                                     </div>
@@ -106,7 +106,7 @@
 
                             <li class="nav-item mx-2">
                                 <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                                   id="dropdownMenuPages" href="./carl.php"
+                                   id="dropdownMenuPages" href="{{route('certification')}}"
                                    style="color: black; font-weight: bold;">
                                     Certification
                                 </a>
@@ -130,7 +130,7 @@
 
                             <li class="nav-item mx-2">
                                 <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                                   id="dropdownMenuPages" href="jobs.php"
+                                   id="dropdownMenuPages" href="{{route('emplois')}}"
                                    style="color: black; font-weight: bold;">
                                     Job Offers
                                 </a>
