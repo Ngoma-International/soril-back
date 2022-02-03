@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\TestMail;
+use App\Models\book;
 use App\Models\Candidat;
+use App\Models\category;
 use App\Models\Emploi;
 use App\Models\Evenement;
 use App\Models\MessagePresident;
@@ -39,10 +41,12 @@ class HomeController extends Controller
 
     public function library(Request $request){
 
-        $messages = MessagePresident::where('id', $request->id)->get()->first();
+        $book = book::orderBy('bo_id', 'desc')->get();
+        $category = category::all();
 
-        return view('message', [
-            'message' => $messages
+        return view('library', [
+                'books'=>$book,
+                'categories'=>$category
             ]
         );
     }

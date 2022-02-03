@@ -42,17 +42,17 @@
                     <div class="page-header min-vh-100">
                         <div class="oblique position-absolute top-0 h-100 d-md-block d-none">
                             <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6"
-                                 style="background-image:url(https://fiverr-res.cloudinary.com/videos/so_0.169294,t_main1,q_auto,f_auto/lsf9uduf7e4o23tzkly9/draw-children-book-illustration-in-my-style.png)"></div>
+                                 style="background-image:url({{asset($books->first()->bo_picture)}})"></div>
                         </div>
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-lg-6 col-md-7 d-flex justify-content-center flex-column">
                                     <h1 class="text-gradient text-info">FEATURED BOOK</h1>
-                                    <h3 class="text-gradient text-dark">TITLE OF BOOK</h3>
+                                    <h3 class="text-gradient text-dark">{{$books->first()->bo_title}}</h3>
                                     <p class="lead pe-5 me-5">
-                                        Price : <b>150$</b> <br>
-                                        Date published : <b>00 - 00 - 2020</b> <br>
-                                        Author : <b>Natshi</b>
+                                        Price : <b>{{$books->first()->bo_price}}$</b> <br>
+                                        Date published : <b>{{$books->first()->bo_pub_date}}</b> <br>
+                                        Author : <b>{{$books->first()->bo_author}}</b>
                                     </p>
                                     <div class="buttons">
                                         <button type="button" class="btn bg-gradient-info mt-4">Read More</button>
