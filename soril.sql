@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : jeu. 03 fév. 2022 à 03:55
--- Version du serveur : 10.4.22-MariaDB
--- Version de PHP : 8.1.1
+-- Host: 127.0.0.1
+-- Generation Time: Feb 03, 2022 at 04:28 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `soril`
+-- Database: `soril`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `abonnements`
+-- Table structure for table `abonnements`
 --
 
 CREATE TABLE `abonnements` (
@@ -37,7 +37,7 @@ CREATE TABLE `abonnements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `abonnements`
+-- Dumping data for table `abonnements`
 --
 
 INSERT INTO `abonnements` (`id`, `article_id`, `abonne_id`, `status`, `created_at`, `updated_at`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `abonnements` (`id`, `article_id`, `abonne_id`, `status`, `created_a
 -- --------------------------------------------------------
 
 --
--- Structure de la table `abonnes`
+-- Table structure for table `abonnes`
 --
 
 CREATE TABLE `abonnes` (
@@ -68,7 +68,7 @@ CREATE TABLE `abonnes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `abonnes`
+-- Dumping data for table `abonnes`
 --
 
 INSERT INTO `abonnes` (`id`, `firstName`, `lastName`, `email`, `pays`, `etat`, `societe`, `fonction`, `departement`, `secteur`, `contact`, `password`, `created_at`, `updated_at`) VALUES
@@ -77,7 +77,7 @@ INSERT INTO `abonnes` (`id`, `firstName`, `lastName`, `email`, `pays`, `etat`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `animateurs`
+-- Table structure for table `animateurs`
 --
 
 CREATE TABLE `animateurs` (
@@ -96,7 +96,7 @@ CREATE TABLE `animateurs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `animateurs`
+-- Dumping data for table `animateurs`
 --
 
 INSERT INTO `animateurs` (`id`, `image`, `prenom`, `nom`, `organisation`, `position`, `email`, `phone`, `pays`, `description`, `created_at`, `updated_at`) VALUES
@@ -106,7 +106,7 @@ INSERT INTO `animateurs` (`id`, `image`, `prenom`, `nom`, `organisation`, `posit
 -- --------------------------------------------------------
 
 --
--- Structure de la table `articles`
+-- Table structure for table `articles`
 --
 
 CREATE TABLE `articles` (
@@ -127,7 +127,7 @@ CREATE TABLE `articles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `articles`
+-- Dumping data for table `articles`
 --
 
 INSERT INTO `articles` (`id`, `firstName`, `lastName`, `type`, `title`, `country`, `phone`, `organisation`, `position`, `email`, `note`, `manuscrit`, `created_at`, `updated_at`) VALUES
@@ -138,10 +138,10 @@ INSERT INTO `articles` (`id`, `firstName`, `lastName`, `type`, `title`, `country
 -- --------------------------------------------------------
 
 --
--- Structure de la table `book`
+-- Table structure for table `books`
 --
 
-CREATE TABLE `book` (
+CREATE TABLE `books` (
   `bo_id` int(11) NOT NULL,
   `bo_cat_id` int(11) DEFAULT NULL,
   `bo_title` varchar(100) DEFAULT NULL,
@@ -157,36 +157,17 @@ CREATE TABLE `book` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `book`
+-- Dumping data for table `books`
 --
 
-INSERT INTO `book` (`bo_id`, `bo_cat_id`, `bo_title`, `bo_description`, `bo_author`, `bo_pub_house`, `bo_pub_date`, `bo_picture`, `bo_price`, `bo_status`, `bo_created_at`, `bo_file`) VALUES
+INSERT INTO `books` (`bo_id`, `bo_cat_id`, `bo_title`, `bo_description`, `bo_author`, `bo_pub_house`, `bo_pub_date`, `bo_picture`, `bo_price`, `bo_status`, `bo_created_at`, `bo_file`) VALUES
 (1, 2, 'Reading Life', ' Ceici est un test pur et simple', 'Philippe Le Noir', 'SAFINA (SALAMA)', '2021-08-16', 'nopicture.png', '3.00', 1, '2021-08-16', ''),
-(2, 2, 'ETude du marché', ' Ceci est un test avec la photo', 'Philippe Le Noir', 'SAFINA', '2021-08-10', '160821034036.jpg', '4.70', 1, '2021-08-16', '300921013010.pdf');
+(2, 2, 'Why risk So Much for So Little', 'An exceptional read, from the author Mimile Mukuna Maisha, released March 2012. A very informative, and very useful approach for business owners to prevent business failure by managing risk.', 'Mimile MUKUNA', 'SAFINA', '2021-08-10', 'assets/img/book/risk.png', '4.70', 1, '2021-08-16', '300921013010.pdf');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `book_category`
---
-
-CREATE TABLE `book_category` (
-  `bo_cat_id` int(11) NOT NULL,
-  `bo_cat_name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `book_category`
---
-
-INSERT INTO `book_category` (`bo_cat_id`, `bo_cat_name`) VALUES
-(1, 'Programming'),
-(2, 'Electricy');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `candidats`
+-- Table structure for table `candidats`
 --
 
 CREATE TABLE `candidats` (
@@ -205,7 +186,7 @@ CREATE TABLE `candidats` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `candidats`
+-- Dumping data for table `candidats`
 --
 
 INSERT INTO `candidats` (`id`, `FirstName`, `MiddleName`, `LastName`, `email`, `state`, `city`, `date`, `phone`, `img`, `created_at`, `updated_at`) VALUES
@@ -214,7 +195,26 @@ INSERT INTO `candidats` (`id`, `FirstName`, `MiddleName`, `LastName`, `email`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `collectives`
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `bo_cat_id` int(11) NOT NULL,
+  `bo_cat_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`bo_cat_id`, `bo_cat_name`) VALUES
+(1, 'Programming'),
+(2, 'Electricy');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `collectives`
 --
 
 CREATE TABLE `collectives` (
@@ -247,7 +247,7 @@ CREATE TABLE `collectives` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `collectives`
+-- Dumping data for table `collectives`
 --
 
 INSERT INTO `collectives` (`id`, `name`, `reg-no`, `industry`, `country`, `position`, `city`, `province`, `website`, `firstName`, `lastName`, `email`, `phone`, `job-title`, `representatives`, `logo`, `fFirstName`, `fLastName`, `fEmail`, `fPhone`, `fJob-title`, `fullname`, `positions`, `statut`, `created_at`, `updated_at`) VALUES
@@ -256,7 +256,7 @@ INSERT INTO `collectives` (`id`, `name`, `reg-no`, `industry`, `country`, `posit
 -- --------------------------------------------------------
 
 --
--- Structure de la table `conseil_admins`
+-- Table structure for table `conseil_admins`
 --
 
 CREATE TABLE `conseil_admins` (
@@ -276,7 +276,7 @@ CREATE TABLE `conseil_admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `conseil_admins`
+-- Dumping data for table `conseil_admins`
 --
 
 INSERT INTO `conseil_admins` (`id`, `prenom`, `nom`, `about`, `organisation`, `position`, `email`, `phone`, `image`, `type`, `pays`, `created_at`, `updated_at`) VALUES
@@ -285,7 +285,7 @@ INSERT INTO `conseil_admins` (`id`, `prenom`, `nom`, `about`, `organisation`, `p
 -- --------------------------------------------------------
 
 --
--- Structure de la table `consultatifs`
+-- Table structure for table `consultatifs`
 --
 
 CREATE TABLE `consultatifs` (
@@ -304,7 +304,7 @@ CREATE TABLE `consultatifs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `consultatifs`
+-- Dumping data for table `consultatifs`
 --
 
 INSERT INTO `consultatifs` (`id`, `prenom`, `nom`, `organisation`, `position`, `email`, `phone`, `type`, `about`, `image`, `created_at`, `updated_at`) VALUES
@@ -313,7 +313,7 @@ INSERT INTO `consultatifs` (`id`, `prenom`, `nom`, `organisation`, `position`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `countries`
+-- Table structure for table `countries`
 --
 
 CREATE TABLE `countries` (
@@ -323,7 +323,7 @@ CREATE TABLE `countries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `countries`
+-- Dumping data for table `countries`
 --
 
 INSERT INTO `countries` (`id`, `code`, `name`) VALUES
@@ -583,7 +583,7 @@ INSERT INTO `countries` (`id`, `code`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `emplois`
+-- Table structure for table `emplois`
 --
 
 CREATE TABLE `emplois` (
@@ -604,7 +604,7 @@ CREATE TABLE `emplois` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `emplois`
+-- Dumping data for table `emplois`
 --
 
 INSERT INTO `emplois` (`id`, `titre`, `salaire`, `expiration`, `secteur`, `pays`, `ville`, `contrat`, `competence`, `qualite`, `prerequis`, `apercu`, `created_at`, `updated_at`) VALUES
@@ -613,7 +613,7 @@ INSERT INTO `emplois` (`id`, `titre`, `salaire`, `expiration`, `secteur`, `pays`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `evenements`
+-- Table structure for table `evenements`
 --
 
 CREATE TABLE `evenements` (
@@ -640,7 +640,7 @@ CREATE TABLE `evenements` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `evenements`
+-- Dumping data for table `evenements`
 --
 
 INSERT INTO `evenements` (`id`, `typeEvent`, `titre`, `sousTitre`, `lieu`, `duree`, `date`, `animateur`, `speaker`, `ville`, `apercu`, `participer`, `prerequis`, `certification`, `type`, `prix`, `description`, `image`, `created_at`, `updated_at`) VALUES
@@ -651,7 +651,7 @@ INSERT INTO `evenements` (`id`, `typeEvent`, `titre`, `sousTitre`, `lieu`, `dure
 -- --------------------------------------------------------
 
 --
--- Structure de la table `event_programmes`
+-- Table structure for table `event_programmes`
 --
 
 CREATE TABLE `event_programmes` (
@@ -667,7 +667,7 @@ CREATE TABLE `event_programmes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `event_programmes`
+-- Dumping data for table `event_programmes`
 --
 
 INSERT INTO `event_programmes` (`id`, `date`, `time`, `facilitator`, `header`, `title`, `created_at`, `updated_at`, `evenement_id`) VALUES
@@ -680,7 +680,7 @@ INSERT INTO `event_programmes` (`id`, `date`, `time`, `facilitator`, `header`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `event_registers`
+-- Table structure for table `event_registers`
 --
 
 CREATE TABLE `event_registers` (
@@ -704,7 +704,7 @@ CREATE TABLE `event_registers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `event_registers`
+-- Dumping data for table `event_registers`
 --
 
 INSERT INTO `event_registers` (`id`, `evenement_id`, `title`, `name`, `email`, `pays`, `phone`, `province`, `company`, `departement`, `position`, `industrie`, `phoneBureau`, `status`, `ref`, `created_at`, `updated_at`) VALUES
@@ -715,7 +715,7 @@ INSERT INTO `event_registers` (`id`, `evenement_id`, `title`, `name`, `email`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -731,7 +731,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `individuals`
+-- Table structure for table `individuals`
 --
 
 CREATE TABLE `individuals` (
@@ -764,7 +764,7 @@ CREATE TABLE `individuals` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `individuals`
+-- Dumping data for table `individuals`
 --
 
 INSERT INTO `individuals` (`id`, `firstName`, `lastName`, `email`, `date`, `country`, `city`, `state`, `companyName`, `position`, `industry`, `phone`, `amount`, `registrantType`, `file`, `statut`, `com1`, `com1statut`, `com2`, `com2statut`, `com3`, `com3statut`, `period`, `dpcpoint`, `created_at`, `updated_at`) VALUES
@@ -773,7 +773,7 @@ INSERT INTO `individuals` (`id`, `firstName`, `lastName`, `email`, `date`, `coun
 -- --------------------------------------------------------
 
 --
--- Structure de la table `management_secretariates`
+-- Table structure for table `management_secretariates`
 --
 
 CREATE TABLE `management_secretariates` (
@@ -792,7 +792,7 @@ CREATE TABLE `management_secretariates` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `management_secretariates`
+-- Dumping data for table `management_secretariates`
 --
 
 INSERT INTO `management_secretariates` (`id`, `prenom`, `nom`, `type`, `email`, `phone`, `image`, `pays`, `about`, `password`, `created_at`, `updated_at`) VALUES
@@ -801,7 +801,7 @@ INSERT INTO `management_secretariates` (`id`, `prenom`, `nom`, `type`, `email`, 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `message_presidents`
+-- Table structure for table `message_presidents`
 --
 
 CREATE TABLE `message_presidents` (
@@ -820,7 +820,7 @@ CREATE TABLE `message_presidents` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `message_presidents`
+-- Dumping data for table `message_presidents`
 --
 
 INSERT INTO `message_presidents` (`id`, `prenom`, `nom`, `date`, `introduction`, `about`, `message`, `titreAuteur`, `titreMessage`, `image`, `created_at`, `updated_at`) VALUES
@@ -830,7 +830,7 @@ INSERT INTO `message_presidents` (`id`, `prenom`, `nom`, `date`, `introduction`,
 -- --------------------------------------------------------
 
 --
--- Structure de la table `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -840,7 +840,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -878,7 +878,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `partenaires`
+-- Table structure for table `partenaires`
 --
 
 CREATE TABLE `partenaires` (
@@ -895,7 +895,7 @@ CREATE TABLE `partenaires` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `partenaires`
+-- Dumping data for table `partenaires`
 --
 
 INSERT INTO `partenaires` (`id`, `organisation`, `pays`, `image`, `nom`, `position`, `email`, `phone`, `created_at`, `updated_at`) VALUES
@@ -906,7 +906,7 @@ INSERT INTO `partenaires` (`id`, `organisation`, `pays`, `image`, `nom`, `positi
 -- --------------------------------------------------------
 
 --
--- Structure de la table `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -916,7 +916,7 @@ CREATE TABLE `password_resets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `password_resets`
+-- Dumping data for table `password_resets`
 --
 
 INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
@@ -925,7 +925,7 @@ INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -943,7 +943,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `sponsors`
+-- Table structure for table `sponsors`
 --
 
 CREATE TABLE `sponsors` (
@@ -961,7 +961,7 @@ CREATE TABLE `sponsors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `sponsors`
+-- Dumping data for table `sponsors`
 --
 
 INSERT INTO `sponsors` (`id`, `organisation`, `pays`, `nom`, `position`, `email`, `phone`, `description`, `image`, `created_at`, `updated_at`) VALUES
@@ -970,7 +970,7 @@ INSERT INTO `sponsors` (`id`, `organisation`, `pays`, `nom`, `position`, `email`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `sponsor_events`
+-- Table structure for table `sponsor_events`
 --
 
 CREATE TABLE `sponsor_events` (
@@ -982,7 +982,7 @@ CREATE TABLE `sponsor_events` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `sponsor_events`
+-- Dumping data for table `sponsor_events`
 --
 
 INSERT INTO `sponsor_events` (`id`, `evenement_id`, `sponsor_id`, `created_at`, `updated_at`) VALUES
@@ -991,7 +991,7 @@ INSERT INTO `sponsor_events` (`id`, `evenement_id`, `sponsor_id`, `created_at`, 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `types`
+-- Table structure for table `types`
 --
 
 CREATE TABLE `types` (
@@ -1002,7 +1002,7 @@ CREATE TABLE `types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `types`
+-- Dumping data for table `types`
 --
 
 INSERT INTO `types` (`id`, `type`, `created_at`, `updated_at`) VALUES
@@ -1012,7 +1012,7 @@ INSERT INTO `types` (`id`, `type`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -1028,7 +1028,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `type_id`, `remember_token`, `created_at`, `updated_at`) VALUES
@@ -1037,7 +1037,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ty
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user_data`
+-- Table structure for table `user_data`
 --
 
 CREATE TABLE `user_data` (
@@ -1051,7 +1051,7 @@ CREATE TABLE `user_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `user_data`
+-- Dumping data for table `user_data`
 --
 
 INSERT INTO `user_data` (`id`, `user_id`, `image`, `about`, `phone`, `created_at`, `updated_at`) VALUES
@@ -1060,11 +1060,11 @@ INSERT INTO `user_data` (`id`, `user_id`, `image`, `about`, `phone`, `created_at
 (3, 6, 'images/dashboard/users/1639641376.PNG', 'No Description', 'infos@domiyns.com', '2021-11-15 12:17:04', '2021-12-16 05:56:16');
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `abonnements`
+-- Indexes for table `abonnements`
 --
 ALTER TABLE `abonnements`
   ADD PRIMARY KEY (`id`),
@@ -1072,124 +1072,136 @@ ALTER TABLE `abonnements`
   ADD KEY `abonnements_abonne_id_foreign` (`abonne_id`);
 
 --
--- Index pour la table `abonnes`
+-- Indexes for table `abonnes`
 --
 ALTER TABLE `abonnes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `animateurs`
+-- Indexes for table `animateurs`
 --
 ALTER TABLE `animateurs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `articles`
+-- Indexes for table `articles`
 --
 ALTER TABLE `articles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `candidats`
+-- Indexes for table `books`
+--
+ALTER TABLE `books`
+  ADD PRIMARY KEY (`bo_id`);
+
+--
+-- Indexes for table `candidats`
 --
 ALTER TABLE `candidats`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `collectives`
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`bo_cat_id`);
+
+--
+-- Indexes for table `collectives`
 --
 ALTER TABLE `collectives`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `conseil_admins`
+-- Indexes for table `conseil_admins`
 --
 ALTER TABLE `conseil_admins`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `consultatifs`
+-- Indexes for table `consultatifs`
 --
 ALTER TABLE `consultatifs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `countries`
+-- Indexes for table `countries`
 --
 ALTER TABLE `countries`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `emplois`
+-- Indexes for table `emplois`
 --
 ALTER TABLE `emplois`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `evenements`
+-- Indexes for table `evenements`
 --
 ALTER TABLE `evenements`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `event_programmes`
+-- Indexes for table `event_programmes`
 --
 ALTER TABLE `event_programmes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `event_programmes_evenement_id_foreign` (`evenement_id`);
 
 --
--- Index pour la table `event_registers`
+-- Indexes for table `event_registers`
 --
 ALTER TABLE `event_registers`
   ADD PRIMARY KEY (`id`),
   ADD KEY `event_registers_evenement_id_foreign` (`evenement_id`);
 
 --
--- Index pour la table `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Index pour la table `individuals`
+-- Indexes for table `individuals`
 --
 ALTER TABLE `individuals`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `management_secretariates`
+-- Indexes for table `management_secretariates`
 --
 ALTER TABLE `management_secretariates`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `message_presidents`
+-- Indexes for table `message_presidents`
 --
 ALTER TABLE `message_presidents`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `partenaires`
+-- Indexes for table `partenaires`
 --
 ALTER TABLE `partenaires`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Index pour la table `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -1197,13 +1209,13 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Index pour la table `sponsors`
+-- Indexes for table `sponsors`
 --
 ALTER TABLE `sponsors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `sponsor_events`
+-- Indexes for table `sponsor_events`
 --
 ALTER TABLE `sponsor_events`
   ADD PRIMARY KEY (`id`),
@@ -1211,13 +1223,13 @@ ALTER TABLE `sponsor_events`
   ADD KEY `sponsor_events_sponsor_id_foreign` (`sponsor_id`);
 
 --
--- Index pour la table `types`
+-- Indexes for table `types`
 --
 ALTER TABLE `types`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -1225,198 +1237,210 @@ ALTER TABLE `users`
   ADD KEY `users_type_id_foreign` (`type_id`);
 
 --
--- Index pour la table `user_data`
+-- Indexes for table `user_data`
 --
 ALTER TABLE `user_data`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_data_user_id_foreign` (`user_id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `abonnements`
+-- AUTO_INCREMENT for table `abonnements`
 --
 ALTER TABLE `abonnements`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT pour la table `abonnes`
+-- AUTO_INCREMENT for table `abonnes`
 --
 ALTER TABLE `abonnes`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT pour la table `animateurs`
+-- AUTO_INCREMENT for table `animateurs`
 --
 ALTER TABLE `animateurs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `articles`
+-- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `candidats`
+-- AUTO_INCREMENT for table `books`
+--
+ALTER TABLE `books`
+  MODIFY `bo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `candidats`
 --
 ALTER TABLE `candidats`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `collectives`
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `bo_cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `collectives`
 --
 ALTER TABLE `collectives`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `conseil_admins`
+-- AUTO_INCREMENT for table `conseil_admins`
 --
 ALTER TABLE `conseil_admins`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `consultatifs`
+-- AUTO_INCREMENT for table `consultatifs`
 --
 ALTER TABLE `consultatifs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `countries`
+-- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=253;
 
 --
--- AUTO_INCREMENT pour la table `emplois`
+-- AUTO_INCREMENT for table `emplois`
 --
 ALTER TABLE `emplois`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `evenements`
+-- AUTO_INCREMENT for table `evenements`
 --
 ALTER TABLE `evenements`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT pour la table `event_programmes`
+-- AUTO_INCREMENT for table `event_programmes`
 --
 ALTER TABLE `event_programmes`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT pour la table `event_registers`
+-- AUTO_INCREMENT for table `event_registers`
 --
 ALTER TABLE `event_registers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT pour la table `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `individuals`
+-- AUTO_INCREMENT for table `individuals`
 --
 ALTER TABLE `individuals`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `management_secretariates`
+-- AUTO_INCREMENT for table `management_secretariates`
 --
 ALTER TABLE `management_secretariates`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `message_presidents`
+-- AUTO_INCREMENT for table `message_presidents`
 --
 ALTER TABLE `message_presidents`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT pour la table `partenaires`
+-- AUTO_INCREMENT for table `partenaires`
 --
 ALTER TABLE `partenaires`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `sponsors`
+-- AUTO_INCREMENT for table `sponsors`
 --
 ALTER TABLE `sponsors`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `sponsor_events`
+-- AUTO_INCREMENT for table `sponsor_events`
 --
 ALTER TABLE `sponsor_events`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `types`
+-- AUTO_INCREMENT for table `types`
 --
 ALTER TABLE `types`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `user_data`
+-- AUTO_INCREMENT for table `user_data`
 --
 ALTER TABLE `user_data`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `abonnements`
+-- Constraints for table `abonnements`
 --
 ALTER TABLE `abonnements`
   ADD CONSTRAINT `abonnements_abonne_id_foreign` FOREIGN KEY (`abonne_id`) REFERENCES `abonnes` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `abonnements_article_id_foreign` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `event_programmes`
+-- Constraints for table `event_programmes`
 --
 ALTER TABLE `event_programmes`
   ADD CONSTRAINT `event_programmes_evenement_id_foreign` FOREIGN KEY (`evenement_id`) REFERENCES `evenements` (`id`);
 
 --
--- Contraintes pour la table `event_registers`
+-- Constraints for table `event_registers`
 --
 ALTER TABLE `event_registers`
   ADD CONSTRAINT `event_registers_evenement_id_foreign` FOREIGN KEY (`evenement_id`) REFERENCES `evenements` (`id`);
 
 --
--- Contraintes pour la table `sponsor_events`
+-- Constraints for table `sponsor_events`
 --
 ALTER TABLE `sponsor_events`
   ADD CONSTRAINT `sponsor_events_evenement_id_foreign` FOREIGN KEY (`evenement_id`) REFERENCES `evenements` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `sponsor_events_sponsor_id_foreign` FOREIGN KEY (`sponsor_id`) REFERENCES `sponsors` (`id`) ON DELETE CASCADE;
 
 --
--- Contraintes pour la table `users`
+-- Constraints for table `users`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_type_id_foreign` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`);
