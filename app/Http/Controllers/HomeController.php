@@ -37,7 +37,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function message(Request $request){
+    public function library(Request $request){
 
         $messages = MessagePresident::where('id', $request->id)->get()->first();
 

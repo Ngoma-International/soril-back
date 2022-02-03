@@ -122,7 +122,7 @@
 
                             <li class="nav-item mx-2">
                                 <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                                   id="dropdownMenuPages" href="bookShop.php?page=Shop"
+                                   id="dropdownMenuPages" href="{{route('library')}}"
                                    style="color: black; font-weight: bold;">
                                     Library
                                 </a>
