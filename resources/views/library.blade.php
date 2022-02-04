@@ -72,22 +72,17 @@
                 <div class="col-md-12 mx-auto">
                     <div class="nav-wrapper position-relative end-0">
                         <ul class="nav nav-pills nav-fill p-1" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link mb-0 px-0 py-1 active" style="color:black"
-                                   data-bs-toggle="tab" href="#risk" role="tab" aria-controls="profile" aria-selected="true">
-                                    Risk Management
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mb-0 px-0 py-1" style="color:black" data-bs-toggle="tab" href="#insurance" role="tab" aria-controls="dashboard" aria-selected="false">
-                                    Insurance
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mb-0 px-0 py-1" style="color:black" data-bs-toggle="tab" href="#other" role="tab" aria-controls="dashboard" aria-selected="false">
-                                    Other
-                                </a>
-                            </li>
+                            @forelse ($categories as $item)
+                                <li class="nav-item">
+                                    <a class="nav-link mb-0 px-0 py-1 active" style="color:black"
+                                       data-bs-toggle="tab" href="#tab-{{$item->bo_cat_id}}" role="tab"
+                                       aria-controls="profile" aria-selected="true">
+                                        {{$item->bo_cat_name}}
+                                    </a>
+                                </li>
+                            @empty
+
+                            @endforelse
                         </ul>
                     </div>
 

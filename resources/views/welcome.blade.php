@@ -220,7 +220,7 @@
                     <div class="row py-lg-3 py-6">
                         <div class="col-lg-3 col-md-5 position-relative my-auto">
                             <img class="img border-radius-lg max-width-200 w-100 position-relative z-index-2"
-                                 src="assets/img/bruce-mars.jpg" alt="bruce">
+                                 src="{{asset('assets/img/mimile.png')}}" alt="bruce">
                         </div>
                         <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mt-sm-0 mt-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
