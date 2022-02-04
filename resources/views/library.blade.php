@@ -70,9 +70,9 @@
         <div class="container">
             <div class="row text-center py-3 mt-3">
                 <div class="col-md-12 mx-auto">
+                    @forelse ($categories as $item)
                     <div class="nav-wrapper position-relative end-0">
                         <ul class="nav nav-pills nav-fill p-1" role="tablist">
-                            @forelse ($categories as $item)
                                 <li class="nav-item">
                                     <a class="nav-link mb-0 px-0 py-1 active" style="color:black"
                                        data-bs-toggle="tab" href="#tab-{{$item->bo_cat_id}}" role="tab"
@@ -80,285 +80,46 @@
                                         {{$item->bo_cat_name}}
                                     </a>
                                 </li>
-                            @empty
-
-                            @endforelse
                         </ul>
                     </div>
 
                     <div class="tab-content mt-4">
-                        <div id="risk" class="tab-pane active">
+                        <div id="tab-{{$item->bo_cat_id}}" class="tab-pane active">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-lg-4">
-                                        <div class="card shadow-lg">
-                                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                                <div class="d-block blur-shadow-image">
-                                                    <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg" alt="img-blur-shadow" class="img-fluid shadow rounded-3">
+                                    @forelse ($books as $items)
+                                        @if ($items->bo_cat_id == $item->bo_cat_id)
+                                            <div class="col-lg-4">
+                                                <div class="card shadow-lg">
+                                                    <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
+                                                        <div class="d-block blur-shadow-image">
+                                                            <img style="width: 50%; object-fit: cover" src="{{asset($items->bo_picture)}}">
+                                                        </div>
+                                                        <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <a href="javascript:;">
+                                                            <h5 class="mt-3">
+                                                                {{$items->bo_title}}
+                                                            </h5>
+                                                        </a>
+                                                        <p>
+                                                            <em>{{$items->bo_author}} </em> | {{$items->bo_price}}$
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                                <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
                                             </div>
-                                            <div class="card-body">
-                                                <a href="javascript:;">
-                                                    <h5 class="mt-3">
-                                                        Test Book
-                                                    </h5>
-                                                </a>
-                                                <p>
-                                                    <em>Auteur </em> | 130$
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        @endif
+                                    @empty
 
-                                    <div class="col-lg-4">
-                                        <div class="card shadow-lg">
-                                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                                <div class="d-block blur-shadow-image">
-                                                    <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg" alt="img-blur-shadow" class="img-fluid shadow rounded-3">
-                                                </div>
-                                                <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
-                                            </div>
-                                            <div class="card-body">
-                                                <a href="javascript:;">
-                                                    <h5 class="mt-3">
-                                                        Test Book
-                                                    </h5>
-                                                </a>
-                                                <p>
-                                                    <em>Auteur </em> | 130$
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4">
-                                        <div class="card shadow-lg">
-                                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                                <div class="d-block blur-shadow-image">
-                                                    <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg" alt="img-blur-shadow" class="img-fluid shadow rounded-3">
-                                                </div>
-                                                <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
-                                            </div>
-                                            <div class="card-body">
-                                                <a href="javascript:;">
-                                                    <h5 class="mt-3">
-                                                        Test Book
-                                                    </h5>
-                                                </a>
-                                                <p>
-                                                    <em>Auteur </em> | 130$
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row my-4">
-                                    <div class="d-flex">
-                                        <ul class="pagination mx-auto">
-                                            <li class="page-item">
-                                                <a class="page-link" href="javascript:;" aria-label="Previous">
-                                                    <i class="fa fa-angle-left"></i>
-                                                    <span class="sr-only">Previous</span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#1">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#2">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#3">3</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="javascript:;" aria-label="Next">
-                                                    <i class="fa fa-angle-right"></i>
-                                                    <span class="sr-only">Next</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="insurance" class="tab-pane fade">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <div class="card shadow-lg">
-                                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                                <div class="d-block blur-shadow-image">
-                                                    <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg" alt="img-blur-shadow" class="img-fluid shadow rounded-3">
-                                                </div>
-                                                <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
-                                            </div>
-                                            <div class="card-body">
-                                                <a href="javascript:;">
-                                                    <h5 class="mt-3">
-                                                        Test Book
-                                                    </h5>
-                                                </a>
-                                                <p>
-                                                    <em>Auteur </em> | 130$
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4">
-                                        <div class="card shadow-lg">
-                                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                                <div class="d-block blur-shadow-image">
-                                                    <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg" alt="img-blur-shadow" class="img-fluid shadow rounded-3">
-                                                </div>
-                                                <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
-                                            </div>
-                                            <div class="card-body">
-                                                <a href="javascript:;">
-                                                    <h5 class="mt-3">
-                                                        Test Book
-                                                    </h5>
-                                                </a>
-                                                <p>
-                                                    <em>Auteur </em> | 130$
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4">
-                                        <div class="card shadow-lg">
-                                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                                <div class="d-block blur-shadow-image">
-                                                    <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg" alt="img-blur-shadow" class="img-fluid shadow rounded-3">
-                                                </div>
-                                                <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
-                                            </div>
-                                            <div class="card-body">
-                                                <a href="javascript:;">
-                                                    <h5 class="mt-3">
-                                                        Test Book
-                                                    </h5>
-                                                </a>
-                                                <p>
-                                                    <em>Auteur </em> | 130$
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row my-4">
-                                    <div class="d-flex">
-                                        <ul class="pagination mx-auto">
-                                            <li class="page-item">
-                                                <a class="page-link" href="javascript:;" aria-label="Previous">
-                                                    <i class="fa fa-angle-left"></i>
-                                                    <span class="sr-only">Previous</span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#1">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#2">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#3">3</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="javascript:;" aria-label="Next">
-                                                    <i class="fa fa-angle-right"></i>
-                                                    <span class="sr-only">Next</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="other" class="tab-pane fade">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <div class="card shadow-lg">
-                                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                                <div class="d-block blur-shadow-image">
-                                                    <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg" alt="img-blur-shadow" class="img-fluid shadow rounded-3">
-                                                </div>
-                                                <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
-                                            </div>
-                                            <div class="card-body">
-                                                <a href="javascript:;">
-                                                    <h5 class="mt-3">
-                                                        Test Book
-                                                    </h5>
-                                                </a>
-                                                <p>
-                                                    <em>Auteur </em> | 130$
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4">
-                                        <div class="card shadow-lg">
-                                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                                <div class="d-block blur-shadow-image">
-                                                    <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg" alt="img-blur-shadow" class="img-fluid shadow rounded-3">
-                                                </div>
-                                                <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
-                                            </div>
-                                            <div class="card-body">
-                                                <a href="javascript:;">
-                                                    <h5 class="mt-3">
-                                                        Test Book
-                                                    </h5>
-                                                </a>
-                                                <p>
-                                                    <em>Auteur </em> | 130$
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4">
-                                        <div class="card shadow-lg">
-                                            <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
-                                                <div class="d-block blur-shadow-image">
-                                                    <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg" alt="img-blur-shadow" class="img-fluid shadow rounded-3">
-                                                </div>
-                                                <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
-                                            </div>
-                                            <div class="card-body">
-                                                <a href="javascript:;">
-                                                    <h5 class="mt-3">
-                                                        Test Book
-                                                    </h5>
-                                                </a>
-                                                <p>
-                                                    <em>Auteur </em> | 130$
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row my-4">
-                                    <div class="d-flex">
-                                        <ul class="pagination mx-auto">
-                                            <li class="page-item">
-                                                <a class="page-link" href="javascript:;" aria-label="Previous">
-                                                    <i class="fa fa-angle-left"></i>
-                                                    <span class="sr-only">Previous</span>
-                                                </a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#1">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#2">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#3">3</a></li>
-                                            <li class="page-item">
-                                                <a class="page-link" href="javascript:;" aria-label="Next">
-                                                    <i class="fa fa-angle-right"></i>
-                                                    <span class="sr-only">Next</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    @endforelse
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @empty
+
+                    @endforelse
                 </div>
             </div>
         </div>

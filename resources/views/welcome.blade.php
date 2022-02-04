@@ -178,22 +178,14 @@
 
     <section class="py-sm-3 py-3">
         <div class="container mt-sm-5">
-            <div class="page-header min-vh-50 my-sm-3 mb-5 border-radius-xl" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/desktop.jpg');">
-                <span class="mask bg-gradient-dark"></span>
+            <div class="page-header min-vh-50 my-sm-3 mb-5 border-radius-xl">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 ms-lg-0 text-center">
-                            <h1 class="text-white mb-0">The african journal</h1>
-                            <h1 class="text-white">of risk management</h1>
-                            <p class="lead text-white opacity-8">
-                                The African Journal of Risk Management (AJRM) publishes quarterty Africa-focused
-                                risk management articles from submissions of original and review papers, studies,
-                                technical reports, book reviews, news and notes commentaries on business,
-                                organisational, social, political, and economic risk management issues and developments.
-                            </p>
-                            <a href="" class="text-white icon-move-right">
-                                Explore
-                                <i class="fas fa-arrow-right text-sm ms-1"></i>
+                            <a href="" >
+                                <img src="{{asset('assets/img/journal.png')}}"
+                                     style="width: 100%;"
+                                     alt="">
                             </a>
                         </div>
                     </div>
