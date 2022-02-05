@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2022 at 04:28 AM
+-- Generation Time: Feb 05, 2022 at 10:05 AM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- PHP Version: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -138,31 +138,46 @@ INSERT INTO `articles` (`id`, `firstName`, `lastName`, `type`, `title`, `country
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `authors`
+--
+
+CREATE TABLE `authors` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `firstName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `middleName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date` date NOT NULL,
+  `state` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `companyName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `department` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `authors`
+--
+
+INSERT INTO `authors` (`id`, `firstName`, `lastName`, `middleName`, `email`, `country`, `city`, `date`, `state`, `companyName`, `department`, `position`, `image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Younes', 'Belhanda', 'L\'Enfant', 'infos@domiyns.com', 'AO', 'Lubumbashi', '2022-02-28', 'Haut-Katanga', 'Wajenzi Digital', 'Lubumbashi', 'CEO', '1644051305.jpg', 0, '2022-02-05 06:55:06', '2022-02-05 06:55:06');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `books`
 --
 
 CREATE TABLE `books` (
-  `bo_id` int(11) NOT NULL,
-  `bo_cat_id` int(11) DEFAULT NULL,
-  `bo_title` varchar(100) DEFAULT NULL,
-  `bo_description` text DEFAULT NULL,
-  `bo_author` varchar(255) DEFAULT NULL,
-  `bo_pub_house` varchar(255) DEFAULT NULL,
-  `bo_pub_date` date DEFAULT NULL,
-  `bo_picture` varchar(50) DEFAULT NULL,
-  `bo_price` decimal(12,2) DEFAULT NULL,
-  `bo_status` int(11) DEFAULT 1,
-  `bo_created_at` date NOT NULL,
-  `bo_file` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `books`
---
-
-INSERT INTO `books` (`bo_id`, `bo_cat_id`, `bo_title`, `bo_description`, `bo_author`, `bo_pub_house`, `bo_pub_date`, `bo_picture`, `bo_price`, `bo_status`, `bo_created_at`, `bo_file`) VALUES
-(1, 2, 'Reading Life', ' Ceici est un test pur et simple', 'Philippe Le Noir', 'SAFINA (SALAMA)', '2021-08-16', 'nopicture.png', '3.00', 1, '2021-08-16', ''),
-(2, 2, 'Why risk So Much for So Little', 'An exceptional read, from the author Mimile Mukuna Maisha, released March 2012. A very informative, and very useful approach for business owners to prevent business failure by managing risk.', 'Mimile MUKUNA', 'SAFINA', '2021-08-10', 'assets/img/book/risk.png', '4.70', 1, '2021-08-16', '300921013010.pdf');
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -191,25 +206,6 @@ CREATE TABLE `candidats` (
 
 INSERT INTO `candidats` (`id`, `FirstName`, `MiddleName`, `LastName`, `email`, `state`, `city`, `date`, `phone`, `img`, `created_at`, `updated_at`) VALUES
 (1, 'Dominique', 'qsdf', 'Youness', 'test4@gmail.com', 'Alabama (AL)', 'Milan', '2022-01-05', '(686) 852-3462', 'documents/cv/1642671535.docx', '2022-01-20 07:38:55', '2022-01-20 07:38:55');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `categories`
---
-
-CREATE TABLE `categories` (
-  `bo_cat_id` int(11) NOT NULL,
-  `bo_cat_name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`bo_cat_id`, `bo_cat_name`) VALUES
-(1, 'Programming'),
-(2, 'Electricy');
 
 -- --------------------------------------------------------
 
@@ -252,6 +248,18 @@ CREATE TABLE `collectives` (
 
 INSERT INTO `collectives` (`id`, `name`, `reg-no`, `industry`, `country`, `position`, `city`, `province`, `website`, `firstName`, `lastName`, `email`, `phone`, `job-title`, `representatives`, `logo`, `fFirstName`, `fLastName`, `fEmail`, `fPhone`, `fJob-title`, `fullname`, `positions`, `statut`, `created_at`, `updated_at`) VALUES
 (1, 'Dominique Youness', 'qsdf', 'Artisanat', 'KH', 'CEO', 'qsdf', 'qsdf', 'qsdf', 'qsdf', 'qsdf', 'anicet@travels.phoebescongo.com', 'qsdf', 'qsdf', '15', 'images/membres/logo/1642755071.jpg', 'Dominique', 'Youness', 'qsdf@qsdf.com', '(686) 852-3462', 'qsdf', 'Dominique Youness', 'qsdf', 1, '2022-01-21 06:51:11', '2022-01-23 16:58:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `commissions`
+--
+
+CREATE TABLE `commissions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -608,7 +616,8 @@ CREATE TABLE `emplois` (
 --
 
 INSERT INTO `emplois` (`id`, `titre`, `salaire`, `expiration`, `secteur`, `pays`, `ville`, `contrat`, `competence`, `qualite`, `prerequis`, `apercu`, `created_at`, `updated_at`) VALUES
-(2, 'belhanda', 444, '2021-11-20', 'Transport et Logistique', 'AS', 'QSDF', 'Projet', 'QSDF', 'QDF', 'QDSF', 'QSDF', '2021-11-17 19:46:58', '2022-01-10 10:47:54');
+(2, 'belhanda', 444, '2021-11-20', 'Transport et Logistique', 'CD', 'Lubumbashi', 'Projet', 'QSDF', 'QDF', 'QDSF', 'QSDF', '2021-11-17 19:46:58', '2022-01-10 10:47:54'),
+(4, 'Dominique', 444, '2021-11-20', 'Transport et Logistique', 'CD', 'Lubumbashi', 'Projet', 'QSDF', 'QDF', 'QDSF', 'QSDF', '2021-11-17 19:46:58', '2022-01-10 10:47:54');
 
 -- --------------------------------------------------------
 
@@ -796,7 +805,8 @@ CREATE TABLE `management_secretariates` (
 --
 
 INSERT INTO `management_secretariates` (`id`, `prenom`, `nom`, `type`, `email`, `phone`, `image`, `pays`, `about`, `password`, `created_at`, `updated_at`) VALUES
-(4, 'Belhanda', 'LaPaille', 'Chargé des Evénements', 'info@ngomadigi.tech', '+243818045132', 'images/dashboard/membres/1641568007.png', 'CD', 'azer', '12345678', '2022-01-07 13:06:48', '2022-01-07 13:06:48');
+(4, 'Belhanda', 'LaPaille', 'Chargé des Evénements', 'info@ngomadigi.tech', '+243818045132', 'images/dashboard/membres/1641568007.png', 'CD', 'azer', '12345678', '2022-01-07 13:06:48', '2022-01-07 13:06:48'),
+(5, 'Dominique', 'Youness', 'Chargé des Finances', 'domiyns@gmail.com', '(686) 852-3462', 'images/dashboard/membres/1643639739.png', 'AT', 'Pas de description', '12345678', '2022-01-31 12:35:39', '2022-01-31 12:35:39');
 
 -- --------------------------------------------------------
 
@@ -873,7 +883,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (28, '2022_01_21_073759_create_individuals_table', 24),
 (29, '2022_01_21_082149_create_collectives_table', 25),
 (30, '2022_01_22_234839_create_sponsors_table', 26),
-(31, '2022_01_23_002323_create_sponsor_events_table', 27);
+(31, '2022_01_23_002323_create_sponsor_events_table', 27),
+(32, '2022_01_24_071341_create_commissions_table', 28),
+(33, '2022_02_03_031717_create_books_table', 28),
+(34, '2022_02_05_075419_create_authors_table', 28);
 
 -- --------------------------------------------------------
 
@@ -920,6 +933,7 @@ CREATE TABLE `password_resets` (
 --
 
 INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('test3@gmail.com', '$2y$10$NNXHsz1S3QCu29FwZtOZc.3Bu2S2teh7a3qtTxk.LbONUyj6w4SMC', '2021-11-15 12:13:05'),
 ('test3@gmail.com', '$2y$10$NNXHsz1S3QCu29FwZtOZc.3Bu2S2teh7a3qtTxk.LbONUyj6w4SMC', '2021-11-15 12:13:05');
 
 -- --------------------------------------------------------
@@ -1090,10 +1104,16 @@ ALTER TABLE `articles`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `authors`
+--
+ALTER TABLE `authors`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `books`
 --
 ALTER TABLE `books`
-  ADD PRIMARY KEY (`bo_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `candidats`
@@ -1102,15 +1122,15 @@ ALTER TABLE `candidats`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`bo_cat_id`);
-
---
 -- Indexes for table `collectives`
 --
 ALTER TABLE `collectives`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `commissions`
+--
+ALTER TABLE `commissions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1272,10 +1292,16 @@ ALTER TABLE `articles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `authors`
+--
+ALTER TABLE `authors`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `bo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `candidats`
@@ -1284,16 +1310,16 @@ ALTER TABLE `candidats`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `bo_cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `collectives`
 --
 ALTER TABLE `collectives`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `commissions`
+--
+ALTER TABLE `commissions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `conseil_admins`
@@ -1317,7 +1343,7 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `emplois`
 --
 ALTER TABLE `emplois`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `evenements`
@@ -1353,7 +1379,7 @@ ALTER TABLE `individuals`
 -- AUTO_INCREMENT for table `management_secretariates`
 --
 ALTER TABLE `management_secretariates`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `message_presidents`
@@ -1365,7 +1391,7 @@ ALTER TABLE `message_presidents`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `partenaires`
