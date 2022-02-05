@@ -42,14 +42,17 @@ Route::get('/', function (){
 Route::get('home', [HomeController::class, 'home'])->name('home'); // Use in soril
 
 /*
- * Library
+ * Library and publication
  */
-Route::get('library', [HomeController::class, 'library'])->name('library');
-Route::get('developpementContinu', [HomeController::class, 'devContinu'])->name('dev-continu');
-Route::resource('dcp', DCPController::class);
+Route::get('library', [HomeController::class, 'library'])->name('library'); //Use in soril
+
+Route::resource('journal', DCPController::class); // Use in soril
+Route::resource('author', \App\Http\Controllers\AuthorController::class); //Use in soril
+Route::get('journal-articles', [DCPController::class, 'articles'])->name('journal-articles'); //Use in soril
+Route::get('submit', [DCPController::class, 'submit'])->name('submit'); //Use in soril
 Route::get('normesProfessionnels', [HomeController::class, 'professional'])->name('professional');
 Route::get('codeEthique', [HomeController::class, 'ethique'])->name('ethique');
-
+Route::get('developpementContinu', [HomeController::class, 'devContinu'])->name('dev-continu');
 Route::get('offresEmploi', [HomeController::class, 'emplois'])->name('emplois'); //Use in soril
 Route::get('detailsEmploi', [HomeController::class, 'detailEmploi'])->name('detailsEmplois'); //Use in soril
 Route::post('candidat', [HomeController::class, 'addCandidate'])->name('candidat');

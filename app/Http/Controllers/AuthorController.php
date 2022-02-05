@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
-class DCPController extends Controller
+class AuthorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class DCPController extends Controller
      */
     public function index()
     {
-        return view('journal.index');
+        return view('journal.author');
     }
 
     /**
@@ -35,26 +34,7 @@ class DCPController extends Controller
      */
     public function store(Request $request)
     {
-        $name = time().'.'.request()->file->getClientOriginalExtension();
-        $request->file->move(public_path('documents/dcp'), 'belhanda.png');
-
-        $data["email"] = "infos@domiyns.com";
-        $data["title"] = "Documents DCP de " . $request->firstName . ' ' . $request->lastName . ' ' . $request->middleName;
-        $data["body"] = "Document DCP";
-
-        $files = [
-            public_path('documents/dcp/belhanda.png'),
-        ];
-
-        Mail::send('mail.dcp', $data, function($message)use($data, $files) {
-            $message->to($data["email"])
-                ->subject($data["title"]);
-
-            foreach ($files as $file){
-                $message->attach($file);
-            }
-        });
-        return redirect('developpementContinu')->with('message', 'Documents envoyés avec success.');
+        dd($request);
     }
 
     /**
@@ -100,13 +80,5 @@ class DCPController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function articles(){
-        return view('journal.articles');
-    }
-
-    public function submit(){
-        return view('journal.submit');
     }
 }
