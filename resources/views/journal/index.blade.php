@@ -37,6 +37,15 @@
 
     <section class="py-2">
         <div class="container">
+            @if(session('message'))
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="alert alert-success" role="alert">
+                        {{session('message')}}
+                    </div>
+                </div>
+            </div>
+            @endif
             <div class="row" id="overview">
                 <div class="col-lg-7">
                     <h2 class="text-gradient text-danger mb-0 mt-2">
@@ -139,7 +148,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="card shadow-lg">
                             <div class="card-body">

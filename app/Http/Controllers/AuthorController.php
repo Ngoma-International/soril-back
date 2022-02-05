@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -30,11 +31,32 @@ class AuthorController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        dd($request);
+
+        $name = time().'.'.request()->image->getClientOriginalExtension();
+        $request->image->move(public_path('images/author'), $name);
+
+        Author::create(
+            [
+                'firstName'=>$request->firstName,
+                'lastName'=>$request->lastName,
+                'middleName'=>$request->middleName,
+                'email'=>$request->email,
+                'country'=>$request->country,
+                'city'=>$request->city,
+                'date'=>$request->date,
+                'state'=>$request->state,
+                'companyName'=>$request->companyName,
+                'department'=>$request->department,
+                'position'=>$request->position,
+                'image'=>$name,
+            ]
+        );
+
+        return redirect('journal')->with('message', 'Successfully, Your request as send');
     }
 
     /**
