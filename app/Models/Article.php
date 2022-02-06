@@ -10,15 +10,10 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = [
-      'firstName',
-      'lastName',
       'type',
       'title',
-      'country',
-      'phone',
-      'organisation',
-      'position',
-      'email',
+      'author_id',
+      'status',
       'note',
       'manuscrit'
     ];
