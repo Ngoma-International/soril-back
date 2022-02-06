@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2022 at 10:05 AM
+-- Generation Time: Feb 06, 2022 at 09:03 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,14 +35,6 @@ CREATE TABLE `abonnements` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `abonnements`
---
-
-INSERT INTO `abonnements` (`id`, `article_id`, `abonne_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 3, 6, 1, '2021-12-24 10:00:55', '2021-12-24 12:31:09'),
-(10, 5, 6, 0, '2022-01-17 09:38:49', '2022-01-17 09:38:49');
 
 -- --------------------------------------------------------
 
@@ -111,16 +103,11 @@ INSERT INTO `animateurs` (`id`, `image`, `prenom`, `nom`, `organisation`, `posit
 
 CREATE TABLE `articles` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `firstName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lastName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `author_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `organisation` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `note` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `manuscrit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -130,10 +117,8 @@ CREATE TABLE `articles` (
 -- Dumping data for table `articles`
 --
 
-INSERT INTO `articles` (`id`, `firstName`, `lastName`, `type`, `title`, `country`, `phone`, `organisation`, `position`, `email`, `note`, `manuscrit`, `created_at`, `updated_at`) VALUES
-(3, 'Dominique', 'Youness', 'original paper', 'hjkhjjhb', 'Bhutan', '(686) 852-3462', 'qsdf', 'qsdf', 'test@gmail.com', 'fkhgf', 'COR39 (2)_1640268409.pdf', '2021-12-23 10:36:06', '2021-12-23 12:06:49'),
-(4, 'Dominique', 'Youness', 'opinion paper', 'sdfg', 'Afghanistan', '(686) 852-3462', 'sdfg', 'sdfg', 'youness.dominique@gmail.com', 'sdfg', 'COR39 (2)_1640268914.pdf', '2021-12-23 12:15:14', '2021-12-23 12:15:14'),
-(5, 'Dominique', 'Youness', 'opinion paper', 'sdfg', 'Afghanistan', '(686) 852-3462', 'sdfg', 'qsdf', 'domiyns@gmail.com', 'sdfg', 'COR39 (1)_1640268939.pdf', '2021-12-23 12:15:40', '2021-12-23 12:15:40');
+INSERT INTO `articles` (`id`, `author_id`, `type`, `title`, `status`, `note`, `manuscrit`, `created_at`, `updated_at`) VALUES
+(6, '1', 'La Paille', 'Belhanda', 0, 'L\'homme le plus dangereux du monde', 'docs/articles1644177702.pdf', '2022-02-06 18:01:42', '2022-02-06 18:01:42');
 
 -- --------------------------------------------------------
 
@@ -156,6 +141,7 @@ CREATE TABLE `authors` (
   `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 0,
+  `password` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '12345678',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -164,8 +150,8 @@ CREATE TABLE `authors` (
 -- Dumping data for table `authors`
 --
 
-INSERT INTO `authors` (`id`, `firstName`, `lastName`, `middleName`, `email`, `country`, `city`, `date`, `state`, `companyName`, `department`, `position`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Younes', 'Belhanda', 'L\'Enfant', 'infos@domiyns.com', 'AO', 'Lubumbashi', '2022-02-28', 'Haut-Katanga', 'Wajenzi Digital', 'Lubumbashi', 'CEO', '1644051305.jpg', 0, '2022-02-05 06:55:06', '2022-02-05 06:55:06');
+INSERT INTO `authors` (`id`, `firstName`, `lastName`, `middleName`, `email`, `country`, `city`, `date`, `state`, `companyName`, `department`, `position`, `image`, `status`, `password`, `created_at`, `updated_at`) VALUES
+(1, 'Younes', 'Belhanda', 'L\'Enfant', 'infos@domiyns.com', 'AO', 'Lubumbashi', '2022-02-28', 'Haut-Katanga', 'Wajenzi Digital', 'Lubumbashi', 'CEO', 'images/author/1644171347.png', 0, '12345678', '2022-02-05 06:55:06', '2022-02-06 16:15:47');
 
 -- --------------------------------------------------------
 
@@ -1289,7 +1275,7 @@ ALTER TABLE `animateurs`
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `authors`
