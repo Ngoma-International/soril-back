@@ -158,7 +158,7 @@
                                 </a>
                                 <hr>
 
-                                <a href="javascript:;">
+                                <a href="{{route(articles.index)}}">
                                     <h5 class="mt-3">
                                         Submit an Article
                                     </h5>

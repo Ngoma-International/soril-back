@@ -3,6 +3,7 @@
 use App\Http\Controllers\AbonneController;
 use App\Http\Controllers\About;
 use App\Http\Controllers\AnimateurControlleur;
+use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CommissionController;
 use App\Http\Controllers\ConseilController;
@@ -49,6 +50,7 @@ Route::get('library', [HomeController::class, 'library'])->name('library'); //Us
 
 Route::resource('journal', DCPController::class); // Use in soril
 Route::resource('author', AuthorController::class); //Use in soril
+Route::resource('articles', ArticlesController::class); //Use in soril
 Route::post('authorLogin', [AuthorController::class, 'login'])->name('authorLogin'); //Use in soril
 Route::get('authorProfile', [AuthorController::class, 'profile'])->name('authorProfile'); //Use in soril
 Route::get('logOutAuthor', [AuthorController::class, 'log_out_author'])->name('logOutAuthor'); //Use in soril
