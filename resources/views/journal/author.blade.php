@@ -67,6 +67,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="password" class="col-4 col-form-label">Password</label>
+                    <div class="col-8">
+                        <input id="password" name="password" placeholder="Your Password" type="password" class="form-control" required="required">
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="country" class="col-4 col-form-label">Country</label>
                     <div class="col-8">
                         <select class="form-select form-control form-control-lg"

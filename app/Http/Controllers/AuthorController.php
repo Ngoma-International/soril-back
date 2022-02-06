@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
+use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class AuthorController extends Controller
 {
@@ -22,9 +24,33 @@ class AuthorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        if(Cookie::get('author') != null){
+            dd('deja connecté');
+        }
+        return view('journal.loginAuthor');
+    }
+
+    public function login(Request $request){
+        $author = Author::all();
+        foreach($author as $auth){
+            if($auth->email == $request->email){
+                if($auth->password == $request->password){
+                    Cookie::queue('author', $auth->id, 86400);
+                    return redirect('authorProfile');
+                } else {
+                    return back()->with('message','Password Error,
+check your password. If you wrong your password, contact an administrator');
+                }
+            } else {
+                return back()->with('message', 'Check your email, if No account, please register');
+            }
+        }
+    }
+
+    public function authorProfile(){
+
     }
 
     /**
@@ -53,6 +79,7 @@ class AuthorController extends Controller
                 'department'=>$request->department,
                 'position'=>$request->position,
                 'image'=>$name,
+                'password'=>$password
             ]
         );
 

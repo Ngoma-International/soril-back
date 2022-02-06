@@ -22,6 +22,7 @@ class Author extends Model
       'department',
       'position',
       'image',
-      'status'
+      'status',
+        'password'
     ];
 }

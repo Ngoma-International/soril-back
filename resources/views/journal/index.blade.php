@@ -134,10 +134,10 @@
                                                     </li>
 
                                                     <li class="nav-item dropdown dropdown-hover mx-0">
-                                                        <a
+                                                        <a href="{{route('author.create')}}"
                                                             class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
-                                                            Login / Register
-                                                            </button>
+                                                            Author Login
+                                                            </a>
                                                     </li>
 
                                                 </ul>

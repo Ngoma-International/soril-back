@@ -3,6 +3,7 @@
 use App\Http\Controllers\AbonneController;
 use App\Http\Controllers\About;
 use App\Http\Controllers\AnimateurControlleur;
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CommissionController;
 use App\Http\Controllers\ConseilController;
 use App\Http\Controllers\Dashboard;
@@ -47,7 +48,9 @@ Route::get('home', [HomeController::class, 'home'])->name('home'); // Use in sor
 Route::get('library', [HomeController::class, 'library'])->name('library'); //Use in soril
 
 Route::resource('journal', DCPController::class); // Use in soril
-Route::resource('author', \App\Http\Controllers\AuthorController::class); //Use in soril
+Route::resource('author', AuthorController::class); //Use in soril
+Route::post('authorLogin', [AuthorController::class, 'login'])->name('authorLogin'); //Use in soril
+Route::get('authorProfile', AuthorController::class, 'profile')->name('authorProfile'); //Use in soril
 Route::get('journal-articles', [DCPController::class, 'articles'])->name('journal-articles'); //Use in soril
 Route::get('submit', [DCPController::class, 'submit'])->name('submit'); //Use in soril
 Route::get('normesProfessionnels', [HomeController::class, 'professional'])->name('professional');
