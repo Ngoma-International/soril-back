@@ -6,6 +6,7 @@ use App\Models\Author;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Session;
 
 class AuthorController extends Controller
 {
@@ -14,9 +15,17 @@ class AuthorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('journal.author');
+        if($request->session()->exists('author') != null){
+            $id = $request->session()->get('author');
+            $author = Author::where('id', $id)->first();
+            return view('journal.author', [
+                'author'=>$author
+            ]);
+        } else {
+            return view('journal.author');
+        }
     }
 
     /**
@@ -26,8 +35,8 @@ class AuthorController extends Controller
      */
     public function create(Request $request)
     {
-        if(Cookie::get('author') != null){
-            dd('deja connecté');
+        if($request->session()->exists('author') != null){
+            return redirect('authorProfile');
         }
         return view('journal.loginAuthor');
     }
@@ -37,11 +46,10 @@ class AuthorController extends Controller
         foreach($author as $auth){
             if($auth->email == $request->email){
                 if($auth->password == $request->password){
-                    Cookie::queue('author', $auth->id, 86400);
+                    $request->session()->put('author', $auth->id);
                     return redirect('authorProfile');
                 } else {
-                    return back()->with('message','Password Error,
-check your password. If you wrong your password, contact an administrator');
+                    return back()->with('message','Password Error, check your password. If you wrong your password, contact an administrator');
                 }
             } else {
                 return back()->with('message', 'Check your email, if No account, please register');
@@ -49,8 +57,18 @@ check your password. If you wrong your password, contact an administrator');
         }
     }
 
-    public function authorProfile(){
+    public function profile(Request $request){
 
+        if($request->session()->exists('author'))
+        {
+            $author = Author::where('id', $request->session()->get('author'))->first();
+            return view('journal.authorProfile', [
+                'author'=>$author
+            ]);
+        }
+        else {
+            return redirect('authorLogin');
+        }
     }
 
     /**
@@ -78,8 +96,8 @@ check your password. If you wrong your password, contact an administrator');
                 'companyName'=>$request->companyName,
                 'department'=>$request->department,
                 'position'=>$request->position,
-                'image'=>$name,
-                'password'=>$password
+                'image'=>'images/author/'.$name,
+                'password'=>$request->password
             ]
         );
 
@@ -117,7 +135,45 @@ check your password. If you wrong your password, contact an administrator');
      */
     public function update(Request $request, $id)
     {
-        //
+        $author = Author::where('id', $id)->first();
+
+        if($request->password != $author->password){
+            return back()->with('message', 'Your old password is not correctly');
+        };
+
+        if($request->image != null){
+            $name = time().'.'.request()->image->getClientOriginalExtension();
+            $request->image->move(public_path('images/author'), $name);
+            Author::where('id', $id)->update(
+                [
+                    'image'=>'images/author/'.$name,
+                ]
+            );
+        }
+
+        Author::where('id', $id)->update(
+            [
+                'firstName'=>$request->firstName,
+                'lastName'=>$request->lastName,
+                'middleName'=>$request->middleName,
+                'email'=>$request->email,
+                'country'=>$request->country,
+                'city'=>$request->city,
+                'date'=>$request->date,
+                'state'=>$request->state,
+                'companyName'=>$request->companyName,
+                'department'=>$request->department,
+                'position'=>$request->position,
+                'password'=>$request->new_password
+            ]
+        );
+
+        return redirect('authorProfile')->with('message', 'Successfully, Your profile as update');
+    }
+
+    public function log_out_author(Request $request){
+        $value = $request->session()->pull('author', 'default');
+        return redirect('journal')->with('message', 'log out successfully');
     }
 
     /**
