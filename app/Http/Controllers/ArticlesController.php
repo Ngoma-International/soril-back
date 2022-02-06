@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
@@ -12,9 +13,12 @@ class ArticlesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if($request->session()->exists('author')){
+            return view('journal.submitArticle');
+        }
+        return view('journal.loginAuthor');
     }
 
     /**
@@ -35,7 +39,26 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        if($request->session()->exists('author'))
+        {
+            $name = time().'.'.request()->image->getClientOriginalExtension();
+            $request->image->move(public_path('docs/articles'), $name);
+
+            Article::create(
+                [
+                    'type'=>$request->type,
+                    'title'=>$request->title,
+                    'author_id'=>$request->session()->get('author'),
+                    'status'=>0,
+                    'note'=>$request->note,
+                    'manuscrit'=>'docs/articles'.$name
+                ],
+            );
+            return redirect('journal')->with('message', 'Successfully, Your request as send');
+        } else {
+            return redirect('journal')->with('message', 'Error, Your request as not send, please login');
+        }
     }
 
     /**

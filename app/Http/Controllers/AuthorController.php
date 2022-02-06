@@ -35,7 +35,7 @@ class AuthorController extends Controller
      */
     public function create(Request $request)
     {
-        if($request->session()->exists('author') != null){
+        if($request->session()->exists('author')){
             return redirect('authorProfile');
         }
         return view('journal.loginAuthor');

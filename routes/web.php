@@ -50,7 +50,7 @@ Route::get('library', [HomeController::class, 'library'])->name('library'); //Us
 
 Route::resource('journal', DCPController::class); // Use in soril
 Route::resource('author', AuthorController::class); //Use in soril
-Route::resource('articles', ArticlesController::class); //Use in soril
+Route::resource('article', ArticlesController::class); //Use in soril
 Route::post('authorLogin', [AuthorController::class, 'login'])->name('authorLogin'); //Use in soril
 Route::get('authorProfile', [AuthorController::class, 'profile'])->name('authorProfile'); //Use in soril
 Route::get('logOutAuthor', [AuthorController::class, 'log_out_author'])->name('logOutAuthor'); //Use in soril

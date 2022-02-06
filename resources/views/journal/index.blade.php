@@ -158,7 +158,7 @@
                                 </a>
                                 <hr>
 
-                                <a href="{{route(articles.index)}}">
+                                <a href="{{route('article.index')}}">
                                     <h5 class="mt-3">
                                         Submit an Article
                                     </h5>
