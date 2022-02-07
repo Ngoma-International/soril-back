@@ -20,6 +20,7 @@ class Abonne extends Model
       'departement',
       'secteur',
       'contact',
-      'password'
+      'password',
+        'status'
     ];
 }

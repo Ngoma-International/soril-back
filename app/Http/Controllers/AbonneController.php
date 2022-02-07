@@ -155,21 +155,16 @@ class AbonneController extends Controller
         }
         if($user->password == $request->password)
         {
+            if($user->status){
+                return redirect()->route('shows', ['id'=>$user->id]);
+            } else{
+                return back()->with('message', 'Your subscribe is not activate');
+            }
 
         } else {
             return back()
                 ->with('message', 'Error password');
         }
-
-        if(!($request->id == null)){
-            abonnement::create([
-                'article_id'=>$request->id,
-                'abonne_id'=>$user->id,
-                'status'=>false
-            ]);
-        }
-
-        return redirect()->route('shows', ['id'=>$user->id]);
 
     }
 }
