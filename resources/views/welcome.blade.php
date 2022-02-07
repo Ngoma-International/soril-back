@@ -6,11 +6,13 @@
 
 @section('content')
     <header class="header-2">
-        <div class="page-header min-vh-100" style="background-image: url('https://www.esa.int/var/esa/storage/images/about_us/business_with_esa/19716975-3-eng-GB/Business_with_ESA_pillars.jpg');">
+        <div class="page-header min-vh-100"
+             style="background-image: url('{{asset('assets/img/Business_with_ESA_pillars.jpg')}}');">
             <div class="container">
                 <div class="col-lg-7 text-center mx-auto">
-                    <p class="lead text-white mt-0" style="text-shadow: 2px 2px 4px black;">
-                        <img src="./assets/img/logos/soril.png" style="filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);"
+                    <p class="lead mt-0" style="color: black;">
+                        <img src="./assets/img/logos/soril.png"
+
                              class="w-70 border-radius-xl position-relative z-index-5" alt=""> <br>
                         MAKING AFRICAN ORGANISATIONS AND INSTITUTIONS<br>
                         MORE EFFECTIVE AND RESILIENT THROUGH RISK LEADERSHIP
