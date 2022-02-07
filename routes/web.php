@@ -124,7 +124,6 @@ Route::get('liste-abonne', [AbonneController::class, 'abs'])
     ->middleware(['auth'])
     ->name('liste');
 Route::get('update-status', [AbonneController::class, 'updates'])
-    ->middleware(['auth'])
     ->name('mufano');
 
 

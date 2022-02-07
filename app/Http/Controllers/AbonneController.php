@@ -115,12 +115,16 @@ class AbonneController extends Controller
     }
 
     public function updates(Request $request){
-        abonnement::where('id', $request->id)
-            ->update([
-               'status'=> !$request->status
-            ]);
-        return back()
-            ->with('success', 'Abonnement desactiver');
+
+        $request->session()->forget('subscribe');
+
+//        abonnement::where('id', $request->id)
+//            ->update([
+//               'status'=> !$request->status
+//            ]);
+        return redirect()
+            ->route('journal.index')
+            ->with('message', 'Log Out Successfully');
     }
 
     /**
@@ -154,7 +158,6 @@ class AbonneController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
 
     public function login(Request $request){

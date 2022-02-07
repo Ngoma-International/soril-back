@@ -172,6 +172,15 @@
                                 </a>
                                 <hr>
 
+                                @if (session('subscribe'))
+                                    <a href="{{route('shows', ['id'=>session('subscribe')])}}">
+                                        <h5 class="mt-3">
+                                            Subscribe Profile
+                                        </h5>
+                                    </a>
+                                    <hr>
+                                @endif
+
                                 <a href="javascript:;">
                                     <h5 class="mt-3">
                                         View Articles
