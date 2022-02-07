@@ -26,361 +26,181 @@
         }
     </script>
 
-    <div
-        style="padding: 50px">
-        <div class="container-fluid">
-            <div class="row">
-                <p>Si vous avez un compte, connectez-vous pour lire le document en cliquant ici :
-                    <a class="btn btn-success shape"
-                       onclick="myFunction()">Connectez-vous</a>
-                </p>
-            </div>
-            <div class="row" id="myDIV" style="display:none">
-                <div class="container">
-                    <div class="login-box-lg">
-
-                        <div class="clearfix over-hidden">
-                            <!-- Logo start -->
-                            <div class="logo light f-left">
-                                <a href="index.html"><img alt="" src="assets/images/logo.png"></a>
-                            </div>
-                            <!-- Logo end -->
-
-                            <div class="login-head f-right">Login</div>
-                        </div>
-
-                        <div class="login-inner shape">
-
-                            <h4 class="bold intro uppercase black-color"></h4>
-
-                            <form class="login-form" id="login-form" method="post" action="{{route('login-subscribe')}}" autocomplete="off">
-                                @csrf
-                                <input type="hidden" value="{{$id}}" id="id" name="id">
-                                <div class="form-input">
-                                    <label class="main-color">Email</label>
-                                    <span class="fa fa-user main-color"></span>
-                                    <input type="email" required="required" class="form-control shape" name="email" id="email">
-                                </div>
-                                <div class="form-input">
-                                    <label class="main-color">Password</label>
-                                    <span class="fa fa-lock main-color"></span>
-                                    <input name="password" type="password" class="form-control shape" id="password" required="required">
-                                </div>
-                                <div class="form-input">
-                                    <input type="submit" class="" value="Login">
-                                </div>
-
-                                <div class="login-links">
-                                    <a href="{{route('subscribe', ['id'=>$id])}}">Pas de compte, Enregistrez-vous</a>
-                                </div>
-
-                            </form>
-                        </div>
-
+    <!-- -------- START HEADER 7 w/ text and video ------- -->
+    <header class="bg-gradient-dark">
+        <div class="page-header min-vh-50" style="background-image: url('assets/img/office-dark.jpg');">
+            <span class="mask bg-gradient-dark opacity-8"></span>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center mx-auto my-auto">
+                        <h1 class="text-white">Subscribe To Journal</h1>
                     </div>
                 </div>
             </div>
-            @if(session('message'))
-                <div class="row">
-                    <div class="msg-box warning-box shape lg"><a class="close fa fa-times" href="#"></a>
-                        <h4>Message</h4>
-                        <p>
-                            {{session('message')}}
-                        </p>
+            <div class="position-absolute w-100 z-index-1 bottom-0">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="moving-waves">
+                        <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)" />
+                        <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)" />
+                        <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)" />
+                        <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,1" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </header>
+    <!-- -------- END HEADER 7 w/ text and video ------- -->
+
+    <div class="container">
+        <div class="row">
+            <p>If you have an account, click-here to :
+                <a class="btn btn-success shape"
+                   onclick="myFunction()">Login</a>
+            </p>
+        </div>
+        <div class="row" id="myDIV" style="display:none">
+            <div class="container">
+                <div class="login-box-lg">
+
+                    <div class="clearfix over-hidden">
+                        <!-- Logo start -->
+                        <div class="logo light f-left">
+                            <a href="index.html"><img alt="" src="assets/images/logo.png"></a>
+                        </div>
+                        <!-- Logo end -->
+
+                        <div class="login-head f-right">Login</div>
+                    </div>
+
+                    <div class="login-inner shape">
+
+                        <h4 class="bold intro uppercase black-color"></h4>
+
+                        <form class="login-form" id="login-form" method="post"
+                              action="{{route('login-subscribe')}}" autocomplete="off">
+                            @csrf
+                            <input type="hidden" value="{{$id}}" id="id" name="id">
+                            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+                            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                                <div class="form-group row">
+                                    <label for="email" class="col-3 col-form-label">Email</label>
+                                    <div class="col-9">
+                                        <input id="email" name="email" placeholder="Your email adress"
+                                               type="email" required="required" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="password" class="col-3 col-form-label">Password</label>
+                                    <div class="col-9">
+                                        <input id="password" name="password" placeholder="Your Password Here"
+                                               type="password" required="required" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="offset-3 col-9">
+                                        <button name="submit" type="submit" class="btn btn-primary">Login</button>
+                                    </div>
+                                </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        @if(session('message'))
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="alert alert-success" role="alert">
+                        {{session('message')}}
                     </div>
                 </div>
-            @endif
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-10">
-                    <div class="heading centered padding-vertical-20">
-                        <i class="fa fa-info-circle tbl main-color"></i>
-                        <h5 class="uppercase head-4 bold">Tous les champs obligatoires sont marqués * et doivent être remplis.</h5>
-                    </div>
-                    <form action="{{route('abonne.store', ['id'=>$id])}}" method="POST">
-                        @csrf
-                        <div class="row">
-                            <div class="form-input col-md-5">
-                                <label>Prénom 	<span class="red">*</span></label>
-                                <input type="text" class="form-control shape"
-                                       required="" name="lastName" id="lastName">
-                            </div>
-                            <div class="form-input col-md-5">
-                                <label>
-                                    Nom de Famille <span class="red">*</span></label>
-                                <input type="text" class="form-control shape" required=""
-                                       name="firstName" id="firstName">
-                            </div>
-                            <div class="form-input col-md-5">
-                                <label>
-                                    Mot de passe <span class="red">*</span></label>
-                                <input type="password" class="form-control shape" name="password" id="password" required>
-                            </div>
-                            <div class="form-input col-md-5">
-                                <label>
-                                    Email <span class="red">*</span></label>
-                                <input type="email" class="form-control shape" required="" name="email" id="email">
-                            </div>
-                            <div class="form-input col-md-5">
-                                <label>
-                                    Pays<span class="red">*</span></label>
-                                <select id="pays" name="pays" class="form-control">
-                                    <option value="Afghanistan">Afghanistan </option>
-                                    <option value="Afrique Centrale">Afrique Centrale </option>
-                                    <option value="Afrique du sud">Afrique du Sud </option>
-                                    <option value="Albanie">Albanie </option>
-                                    <option value="Algérie">Algérie </option>
-                                    <option value="Allemagne">Allemagne </option>
-                                    <option value="Andorre">Andorre </option>
-                                    <option value="Angola">Angola </option>
-                                    <option value="Anguilla">Anguilla </option>
-                                    <option value="Arabie Saoudite">Arabie Saoudite </option>
-                                    <option value="Argentine">Argentine </option>
-                                    <option value="Arménie">Arménie </option>
-                                    <option value="Australie">Australie </option>
-                                    <option value="Autriche">Autriche </option>
-                                    <option value="Azerbaïdjan">Azerbaïdjan </option>
-                                    <option value="Bahamas">Bahamas </option>
-                                    <option value="Bangladesh">Bangladesh </option>
-                                    <option value="Barbade">Barbade </option>
-                                    <option value="Bahreïn">Bahreïn </option>
-                                    <option value="Belgique">Belgique </option>
-                                    <option value="Belize">Belize </option>
-                                    <option value="Benin">Benin </option>
-                                    <option value="Bermudes">Bermudes </option>
-                                    <option value="Biélorussie">Biélorussie </option>
-                                    <option value="Bolivie">Bolivie </option>
-                                    <option value="Botswana">Botswana </option>
-                                    <option value="Bhoutan">Bhoutan </option>
-                                    <option value="Bosnie-Herzégovine">Bosnie-Herzégovine </option>
-                                    <option value="Brésil">Brésil </option>
-                                    <option value="Brunei">Brunei </option>
-                                    <option value="Bulgarie">Bulgarie </option>
-                                    <option value="Burkina-Faso">Burkina-Faso </option>
-                                    <option value="Burundi">Burundi </option>
-                                    <option value="Caïman">Caïman </option>
-                                    <option value="Cambodge">Cambodge </option>
-                                    <option value="Cameroun">Cameroun </option>
-                                    <option value="Canada">Canada </option>
-                                    <option value="Canaries">Canaries </option>
-                                    <option value="Cap-Vert">Cap-Vert </option>
-                                    <option value="Chili">Chili </option>
-                                    <option value="Chine">Chine </option>
-                                    <option value="Chypre">Chypre </option>
-                                    <option value="Colombie">Colombie </option>
-                                    <option value="Comores">Colombie </option>
-                                    <option value="Congo ((République du) ">Congo ((République du) </option>
-                                    <option value="(République Démocratique) ">Congo (République Démocratique) </option>
-                                    <option value="Cook">Cook </option>
-                                    <option value="Corée du Nord">Corée du Nord </option>
-                                    <option value="Corée du Sud"> Corée du Sud </option>
-                                    <option value="Costa-Rica">Costa-Rica </option>
-                                    <option value="Côte-d’Ivoire">Côte-d’Ivoire </option>
-                                    <option value="Croatie">Croatie </option>
-                                    <option value="Cuba">Cuba </option>
-                                    <option value="Danemark">Danemark </option>
-                                    <option value="Djibouti">Djibouti </option>
-                                    <option value="Dominique">Dominique </option>
-                                    <option value="Egypte">Egypte </option>
-                                    <option value="Emirats Arabes Unis">Emirats Arabes Unis </option>
-                                    <option value="Equateur">Equateur </option>
-                                    <option value="Erythrée">Erythrée </option>
-                                    <option value="Espagne">Espagne </option>
-                                    <option value="Estonie">Estonie </option>
-                                    <option value="Etats-Unis">Etats-Unis </option>
-                                    <option value="Ethiopie">Ethiopie </option>
-                                    <option value="Falkland">Falkland </option>
-                                    <option value="Féroé">Féroé </option>
-                                    <option value="Fidji">Fidji </option>
-                                    <option value="Finlande">Finlande </option>
-                                    <option value="France">France </option>
-                                    <option value="Gabon">Gabon </option>
-                                    <option value="Gambie">Gambie </option>
-                                    <option value="Géorgie">Géorgie </option>
-                                    <option value="Ghana">Ghana </option>
-                                    <option value="Gibraltar">Gibraltar </option>
-                                    <option value="Grèce">Grèce </option>
-                                    <option value="Grenade">Grenade </option>
-                                    <option value="Groenland">Groenland </option>
-                                    <option value="Guadeloupe">Guadeloupe </option>
-                                    <option value="Guam">Guam </option>
-                                    <option value="Guatemala">Guatemala</option>
-                                    <option value="Guernesey">Guernesey </option>
-                                    <option value="Guinée">Guinée </option>
-                                    <option value="Guinée Bissau">Guinée Bissau </option>
-                                    <option value="Guinée Equatoriale">Guinée Equatoriale </option>
-                                    <option value="Guyana">Guyana </option>
-                                    <option value="Guyane Française ">Guyane Française </option>
-                                    <option value="Haïti">Haïti </option>
-                                    <option value="Hawaii">Hawaii </option>
-                                    <option value="Honduras">Honduras </option>
-                                    <option value="Hongkong">Hongkong </option>
-                                    <option value="Hongrie">Hongrie </option>
-                                    <option value="Inde">Inde </option>
-                                    <option value="Indonésie">Indonésie </option>
-                                    <option value="Iran">Iran </option>
-                                    <option value="Iraq">Iraq </option>
-                                    <option value="Irlande">Irlande </option>
-                                    <option value="Islande">Islande </option>
-                                    <option value="Israël">Israël </option>
-                                    <option value="Italie">Italie </option>
-                                    <option value="Jamaïque">Jamaïque </option>
-                                    <option value="Jan Mayen">Jan Mayen </option>
-                                    <option value="Japon">Japon </option>
-                                    <option value="Jersey">Jersey </option>
-                                    <option value="Jordanie">Jordanie </option>
-                                    <option value="Kazakhstan">Kazakhstan </option>
-                                    <option value="Kenya">Kenya </option>
-                                    <option value="Kirghizstan">Kirghizistan </option>
-                                    <option value="Kiribati">Kiribati </option>
-                                    <option value="Koweït">Koweït </option>
-                                    <option value="Laos">Laos </option>
-                                    <option value="Lesotho">Lesotho </option>
-                                    <option value="Lettonie">Lettonie </option>
-                                    <option value="Liban">Liban </option>
-                                    <option value="Liberia">Liberia </option>
-                                    <option value="Liechtenstein">Liechtenstein </option>
-                                    <option value="Lituanie">Lituanie </option>
-                                    <option value="Luxembourg">Luxembourg </option>
-                                    <option value="Lybie">Lybie </option>
-                                    <option value="Macao">Macao </option>
-                                    <option value="Macédoine">Macédoine </option>
-                                    <option value="Madagascar">Madagascar </option>
-                                    <option value="Madère">Madère </option>
-                                    <option value="Malaisie">Malaisie </option>
-                                    <option value="Malawi">Malawi </option>
-                                    <option value="Maldives">Maldives </option>
-                                    <option value="Mali">Mali </option>
-                                    <option value="Malte">Malte </option>
-                                    <option value="Man">Man </option>
-                                    <option value="Mariannes du Nord">Mariannes du Nord </option>
-                                    <option value="Maroc">Maroc </option>
-                                    <option value="Marshall">Marshall </option>
-                                    <option value="Martinique">Martinique </option>
-                                    <option value="Maurice">Maurice </option>
-                                    <option value="Mauritanie">Mauritanie </option>
-                                    <option value="Mayotte">Mayotte </option>
-                                    <option value="Mexique">Mexique </option>
-                                    <option value="Micronésie">Micronésie </option>
-                                    <option value="Midway">Midway </option>
-                                    <option value="Moldavie">Moldavie </option>
-                                    <option value="Monaco">Monaco </option>
-                                    <option value="Mongolie">Mongolie </option>
-                                    <option value="Montserrat">Montserrat </option>
-                                    <option value="Mozambique">Mozambique </option>
-                                    <option value="Namibie">Namibie </option>
-                                    <option value="Nauru">Nauru </option>
-                                    <option value="Népal">Népal </option>
-                                    <option value="Nicaragua">Nicaragua </option>
-                                    <option value="Niger">Niger </option>
-                                    <option value="Nigeria">Nigeria </option>
-                                    <option value="Niue">Niue </option>
-                                    <option value="Norfolk">Norfolk </option>
-                                    <option value="Norvège">Norvège </option>
-                                    <option value="Nouvelle-Calédonie">Nouvelle-Calédonie </option>
-                                    <option value="Nouvelle-Zélande">Nouvelle-Zélande </option>
-                                    <option value="Oman">Oman </option>
-                                    <option value="Ouganda">Ouganda </option>
-                                    <option value="Ouzbékistan">Ouzbékistan </option>
-                                    <option value="Pakistan">Pakistan </option>
-                                    <option value="Palau">Palau </option>
-                                    <option value="Palestine">Palestine </option>
-                                    <option value="Panama">Panama </option>
-                                    <option value="Papouasie-Nouvelle-Guinée">Papouasie-Nouvelle-Guinée </option>
-                                    <option value="Paraguay">Paraguay </option>
-                                    <option value="Pays-Bas">Pays-Bas </option>
-                                    <option value="Pérou">Pérou </option>
-                                    <option value="Philippines">Philippines </option>
-                                    <option value="Pologne">Pologne </option>
-                                    <option value="Polynésie">Polynésie </option>
-                                    <option value="Porto Rico">Porto Rico </option>
-                                    <option value="Portugal">Portugal </option>
-                                    <option value="Qatar">Qatar </option>
-                                    <option value="République Dominicaine">République Dominicaine </option>
-                                    <option value="République Tchèque">République Tchèque </option>
-                                    <option value="Réunion">Réunion </option>
-                                    <option value="Roumanie">Roumanie </option>
-                                    <option value="Royaume-Uni">Royaume-Uni </option>
-                                    <option value="Russie">Russie </option>
-                                    <option value="Rwanda">Rwanda </option>
-                                    <option value="Sahara Occidental">Sahara Occidental </option>
-                                    <option value="Sainte-Lucie">Sainte-Lucie </option>
-                                    <option value="Saint-Marin">Saint-Marin </option>
-                                    <option value="Salomon">Salomon </option>
-                                    <option value="Salvador">Salvador </option>
-                                    <option value="Samoa Occidentales">Samoa Occidentales</option>
-                                    <option value="Samoa Américaine">Samoa Américaine </option>
-                                    <option value="Sao Tomé et Principe">Sao Tomé et Principe </option>
-                                    <option value="Sénégal">Sénégal </option>
-                                    <option value="Seychelles">Seychelles </option>
-                                    <option value="Sierra Leone">Sierra Leone </option>
-                                    <option value="Singapour">Singapour </option>
-                                    <option value="Slovaquie">Slovaquie </option>
-                                    <option value="Slovénie">Slovénie</option>
-                                    <option value="Somalie">Somalie </option>
-                                    <option value="Soudan">Soudan </option>
-                                    <option value="Sri Lanka">Sri Lanka </option>
-                                    <option value="Suède">Suède </option>
-                                    <option value="Suisse">Suisse </option>
-                                    <option value="Surinam">Surinam </option>
-                                    <option value="Swaziland">Swaziland </option>
-                                    <option value="Syrie">Syrie </option>
-                                    <option value="Tadjikistan">Tadjikistan </option>
-                                    <option value="Taiwan">Taiwan </option>
-                                    <option value="Tonga">Tonga </option>
-                                    <option value="Tanzanie">Tanzanie </option>
-                                    <option value="Tchad">Tchad </option>
-                                    <option value="Thaïlande">Thaïlande </option>
-                                    <option value="Tibet">Tibet </option>
-                                    <option value="Timor-Oriental">Timor-Oriental </option>
-                                    <option value="Togo">Togo </option>
-                                    <option value="Trinité-et-Tobago">Trinité-et-Tobago </option>
-                                    <option value="Tristan da Cunha">Tristan de Cunha </option>
-                                    <option value="Tunisie">Tunisie </option>
-                                    <option value="Turkménistan">Turkménistan </option>
-                                    <option value="Turquie">Turquie </option>
-                                    <option value="Ukraine">Ukraine </option>
-                                    <option value="Uruguay">Uruguay </option>
-                                    <option value="Vanuatu">Vanuatu </option>
-                                    <option value="Vatican">Vatican </option>
-                                    <option value="Venezuela">Venezuela </option>
-                                    <option value="Vierges Américaines">Vierges Américaines </option>
-                                    <option value="Vierges Britanniques">Vierges Britanniques </option>
-                                    <option value="Vietnam">Vietnam </option>
-                                    <option value="Wake">Wake </option>
-                                    <option value="Wallis et Futuma">Wallis et Futuma </option>
-                                    <option value="Yémen">Yémen </option>
-                                    <option value="Yougoslavie">Yougoslavie </option>
-                                    <option value="Zambie">Zambie </option>
-                                    <option value="Zimbabwe">Zimbabwe </option>
+            </div>
+        @endif
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div class="heading centered padding-vertical-20">
+                    <h5 class="uppercase head-4 bold">
+                        Complete this form for a Subscribe to Journal</h5>
+                </div>
+                <form action="{{route('abonne.store', ['id'=>$id])}}" method="POST">
+                    @csrf
+                    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+                    <form>
+                        <div class="form-group row">
+                            <label for="firstName" class="col-3 col-form-label">First Name</label>
+                            <div class="col-9">
+                                <input id="firstName" name="firstName" placeholder="Your Frist Name Here" type="text" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lastName" class="col-3 col-form-label">Last Name</label>
+                            <div class="col-9">
+                                <input id="lastName" name="lastName" placeholder="Your Last Name Here" type="text" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" class="col-3 col-form-label">Password</label>
+                            <div class="col-9">
+                                <input id="password" name="password" placeholder="Your Password Here" type="text" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-3 col-form-label">Email</label>
+                            <div class="col-9">
+                                <input id="email" name="email" placeholder="Your Email" type="text" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="pays" class="col-3 col-form-label">Country</label>
+                            <div class="col-9">
+                                <select class="form-select form-control form-control-lg"
+                                        name="pays" id="pays"
+                                        data-search="on">
+                                    @forelse(\App\Models\Country::all() as $country)
+                                        <option value="{{$country->code}}">{{$country->name}}</option>
+                                    @empty
+                                    @endforelse
                                 </select>
                             </div>
-                            <div class="form-input col-md-5">
-                                <label>
-                                    Province | Etat *<span class="red">*</span></label>
-                                <input type="text" class="form-control shape" required="" name="etat" id="etat">
+                        </div>
+                        <div class="form-group row">
+                            <label for="etat" class="col-3 col-form-label">State</label>
+                            <div class="col-9">
+                                <input id="etat" name="etat" placeholder="State Here" type="text" class="form-control" required="required">
                             </div>
-                            <div class="form-input col-md-5">
-                                <label>
-                                    Nom de la Société <span class="red">*</span></label>
-                                <input type="text" class="form-control shape" required="" name="societe" id="societe">
+                        </div>
+                        <div class="form-group row">
+                            <label for="societe" class="col-3 col-form-label">Company</label>
+                            <div class="col-9">
+                                <input id="societe" name="societe" placeholder="Company Name" type="text" class="form-control" required="required">
                             </div>
-                            <div class="form-input col-md-5">
-                                <label>
-                                    Fonction/Titre <span class="red">*</span></label>
-                                <input type="text" class="form-control shape" required="" name="fonction" id="fonction">
+                        </div>
+                        <div class="form-group row">
+                            <label for="position" class="col-3 col-form-label">Position</label>
+                            <div class="col-9">
+                                <input id="fonction" name="fonction" placeholder="Position" type="text" class="form-control" required="required">
                             </div>
-                            <div class="form-input col-md-5">
-                                <label>
-                                    Département <span class="red">*</span></label>
-                                <input type="text" class="form-control shape" required="" name="departement" id="departement">
+                        </div>
+                        <div class="form-group row">
+                            <label for="departement" class="col-3 col-form-label">Department</label>
+                            <div class="col-9">
+                                <input id="departement" name="departement" placeholder="Department" type="text" class="form-control">
                             </div>
-                            <div class="form-input col-md-5">
-                                <label>
-                                    Secteur<span class="red">*</span></label>
-
-                                <select class=" shape" style="color: #fff; background-color:#54585c;" name="secteur" id="secteur">
+                        </div>
+                        <div class="form-group row">
+                            <label for="secteur" class="col-3 col-form-label">Secteur</label>
+                            <div class="col-9">
+                                <select id="secteur" name="secteur" class="custom-select" required="required">
                                     <option>Administrations Publiques</option>
                                     <option>Aéronautique, Espace</option>
                                     <option>Agriculture, foresterie, pêche et chasse</option>
@@ -429,26 +249,24 @@
                                     <option>Télécommunications</option>
                                     <option>Textile / Habillement / Chaussure</option>
                                     <option>Transport, Logistique, Entreposage</option>
-
                                 </select>
-
-                            </div>
-                            <div class="form-input col-md-5">
-                                <label>
-                                    Numéro de Contact <span class="red">*</span></label>
-                                <input type="tel" class="form-control shape" required="" name="contact" id="contact">
                             </div>
                         </div>
-
-                        <div class="clearfix"></div>
-                        <div class="form-input margin-top-20 clearfix col-md-5">
-                            <input type="submit" class="btn btn-lg main-bg btn-block shape" value="Soumettre">
+                        <div class="form-group row">
+                            <label for="contact" class="col-3 col-form-label">Phone Number</label>
+                            <div class="col-9">
+                                <input id="contact" name="contact" placeholder="Phone Number" type="text" class="form-control" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-3 col-9">
+                                <button name="submit" type="submit" class="btn btn-primary">Subscribe</button>
+                            </div>
                         </div>
                     </form>
-                </div>
-
+                </form>
             </div>
-        </div>
 
+        </div>
     </div>
 @endsection

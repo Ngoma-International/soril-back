@@ -165,7 +165,7 @@
                                 </a>
                                 <hr>
 
-                                <a href="javascript:;">
+                                <a href="{{route('subscribe')}}">
                                     <h5 class="mt-3">
                                         Subscrite to The Journal
                                     </h5>

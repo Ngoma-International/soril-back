@@ -54,12 +54,6 @@ class AbonneController extends Controller
             'password'=>$request->password
         ]);
 
-        abonnement::create([
-                'article_id'=>$request->id,
-                'abonne_id'=>$ab->id,
-                'status'=>false
-            ]);
-
         return redirect()->route('shows', ['id'=>$ab->id]);
     }
 
@@ -157,14 +151,14 @@ class AbonneController extends Controller
         $user = Abonne::where('email', $request->email)->first();
         if($user == null){
             return back()
-                ->with('message', 'Aucun abonné n\'utilise cet adresse mail, verifiez vos informations');
+                ->with('message', 'Don\'t have an account, please check information.');
         }
         if($user->password == $request->password)
         {
 
         } else {
             return back()
-                ->with('message', 'Le mot de passe entrée est incorrect');
+                ->with('message', 'Error password');
         }
 
         if(!($request->id == null)){
