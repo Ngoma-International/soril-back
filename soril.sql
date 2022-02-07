@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2022 at 09:03 PM
+-- Generation Time: Feb 07, 2022 at 04:57 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -55,6 +55,7 @@ CREATE TABLE `abonnes` (
   `secteur` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -63,8 +64,9 @@ CREATE TABLE `abonnes` (
 -- Dumping data for table `abonnes`
 --
 
-INSERT INTO `abonnes` (`id`, `firstName`, `lastName`, `email`, `pays`, `etat`, `societe`, `fonction`, `departement`, `secteur`, `contact`, `password`, `created_at`, `updated_at`) VALUES
-(6, 'Youness', 'Dominique', 'domiyns@gmail.com', 'Afghanistan', 'Alabama (AL)', 'qqsdf', 'qsdf', 'qsdf', 'Administrations Publiques', 'qsdfqsdf', '12345678', '2021-12-24 10:00:55', '2021-12-24 10:00:55');
+INSERT INTO `abonnes` (`id`, `firstName`, `lastName`, `email`, `pays`, `etat`, `societe`, `fonction`, `departement`, `secteur`, `contact`, `password`, `status`, `created_at`, `updated_at`) VALUES
+(6, 'Youness', 'Dominique', 'domiyns@gmail.com', 'Afghanistan', 'Alabama (AL)', 'qqsdf', 'qsdf', 'qsdf', 'Administrations Publiques', 'qsdfqsdf', '12345678', 0, '2021-12-24 10:00:55', '2021-12-24 10:00:55'),
+(7, 'Dominique', 'Youness', 'infos@domiyns.com', 'AF', 'Alabama (AL)', 'qqsdf', 'qsdf', 'qsdf', 'Communication', '(686) 852-3462', '12345678', 1, '2022-02-07 12:19:34', '2022-02-07 12:19:34');
 
 -- --------------------------------------------------------
 
@@ -1263,7 +1265,7 @@ ALTER TABLE `abonnements`
 -- AUTO_INCREMENT for table `abonnes`
 --
 ALTER TABLE `abonnes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `animateurs`
