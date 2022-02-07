@@ -102,7 +102,7 @@
                             <div class="card-body">
                                 <a href="javascript:;">
                                     <h5 class="mt-0">
-                                        THE CERTIFIED AFRICAN RISK LEADER
+                                        THE AFRICAN JOURNAL OF RISK MANAGEMENT
                                     </h5>
                                 </a>
                                 <p class="text-sm mb-0" style="color: black">
@@ -110,13 +110,6 @@
                                     is published quarterly online only on behalf of on behalf
                                     of the African Risk Management Society.
 
-                                    The mission of the ARJM is to create, stimulate and
-                                    perpetuate a culture of information sharing and publishing
-                                    amongst researchers and practitioners of risk management
-                                    in African in ways that will contribute to availability
-                                    of Africa related risk and risk management information,
-                                    better understanding of Africa risk and risk management
-                                    particularities and, overall, to the purpose of ARiMaS.
                                 </p>
 
                                 <br>
