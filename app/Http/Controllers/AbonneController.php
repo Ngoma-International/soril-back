@@ -77,14 +77,25 @@ class AbonneController extends Controller
 
     public function shows(Request $request)
     {
-        $user = Abonne::where('id', $request->id)->first();
-        $articles = Article::all();
-        $abonnements = abonnement::where('abonne_id', $user->id)->get();
-        return view('publication.profile', [
-            'user'=>$user,
-            'articles'=>$articles,
-            'abonnements'=>$abonnements
-        ]);
+        if($request->session()->exists('subscribe'))
+        {
+            if($request->session()->get('subscribe') == $request->id){
+                $user = Abonne::where('id', $request->id)->first();
+                $articles = Article::all();
+                $abonnements = abonnement::where('abonne_id', $user->id)->get();
+                return view('publication.profile', [
+                    'user'=>$user,
+                    'articles'=>$articles,
+                    'abonnements'=>$abonnements
+                ]);
+            }
+            else {
+                return redirect()->route('subscribe')->with('message', 'Session expired, please login');
+            }
+        }
+        else {
+            return redirect()->route('subscribe')->with('message', 'Not connect, please login');
+        }
     }
 
     public function abs()
@@ -156,6 +167,7 @@ class AbonneController extends Controller
         if($user->password == $request->password)
         {
             if($user->status){
+                $request->session()->put('subscribe', $user->id);
                 return redirect()->route('shows', ['id'=>$user->id]);
             } else{
                 return back()->with('message', 'Your subscribe is not activate');
