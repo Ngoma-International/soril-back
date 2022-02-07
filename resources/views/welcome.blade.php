@@ -53,41 +53,74 @@
                                 <div class="card shadow-lg">
                                     <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
                                         <div class="d-block blur-shadow-image">
-                                            <img src="assets/img/logo_illustration.jpg"
-                                                 alt="img-blur-shadow" class="img-fluid shadow rounded-3">
+                                            <img src="{{asset('assets/img/logos/carl-logo.png')}}"
+                                                 style="width: 100%;"
+                                                 alt="img-blur-shadow" class="">
                                         </div>
                                         <div class="colored-shadow" style="background-image: url(&quot;assets/img/logo_illustration.jpg&quot;);"></div>
                                     </div>
                                 </div>
                             </div>
                             <hr class="vertical dark">
+                            <div class="card-body">
+                                <a href="javascript:;">
+                                    <h5 class="mt-0">
+                                        THE CERTIFIED AFRICAN RISK LEADER
+                                    </h5>
+                                </a>
+                                <p class="text-sm mb-0" style="color: black">
+                                    The Certified African Risk Leader course (CARL)
+                                    is designed to equip participants with the knowledge
+                                    and skillset required to become risk leaders in their organisations.
+                                    The course is will immerse you in dynamic case studies,
+                                    tail-risk stress tests, scenario planning, and wargaming exercises,
+                                    as you explore how to make informed risk management decisions.
+                                </p>
+
+                                <br>
+
+                                <a href="{{route('certification')}}"><span class="badge bg-gradient-info">EXPLORE</span></a>
+                            </div>
                         </div>
 
                         <div class="col-md-6 position-relative">
                             <div class="col-lg-12 ms-auto mt-lg-0 mt-2">
                                 <div class="card shadow-lg">
-                                    <div class="card-body">
-                                        <a href="javascript:;">
-                                            <h5 class="mt-0">
-                                                THE CERTIFIED AFRICAN RISK LEADER
-                                            </h5>
-                                        </a>
-                                        <p class="text-sm mb-0" style="color: black">
-                                            The Certified African Risk Leader course (CARL)
-                                            is designed to equip participants with the knowledge
-                                            and skillset required to become risk leaders in their organisations.
-                                            The course is will immerse you in dynamic case studies,
-                                            tail-risk stress tests, scenario planning, and wargaming exercises,
-                                            as you explore how to make informed risk management decisions.
-                                        </p>
-
-                                        <br>
-
-                                        <a href="./carl.php"><span class="badge bg-gradient-info">EXPLORE</span></a>
+                                    <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
+                                        <div class="d-block blur-shadow-image">
+                                            <img src="{{asset('assets/img/journal.jpg')}}"
+                                                 style="width: 100%;"
+                                                 alt="img-blur-shadow" class="">
+                                        </div>
+                                        <div class="colored-shadow" style="background-image: url(&quot;assets/img/logo_illustration.jpg&quot;);"></div>
                                     </div>
                                 </div>
                             </div>
                             <hr class="vertical dark">
+                            <div class="card-body">
+                                <a href="javascript:;">
+                                    <h5 class="mt-0">
+                                        THE CERTIFIED AFRICAN RISK LEADER
+                                    </h5>
+                                </a>
+                                <p class="text-sm mb-0" style="color: black">
+                                    The African Journal of Risk Management (AJRM)
+                                    is published quarterly online only on behalf of on behalf
+                                    of the African Risk Management Society.
+
+                                    The mission of the ARJM is to create, stimulate and
+                                    perpetuate a culture of information sharing and publishing
+                                    amongst researchers and practitioners of risk management
+                                    in African in ways that will contribute to availability
+                                    of Africa related risk and risk management information,
+                                    better understanding of Africa risk and risk management
+                                    particularities and, overall, to the purpose of ARiMaS.
+                                </p>
+
+                                <br>
+
+                                <a href="{{route('journal.index')}}"><span class="badge bg-gradient-info">EXPLORE</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,27 +207,6 @@
             </div>
         </div>
     </section>
-
-
-    <section class="py-sm-3 py-3">
-        <div class="container mt-sm-5">
-            <div class="page-header min-vh-50 my-sm-3 mb-5 border-radius-xl">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 ms-lg-0 text-center">
-                            <a href="" >
-                                <img src="{{asset('assets/img/journal.png')}}"
-                                     style="width: 100%;"
-                                     alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
 
     <section class="py-sm-1 py-1 position-relative">
 

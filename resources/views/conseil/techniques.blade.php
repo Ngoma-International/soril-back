@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mx-auto my-auto">
-                        <img src="assets/img/logos/carl-logo.svg" alt="">
+                        <img src="{{asset('assets/img/logos/carl-logo.svg')}}" alt="">
                     </div>
                 </div>
             </div>
