@@ -7,12 +7,12 @@
 @section('content')
     <!-- -------- START HEADER 7 w/ text and video ------- -->
     <header class="bg-gradient-dark">
-        <div class="page-header min-vh-100" style="background-image: url('assets/img/office-dark.jpg');">
+        <div class="page-header min-vh-75" style="background-image: url('assets/img/office-dark.jpg');">
             <span class="mask bg-gradient-dark opacity-8"></span>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mx-auto my-auto">
-                        <img src="{{asset('assets/img/logos/carl-logo.svg')}}" alt="">
+                        <img src="{{asset('assets/img/logos/carl-logo.png')}}" width="50%;" style="margin: 0px" alt="">
                     </div>
                 </div>
             </div>
