@@ -7,7 +7,7 @@
 @section('content')
     <!-- -------- START HEADER 7 w/ text and video ------- -->
     <header class="bg-gradient-dark">
-        <div class="page-header min-vh-50" style="background-image: url('assets/img/office-dark.jpg');">
+        <div class="page-header min-vh-75" style="background-image: url('assets/img/office-dark.jpg');">
             <span class="mask bg-gradient-dark opacity-8"></span>
             <div class="container">
                 <div class="row justify-content-center">
@@ -52,7 +52,7 @@
                     <br>
                     <p style="color: black">
                         This space is free and is not controlled by ARIMAS. ARIMAS declines
-                        all responsibility for the accuracy of the information and data and the
+                        all responsibility <br> for the accuracy of the information and data and the
                         use that is made of it.
                     </p>
                 </div>
@@ -73,7 +73,7 @@
                             }
                         </script>
                         <h4 for="exampleFormControlSelect1">Filter Country</h4>
-                        <select class="form-control text-center" name="type" onchange="myFunction(this.value)">
+                        <select class="form-control-lg text-center" name="type" onchange="myFunction(this.value)">
                             @if(request()->pays == "all" || request()->pays == "")
                                 <option selected value="all">All</option>
                                 <option value="CD">Congo Democratic Republic</option>
