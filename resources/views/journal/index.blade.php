@@ -12,7 +12,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center mx-auto my-auto">
-                        <h1 class="text-white">The African Journal of Risk Management</h1>
+                        <h1 class="text-white">The African Journal of Risk Leadership</h1>
                     </div>
                 </div>
             </div>

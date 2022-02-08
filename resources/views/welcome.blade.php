@@ -36,7 +36,7 @@
                             <p style="color:black; margin: 5px!important;">
                                 <i>{{$annual->description}}</i>
                             </p>
-                            <a href="{{route('conference', $annual->id)}}" style="margin:0px!important;" target="_blank"
+                            <a href="{{route('conference', $annual->id)}}" style="margin:0px!important; color:black!important;" target="_blank"
                                class="btn btn-outline-white mt-5 up btn-round">View More ...</a>
                         </div>
                     </div>
@@ -138,6 +138,8 @@
         </div>
     </section>
 
+    <hr>
+
     <section class="my-0 py-0">
         <div class="container">
             <div class="row">
@@ -190,7 +192,9 @@
         </div>
     </section>
 
-    <section class="py-sm-1 py-1 position-relative">
+    <hr>
+
+    <section class="py-sm-5 py-3 position-relative">
 
         <div class="row">
             <div class="row justify-content-center text-center my-sm-0">
@@ -210,21 +214,17 @@
                         </div>
                         <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mt-sm-0 mt-4">
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h4 class="mb-0" style="color: black">MIMILE MUKUNA Maisha</h4>
-                                <div class="d-block">
-                                    <button type="button"
-                                            data-bs-toggle="modal" data-bs-target="#biographieModal"
-                                            class="btn bg-gradient-info w-auto me-1 mb-0">
-                                        View Bio
-                                    </button>
-                                </div>
                             </div>
                             <p class="text-lg mb-0" style="color: black">
-                                The Significance of Risk Leadership in Helping People Deal with Uncertainty
+                                The Significance of Risk Leadership in <br> Helping People Deal with Uncertainty
                                 <br>
-                                11-04-2020
+                                April, 11, 2020
                                 <br>
-                                <em>Mimile Mukuna Maisha</em>
+                                <button type="button"
+                                        data-bs-toggle="modal" data-bs-target="#biographieModal"
+                                        style="border-color: transparent; background-color: transparent">
+                                    <em>Mimile Mukuna Maisha</em>
+                                </button>
                                 <br><a href="javascript:;" class="text-info icon-move-right" data-bs-toggle="modal" data-bs-target="#messageModal">Read Full Message
                                     <i class="fas fa-arrow-right text-sm ms-1"></i>
                                 </a>
