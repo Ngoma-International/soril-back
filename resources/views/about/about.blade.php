@@ -217,18 +217,20 @@
             </div>
             <div class="row">
                 @forelse($secretariats as $sec)
-                    <div class="col-lg-6 col-12">
+                    <div class="col-lg-3 col-6">
                         <div class="card card-profile overflow-hidden">
                             <div class="row">
-                                <div class="col-lg-4 col-md-6 col-12 pe-lg-0">
+                                <div class="col-lg-12 col-md-6 col-12 pe-lg-0">
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
-                                            <img class="w-100 border-radius-md"
+                                            <img class="w-90 border-radius-md"
+                                                 height="200px"
+                                                 STYLE="object-fit: cover"
                                                  src="{{asset($sec->image)}}" alt="image">
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-lg-8 col-md-6 col-12 ps-lg-0 my-auto">
+                                <div class="col-lg-12 col-md-6 col-12 ps-lg-0 my-auto">
                                     <div class="card-body">
                                         <h5 class="mb-0" style="color: black">{{$sec->prenom . ' ' . $sec->nom}}</h5>
                                         <h6 class="text-info">{{$sec->type}}</h6>
@@ -251,18 +253,20 @@
             </div>
             <div class="row">
                 @forelse($admins as $admin)
-                    <div class="col-lg-6 col-12">
+                    <div class="col-lg-3 col-12">
                         <div class="card card-profile overflow-hidden">
                             <div class="row">
-                                <div class="col-lg-4 col-md-6 col-12 pe-lg-0">
+                                <div class="col-lg-12 col-md-6 col-12 pe-lg-0">
                                     <a href="javascript:;">
                                         <div class="p-3 pe-md-0">
-                                            <img class="w-100 border-radius-md"
+                                            <img class="w-90 border-radius-md"
+                                                 height="200px"
+                                                 STYLE="object-fit: cover"
                                                  src="{{$admin->image}}" alt="image">
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-lg-8 col-md-6 col-12 ps-lg-0 my-auto">
+                                <div class="col-lg-12 col-md-6 col-12 ps-lg-0 my-auto">
                                     <div class="card-body">
                                         <h5 class="mb-0" style="color: black">{{$admin->prenom . ' ' . $admin->nom}}</h5>
                                         <h6 class="text-info">{{$admin->position}}</h6>
@@ -285,18 +289,20 @@
             </div>
             <div class="row">
                 @forelse($consultatifs as $cons)
-                    <div class="col-lg-6 col-12">
+                    <div class="col-lg-3 col-12">
                     <div class="card card-profile overflow-hidden">
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 col-12 pe-lg-0">
+                            <div class="col-lg-12 col-md-6 col-12 pe-lg-0">
                                 <a href="javascript:;">
                                     <div class="p-3 pe-md-0">
-                                        <img class="w-100 border-radius-md"
+                                        <img class="w-90 border-radius-md"
+                                             height="200px"
+                                             STYLE="object-fit: cover;"
                                              src="{{asset($cons->image)}}" alt="image">
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-8 col-md-6 col-12 ps-lg-0 my-auto">
+                            <div class="col-lg-12 col-md-6 col-12 ps-lg-0 my-auto">
                                 <div class="card-body">
                                     <h5 class="mb-0" style="color: black">{{$cons->prenom . ' ' . $cons->nom}}</h5>
                                     <h6 class="text-info">{{$cons->position}}</h6>
