@@ -9,23 +9,37 @@
         <div class="page-header min-vh-100"
              style="background-image: url('{{asset('assets/img/Business_with_ESA_pillars.jpg')}}');">
             <div class="container">
-                <div class="col-lg-7 text-center mx-auto">
-                    <p class="lead mt-0" style="color: black;">
-                        <img src="./assets/img/logos/soril.png"
+                <div class="row">
+                    <div class="col-lg-6 text-center mx-auto">
+                        <p class="lead mt-0" style="color: black;">
+                            <img src="{{asset('./assets/img/logos/soril.png')}}"
+                                 class="w-100 border-radius-xl position-relative z-index-5" alt=""> <br>
+                            MAKING AFRICAN ORGANISATIONS AND INSTITUTIONS<br>
+                            MORE EFFECTIVE AND RESILIENT THROUGH RISK LEADERSHIP
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <div class="text-center"
+                             style="border-radius: 5%; width: 60%; margin: auto; background-color: rgba(250, 250, 250, .5); padding: 10px; margin-top: 70px">
+                            <h4 style="color:black">{{$annual->titre}}</h4>
 
-                             class="w-70 border-radius-xl position-relative z-index-5" alt=""> <br>
-                        MAKING AFRICAN ORGANISATIONS AND INSTITUTIONS<br>
-                        MORE EFFECTIVE AND RESILIENT THROUGH RISK LEADERSHIP
+                            <p style="color: black; font-weight: normal">
+                                {{$annual->lieu}} | {{$annual->ville}}
+                            </p>
 
-                        <br>
+                            <p style="color: black; font-weight: normal; margin: 5px!important;">
+                                {{ Carbon\Carbon::parse($annual->date)->format('F, d Y') }}
+                                -
+                                Durée : {{$annual->duree}} jour(s)
+                            </p>
 
-                        <a href="./cmembership.php">
-                            <button type="button" class="btn btn-light w-auto">Join as a Corporate Member</button>
-                        </a>
-                        <a href="./pmembership.php">
-                            <button type="button" class="btn bg-gradient-info w-auto">Join as a Individual Member</button>
-                        </a>
-                    </p>
+                            <p style="color:black; margin: 5px!important;">
+                                <i>{{$annual->description}}</i>
+                            </p>
+                            <a href="{{route('conference', $annual->id)}}" style="margin:0px!important;" target="_blank"
+                               class="btn btn-outline-white mt-5 up btn-round">View More ...</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="position-absolute w-100 z-index-1 bottom-0">
@@ -81,7 +95,8 @@
 
                                 <br>
 
-                                <a href="{{route('certification')}}"><span class="badge bg-gradient-info">EXPLORE</span></a>
+                                <a href="{{route('certification')}}">
+                                    <span class="badge bg-gradient-info">EXPLORE</span></a>
                             </div>
                         </div>
 
@@ -90,7 +105,7 @@
                                 <div class="card shadow-lg">
                                     <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
                                         <div class="d-block blur-shadow-image">
-                                            <img src="{{asset('assets/img/journal.jpg')}}"
+                                            <img src="{{asset('assets/img/journal.png')}}"
                                                  style="width: 100%;"
                                                  alt="img-blur-shadow" class="">
                                         </div>
@@ -102,7 +117,7 @@
                             <div class="card-body">
                                 <a href="javascript:;">
                                     <h5 class="mt-0">
-                                        THE AFRICAN JOURNAL OF RISK MANAGEMENT
+                                        THE AFRICAN JOURNAL OF RISK LEADERSHIP
                                     </h5>
                                 </a>
                                 <p class="text-sm mb-0" style="color: black">
@@ -135,7 +150,7 @@
         </div>
         <div class="container mt-sm-5 mt-1">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="row">
 
                         @forelse($events as $event)
@@ -169,34 +184,6 @@
                             <button type="button"
                                     class="btn bg-gradient-info w-auto me-1 mb-0">View More ...</button>
                         </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 ms-auto me-auto p-lg-4 mt-lg-0 mt-4">
-                    <div class="card card-background card-background-mask-dark tilt" data-tilt>
-                        <div class="full-background"
-                             style="background-image: url('https://perspectives-cblacp.eu/wp-content/uploads/2020/10/Aerial-view-of-Kigali-Convention-Centre-1-1024x492.jpg')"></div>
-                        <div class="card-body pt-7 text-center">
-                            <h1 class="text-white up mb-0">{{$annual->titre}}</h1>
-
-                            <p style="color: white; font-weight: bold">
-                                {{$annual->lieu}} | {{$annual->ville}}
-                            </p>
-
-                            <p style="color: white; font-weight: bold">
-                                {{ Carbon\Carbon::parse($annual->date)->format('F, d Y') }}
-                                <br>
-                                Durée : {{$annual->duree}} jour(s)
-                            </p>
-
-                            <br>
-
-                            <h4 class="text-white">
-                                {{$annual->description}}
-                            </h4>
-                            <a href="{{route('conference', $annual->id)}}" target="_blank"
-                               class="btn btn-outline-white mt-5 up btn-round">View More ...</a>
-                        </div>
                     </div>
                 </div>
             </div>
