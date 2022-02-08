@@ -7,7 +7,7 @@
 @section('content')
     <!-- -------- START HEADER 7 w/ text and video ------- -->
     <header class="bg-gradient-dark">
-        <div class="page-header min-vh-50" style="background-image: url('assets/img/office-dark.jpg');">
+        <div class="page-header min-vh-75" style="background-image: url('assets/img/office-dark.jpg');">
             <span class="mask bg-gradient-dark opacity-8"></span>
             <div class="container">
                 <div class="row justify-content-center">
