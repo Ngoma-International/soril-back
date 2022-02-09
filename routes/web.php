@@ -131,8 +131,8 @@ Route::get('update-status', [AbonneController::class, 'updates'])
  */
 Route::get('certifications', [ConseilController::class, 'techniques'])
     ->name('certification'); //Use in soril
-Route::get('conseils-qualifications', [ConseilController::class, 'qualifications'])
-    ->name('qualifications');
+Route::get('all-articles', [ConseilController::class, 'articles'])
+    ->name('artis'); //Use in soril
 Route::get('moreinformation', [ConseilController::class, 'moreinfo'])
     ->name('moreinfo'); //Use in soril
 Route::get('log-out-subscribe', [ConseilController::class, 'logOut'])

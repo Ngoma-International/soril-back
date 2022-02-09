@@ -181,7 +181,7 @@
                                     <hr>
                                 @endif
 
-                                <a href="javascript:;">
+                                <a href="{{route('artis')}}">
                                     <h5 class="mt-3">
                                         View Articles
                                     </h5>

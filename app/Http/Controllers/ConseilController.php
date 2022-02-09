@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ConseilController extends Controller
@@ -10,8 +11,12 @@ class ConseilController extends Controller
         return view('conseil.techniques');
     }
 
-    public function qualifications(){
-        return view('conseil.qualifications');
+    public function articles(){
+        $arts = Article::orderBy('id', 'desc')->get();
+        return view('conseil.articles',
+        [
+            'arts'=>$arts
+        ]);
     }
 
     public function moreinfo(Request $request){
