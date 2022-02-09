@@ -24,7 +24,9 @@ class AuthorController extends Controller
                 'author'=>$author
             ]);
         } else {
-            return view('journal.author');
+            return view('journal.author', [
+                'author'=>null
+            ]);
         }
     }
 
