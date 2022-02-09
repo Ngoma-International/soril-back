@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2022 at 04:57 PM
+-- Generation Time: Feb 09, 2022 at 01:05 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -162,10 +162,28 @@ INSERT INTO `authors` (`id`, `firstName`, `lastName`, `middleName`, `email`, `co
 --
 
 CREATE TABLE `books` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `bo_id` int(11) NOT NULL,
+  `bo_cat_id` int(11) DEFAULT NULL,
+  `bo_title` varchar(100) DEFAULT NULL,
+  `bo_description` text DEFAULT NULL,
+  `bo_author` varchar(255) DEFAULT NULL,
+  `bo_pub_house` varchar(255) DEFAULT NULL,
+  `bo_pub_date` date DEFAULT NULL,
+  `bo_picture` varchar(50) DEFAULT NULL,
+  `bo_price` decimal(12,2) DEFAULT NULL,
+  `bo_status` int(11) DEFAULT 1,
+  `bo_created_at` date NOT NULL,
+  `bo_file` varchar(200) NOT NULL,
+  `bo_access` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`bo_id`, `bo_cat_id`, `bo_title`, `bo_description`, `bo_author`, `bo_pub_house`, `bo_pub_date`, `bo_picture`, `bo_price`, `bo_status`, `bo_created_at`, `bo_file`, `bo_access`) VALUES
+(1, 2, 'Reading Life', ' Ceici est un test pur et simple', 'Philippe Le Noir', 'SAFINA (SALAMA)', '2021-08-16', 'nopicture.png', '3.00', 1, '2021-08-16', '', ''),
+(2, 2, 'Why risk So Much for So Little', 'An exceptional read, from the author Mimile Mukuna Maisha, released March 2012. A very informative, and very useful approach for business owners to prevent business failure by managing risk.', 'Mimile MUKUNA', 'SAFINA', '2021-08-10', 'assets/img/book/risk.png', '4.70', 1, '2021-08-16', '300921013010.pdf', '');
 
 -- --------------------------------------------------------
 
@@ -194,6 +212,26 @@ CREATE TABLE `candidats` (
 
 INSERT INTO `candidats` (`id`, `FirstName`, `MiddleName`, `LastName`, `email`, `state`, `city`, `date`, `phone`, `img`, `created_at`, `updated_at`) VALUES
 (1, 'Dominique', 'qsdf', 'Youness', 'test4@gmail.com', 'Alabama (AL)', 'Milan', '2022-01-05', '(686) 852-3462', 'documents/cv/1642671535.docx', '2022-01-20 07:38:55', '2022-01-20 07:38:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `bo_cat_id` int(11) NOT NULL,
+  `bo_cat_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`bo_cat_id`, `bo_cat_name`) VALUES
+(1, 'Risk Management'),
+(2, 'Insurance'),
+(3, 'Other');
 
 -- --------------------------------------------------------
 
@@ -1101,13 +1139,19 @@ ALTER TABLE `authors`
 -- Indexes for table `books`
 --
 ALTER TABLE `books`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`bo_id`);
 
 --
 -- Indexes for table `candidats`
 --
 ALTER TABLE `candidats`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`bo_cat_id`);
 
 --
 -- Indexes for table `collectives`
@@ -1289,13 +1333,19 @@ ALTER TABLE `authors`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `bo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `candidats`
 --
 ALTER TABLE `candidats`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `bo_cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `collectives`
