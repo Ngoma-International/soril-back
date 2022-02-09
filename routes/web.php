@@ -57,7 +57,6 @@ Route::get('logOutAuthor', [AuthorController::class, 'log_out_author'])->name('l
 Route::get('journal-articles', [DCPController::class, 'articles'])->name('journal-articles'); //Use in soril
 Route::get('submit', [DCPController::class, 'submit'])->name('submit'); //Use in soril
 Route::get('normesProfessionnels', [HomeController::class, 'professional'])->name('professional');
-Route::get('codeEthique', [HomeController::class, 'ethique'])->name('ethique');
 Route::get('developpementContinu', [HomeController::class, 'devContinu'])->name('dev-continu');
 Route::get('offresEmploi', [HomeController::class, 'emplois'])->name('emplois'); //Use in soril
 Route::get('detailsEmploi', [HomeController::class, 'detailEmploi'])->name('detailsEmplois'); //Use in soril
@@ -134,6 +133,8 @@ Route::get('certifications', [ConseilController::class, 'techniques'])
     ->name('certification'); //Use in soril
 Route::get('conseils-qualifications', [ConseilController::class, 'qualifications'])
     ->name('qualifications');
+Route::get('moreinformation', [ConseilController::class, 'moreinfo'])
+    ->name('moreinfo'); //Use in soril
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('users', UserController::class);

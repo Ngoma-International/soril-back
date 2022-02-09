@@ -13,4 +13,8 @@ class ConseilController extends Controller
     public function qualifications(){
         return view('conseil.qualifications');
     }
+
+    public function moreinfo(Request $request){
+        return view('conseil.moreinfo');
+    }
 }

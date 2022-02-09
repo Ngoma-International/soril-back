@@ -136,7 +136,15 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item my-auto ms-3 ms-lg-0">
+                            <li class="nav-item mx-2">
+                                <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                                   id="dropdownMenuPages" href="{{route('moreinfo')}}"
+                                   style="color: black; font-weight: bold;">
+                                    More Information
+                                </a>
+                            </li>
+
+                            <li class="nav-item my-auto ms-3 ms-lg-0 ml-5">
                                 <a>
                                     <button type="button" class="btn bg-gradient-info w-auto me-1 mb-0" data-bs-toggle="modal" data-bs-target="#login">
                                         LOGIN
