@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2022 at 01:05 AM
+-- Generation Time: Feb 09, 2022 at 01:41 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -120,7 +120,7 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `author_id`, `type`, `title`, `status`, `note`, `manuscrit`, `created_at`, `updated_at`) VALUES
-(6, '1', 'La Paille', 'Belhanda', 0, 'L\'homme le plus dangereux du monde', 'docs/articles1644177702.pdf', '2022-02-06 18:01:42', '2022-02-06 18:01:42');
+(6, '1', 'La Paille', 'Belhanda', 1, 'L\'homme le plus dangereux du monde', 'docs/articles1644177702.pdf', '2022-02-06 18:01:42', '2022-02-06 18:01:42');
 
 -- --------------------------------------------------------
 
