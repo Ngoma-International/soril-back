@@ -60,8 +60,9 @@
                     <div class="d-flex flex-row justify-content-center align-items-center gap-2">
                         <span class="idd1">{{$author->companyName . ' - ' . $author->department}}</span>
                     </div>
+                    <br>
                     <div class=" d-flex mt-2">
-                        <a href="{{route('author.index')}}" class="btn1 btn-dark">Edit Profile</a>
+                        <a href="{{route('author.index')}}" class="btn">Edit Profile</a>
                     </div>
                     <div class=" px-2 rounded mt-4 date ">
                         <a href="{{route('logOutAuthor')}}">
