@@ -135,6 +135,8 @@ Route::get('conseils-qualifications', [ConseilController::class, 'qualifications
     ->name('qualifications');
 Route::get('moreinformation', [ConseilController::class, 'moreinfo'])
     ->name('moreinfo'); //Use in soril
+Route::get('log-out-subscribe', [ConseilController::class, 'logOut'])
+    ->name('log-out-subscribe'); //Use in soril
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('users', UserController::class);

@@ -17,4 +17,9 @@ class ConseilController extends Controller
     public function moreinfo(Request $request){
         return view('conseil.moreinfo');
     }
+
+    public function logOut(Request $request){
+        $value = $request->session()->pull('subscribe', 'default');
+        return redirect('subscribe')->with('message', 'log out successfully');
+    }
 }

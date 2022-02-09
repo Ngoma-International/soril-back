@@ -69,7 +69,7 @@ class AuthorController extends Controller
             ]);
         }
         else {
-            return redirect('authorLogin');
+            return redirect('author/create');
         }
     }
 

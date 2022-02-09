@@ -62,7 +62,7 @@
                         <a href="{{route('author.index')}}" class="btn">Edit Profile</a>
                     </div>
                     <div class=" px-2 rounded mt-4 date ">
-                        <a href="{{route('logOutAuthor')}}">
+                        <a href="{{route('log-out-subscribe')}}">
                             <span class="join">Log Out</span>
                         </a>
                     </div>
