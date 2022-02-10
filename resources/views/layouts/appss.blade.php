@@ -325,27 +325,27 @@
                     <h4 class="text-gradient text-dark">Useful Links</h4>
                     <ul class="flex-column ms-n3 nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank">
+                            <a class="nav-link" href="{{route('home')}}" target="_blank">
                                 Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank">
+                            <a class="nav-link" href="{{route('individual')}}" target="_blank">
                                 Individual Members
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank">
+                            <a class="nav-link" href="{{route('collective')}}" target="_blank">
                                 Corporate Members
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank">
+                            <a class="nav-link" href="{{route('certification')}}" target="_blank">
                                 Certification
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank">
+                            <a class="nav-link" href="{{route('journal.index')}}" target="_blank">
                                 The Journal
                             </a>
                         </li>
@@ -354,38 +354,44 @@
             </div>
             <div class="col-md-4 col-sm-6 col-6 mb-4">
                 <div>
-                    <h4 class="text-gradient text-dark">Events</h4>
+                    <h4 class="text-gradient text-dark">Annual Conference</h4>
                     <ul class="flex-column ms-n3 nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="" target="_blank">
-                                <h6>Risk Leadership Masterclass</h6>
+                            <a class="nav-link"
+                               href="{{route('conference', \App\Models\Evenement::where('typeEvent', 'annual')->first()->id)}}"
+                               target="_blank">
+                                <h6>{{\App\Models\Evenement::where('typeEvent', 'annual')->first()->titre}}</h6>
                                 <i class="fa fa-calendar text-lg opacity-8"></i>
-                                24-26 June 2021 |
-                                <i class="fa fa-map-marker text-lg opacity-8"></i>
-                                Online - Chine Event
+                                {{ Carbon\Carbon::parse(\App\Models\Evenement::where('typeEvent', 'annual')->first()->date)->format('F, d Y') }}
+                                -
+                                Durée : {{\App\Models\Evenement::where('typeEvent', 'annual')->first()->duree}} day(s)
+                                <br><i class="fa fa-map-marker text-lg opacity-8"></i>
+                                {{\App\Models\Evenement::where('typeEvent', 'annual')->first()->lieu}}
+                                | {{\App\Models\Evenement::where('typeEvent', 'annual')->first()->ville}}
                             </a>
                         </li>
+                    </ul>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="" target="_blank">
-                                <h6>Risk Leadership Masterclass</h6>
-                                <i class="fa fa-calendar text-lg opacity-8"></i>
-                                24-26 June 2021 |
-                                <i class="fa fa-map-marker text-lg opacity-8"></i>
-                                Online - Chine Event
-                            </a>
-                        </li>
+                    <h4 class="text-gradient text-dark">Seminars</h4>
+                    <ul class="flex-column ms-n3 nav">
+                        @forelse (\App\Models\Evenement::orderBy('date', 'desc')->take(2)->get() as $item)
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   href="{{route('conference', $item->id)}}"
+                                   target="_blank">
+                                    <h6>{{$item->titre}}</h6>
+                                    <i class="fa fa-calendar text-lg opacity-8"></i>
+                                    {{ Carbon\Carbon::parse($item->date)->format('F, d Y') }}
+                                    -
+                                    Durée : {{$item->duree}} day(s)
+                                    <br><i class="fa fa-map-marker text-lg opacity-8"></i>
+                                    {{$item->lieu}}
+                                    | {{$item->ville}}
+                                </a>
+                            </li>
+                        @empty
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="" target="_blank">
-                                <h6>Risk Leadership Masterclass</h6>
-                                <i class="fa fa-calendar text-lg opacity-8"></i>
-                                24-26 June 2021 |
-                                <i class="fa fa-map-marker text-lg opacity-8"></i>
-                                Online - Chine Event
-                            </a>
-                        </li>
-
+                        @endforelse
                     </ul>
                 </div>
             </div>

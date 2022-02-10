@@ -30,7 +30,7 @@
                             <p style="color: black; font-weight: normal; margin: 5px!important;">
                                 {{ Carbon\Carbon::parse($annual->date)->format('F, d Y') }}
                                 -
-                                Durée : {{$annual->duree}} jour(s)
+                                Durée : {{$annual->duree}} day(s)
                             </p>
 
                             <p style="color:black; margin: 5px!important;">
