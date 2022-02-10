@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2022 at 01:41 AM
+-- Generation Time: Feb 10, 2022 at 03:36 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -745,7 +745,9 @@ CREATE TABLE `event_registers` (
 INSERT INTO `event_registers` (`id`, `evenement_id`, `title`, `name`, `email`, `pays`, `phone`, `province`, `company`, `departement`, `position`, `industrie`, `phoneBureau`, `status`, `ref`, `created_at`, `updated_at`) VALUES
 (4, 3, 'mr', 'Dominique Youness Belhanda', 'youness.dominique@gmail.com', 'Azerbaïdjan', '(686) 852-3462', 'Alabama (AL)', 'Belhanda', 'qsdf', 'qsdf', 'Civil Engineering', '(686) 852-3462', 0, '', '2021-12-21 09:32:28', '2021-12-21 09:32:28'),
 (5, 3, 'mr', 'Dominique Youness Belhanda', 'youness.dominique@gmail.com', 'Azerbaïdjan', '(686) 852-3462', 'Alabama (AL)', 'Belhanda', 'qsdf', 'qsdf', 'Civil Engineering', '(686) 852-3462', 0, '', '2021-12-21 09:33:07', '2021-12-21 09:33:07'),
-(7, 2, 'mrs', 'Dominique Youness Belhanda', 'test4@gmail.com', 'Afghanistan', '(686) 852-3462', 'Alabama (AL)', 'Belhanda', 'qsdf', 'CEO', 'Civic/Social Organization', '(686) 852-3462', 0, '', '2022-01-17 08:53:26', '2022-01-17 08:53:26');
+(7, 2, 'mrs', 'Dominique Youness Belhanda', 'test4@gmail.com', 'Afghanistan', '(686) 852-3462', 'Alabama (AL)', 'Belhanda', 'qsdf', 'CEO', 'Civic/Social Organization', '(686) 852-3462', 0, '', '2022-01-17 08:53:26', '2022-01-17 08:53:26'),
+(8, 6, 'mrs', 'Dominique Youness Belhanda', 'dikabelo@bytesizecollege.org', 'Afghanistan', '(686) 852-3462', 'Alabama (AL)', 'Belhanda', 'qsdf', 'qsdf', 'Capital Markets/Hedge Fund/Private Equity', '(686) 852-3462', 0, '', '2022-02-10 00:30:21', '2022-02-10 00:30:21'),
+(9, 6, 'mrs', 'Dominique Youness Belhanda', 'test2@gmail.com', 'Afghanistan', '(686) 852-3462', 'Alabama (AL)', 'Belhanda', 'qsdf', 'qsdfq', 'Building Materials', '(686) 852-3462', 0, '', '2022-02-10 00:31:46', '2022-02-10 00:31:46');
 
 -- --------------------------------------------------------
 
@@ -929,6 +931,7 @@ CREATE TABLE `partenaires` (
   `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -937,10 +940,11 @@ CREATE TABLE `partenaires` (
 -- Dumping data for table `partenaires`
 --
 
-INSERT INTO `partenaires` (`id`, `organisation`, `pays`, `image`, `nom`, `position`, `email`, `phone`, `created_at`, `updated_at`) VALUES
-(2, 'DomiYns', 'DZ', 'images/dashboard/membres/1637183425.jpg', 'Dominique Youness', 'CEO', '18mt316@esisalama.org', '(686) 852-3462', '2021-11-17 19:10:25', '2022-01-10 10:15:46'),
-(3, 'LaSouveraine', 'China', 'images/dashboard/membres/1637523314.png', 'Mimile Mukuna', 'CEO', 'mm@gmail.com', '+243996852377', '2021-11-21 17:35:14', '2021-11-21 17:35:14'),
-(5, 'NgomaDigiTech', 'ZA', 'images/dashboard/membres/1641817360.png', 'Dominique Youness', 'CEO', 'info@ngomadigi.tech', '+243996852377', '2022-01-10 10:22:40', '2022-01-10 10:22:40');
+INSERT INTO `partenaires` (`id`, `organisation`, `pays`, `image`, `nom`, `position`, `email`, `phone`, `status`, `created_at`, `updated_at`) VALUES
+(2, 'DomiYns', 'DZ', 'images/dashboard/membres/1637183425.jpg', 'Dominique Youness', 'CEO', '18mt316@esisalama.org', '(686) 852-3462', 1, '2021-11-17 19:10:25', '2022-01-10 10:15:46'),
+(3, 'LaSouveraine', 'China', 'images/dashboard/membres/1637523314.png', 'Mimile Mukuna', 'CEO', 'mm@gmail.com', '+243996852377', 1, '2021-11-21 17:35:14', '2021-11-21 17:35:14'),
+(5, 'NgomaDigiTech', 'ZA', 'images/dashboard/membres/1641817360.png', 'Dominique Youness', 'CEO', 'info@ngomadigi.tech', '+243996852377', 1, '2022-01-10 10:22:40', '2022-01-10 10:22:40'),
+(6, 'Belhanda', 'CD', 'images/dashboard/membres/1644458615.png', 'Alain KUTULA', 'CEO', 'register@ngoma.com', '+243996852377', 1, '2022-02-10 00:03:35', '2022-02-10 00:03:35');
 
 -- --------------------------------------------------------
 
@@ -1399,7 +1403,7 @@ ALTER TABLE `event_programmes`
 -- AUTO_INCREMENT for table `event_registers`
 --
 ALTER TABLE `event_registers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1435,7 +1439,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `partenaires`
 --
 ALTER TABLE `partenaires`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
