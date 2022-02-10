@@ -36,6 +36,15 @@
     <!-- -------- END HEADER 7 w/ text and video ------- -->
     <section class="py-2">
         <div class="container">
+            @if(session('message'))
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-success" role="alert">
+                            {{session('message')}}
+                        </div>
+                    </div>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="text-gradient text-danger mb-0 mt-2">Who We Are</h2>
@@ -367,7 +376,7 @@
 
                     <div class="container">
                         <div class="row text-center">
-                            <button type="button" class="btn btn-danger w-auto me-1 mb-0">Register</button>
+                            <a href="{{route('partenariat')}}" type="button" class="btn btn-danger w-auto me-1 mb-0">Register</a>
                         </div>
 
                         <hr class="horizontal dark my-5">
@@ -377,8 +386,12 @@
                             <br>
                             @forelse($partenaires as $part)
                                 <div class="col-lg-2 col-md-4 col-6 ms-auto">
-                                    <img class="w-100 opacity-10"
+                                    <img class="opacity-10"
+                                         width="150px"
+                                         height="80px"
+                                         style="object-fit:contain"
                                          src="{{asset($part->image)}}" alt="Logo">
+                                    <h5>{{$part->organisation}}</h5>
                                 </div>
                             @empty
                             @endforelse

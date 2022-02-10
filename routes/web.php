@@ -67,6 +67,8 @@ Route::post('candidat', [HomeController::class, 'addCandidate'])->name('candidat
  */
 
 Route::get('about', [About::class, 'home'])->name('about');
+Route::get('register-partenaire', [About::class, 'partenaire'])->name('partenariat');
+Route::post('send-register', [About::class, 'send'])->name('send-register');
 
 
 /*
