@@ -9,7 +9,7 @@
                     <div class="nk-block-head nk-block-head-sm">
                         <div class="nk-block-between">
                             <div class="nk-block-head-content">
-                                <h3 class="nk-block-title page-title">Animateurs</h3>
+                                <h3 class="nk-block-title page-title">Sponsors</h3>
                                 <div class="nk-block-des text-soft">
                                     <p>
                                         {{count($sponsors)}} Sponsor (s)
@@ -254,7 +254,7 @@
                                             <div class="modal-content">
                                                 <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
                                                 <div class="modal-body modal-body-lg">
-                                                    <h5 class="title">Add Animateur</h5>
+                                                    <h5 class="title">Add Sponsor</h5>
                                                     <ul class="nk-nav nav nav-tabs">
                                                         <li class="nav-item">
                                                             <a class="nav-link active" data-toggle="tab" href="#personal">Informations</a>

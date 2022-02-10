@@ -87,4 +87,8 @@ class EvenementController extends Controller
         ]
         );
     }
+
+    public function opportunity(){
+        return view('evenement.opportunity');
+    }
 }

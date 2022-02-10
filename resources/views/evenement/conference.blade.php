@@ -147,7 +147,7 @@
                             <h4 style="color:black">Sponsorship</h4>
                             <p style="margin-left: 20px;">Opportunity</p>
 
-                            <a href="sponsorship.html">
+                            <a href="{{route('opportunity')}}">
                                 <button type="button" class="btn bg-gradient-dark w-auto me-1 mb-0">View More</button>
                             </a>
                         </div>
@@ -242,7 +242,7 @@
                             <div class="row">
                                 <div class="col-md-7 mx-auto text-center">
                                     <h1 class="text-white">Price : {{$annual->prix}} $</h1>
-                                    <a href=""
+                                    <a href="{{route('regEvent', ['id', $annual->id])}}"
                                        class="btn btn-white btn-lg mb-3 mb-sm-0">REGISTER NOW</a>
                                 </div>
                             </div>

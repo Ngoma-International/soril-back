@@ -17,6 +17,7 @@ class Partenaire extends Model
       'position',
       'phone',
       'email',
-      'phone'
+      'phone',
+        'status'
     ];
 }

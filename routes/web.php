@@ -94,10 +94,11 @@ Route::get('all-events', [EvenementController::class, 'home'])
 Route::get('event_details', [EvenementController::class, 'detail'])
     ->name('evenementDetail');
 Route::get('register_evenement', [EvenementController::class, 'regEvent'])
-    ->name('regEvent');
+    ->name('regEvent'); //Use in soril
 Route::post('register_evenement_post', [EvenementController::class, 'regEventPost']);
 Route::get('conference/{id}', [EvenementController::class, 'conference'])
     ->name('conference'); //Use in soril
+Route::get('opportunity', [EvenementController::class, 'opportunity'])->name('opportunity');
 /*
  * Dashboard Route
  */

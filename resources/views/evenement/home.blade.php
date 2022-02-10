@@ -80,7 +80,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="button" class="btn bg-gradient-dark w-auto me-1 mb-0">See Sponsorship Opportunities</button>
+                    <a href="{{route('opportunity')}}" class="btn bg-gradient-dark w-auto me-1 mb-0">See Sponsorship Opportunities</a>
                 </div>
             </div>
             <br>
