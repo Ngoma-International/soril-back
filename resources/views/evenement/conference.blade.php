@@ -123,8 +123,18 @@
         </div>
     </header>
 
+
     <section>
         <div class="container">
+            @if(session('message'))
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-success" role="alert">
+                            {{session('message')}}
+                        </div>
+                    </div>
+                </div>
+            @endif
             <div class="row">
                 <div class="card mt-5 my-5">
                     <h3 class="text-gradient text-dark mb-0 mt-2">
@@ -242,7 +252,7 @@
                             <div class="row">
                                 <div class="col-md-7 mx-auto text-center">
                                     <h1 class="text-white">Price : {{$annual->prix}} $</h1>
-                                    <a href="{{route('regEvent', ['id', $annual->id])}}"
+                                    <a href="{{route('regEvent', ['id'=> $annual->id])}}"
                                        class="btn btn-white btn-lg mb-3 mb-sm-0">REGISTER NOW</a>
                                 </div>
                             </div>

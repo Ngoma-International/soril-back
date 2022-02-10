@@ -69,8 +69,8 @@ class EvenementController extends Controller
             'status'=>false,
             'ref'=>''
         ]);
-        return redirect('event_details?id='.$request->id)
-            ->with(['success'=>'Votre enregistrement a réussi']);
+        return redirect()->route('conference', $request->id)
+            ->with(['message'=>'Your request as send']);
     }
 
     public function conference($id){
