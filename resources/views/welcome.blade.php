@@ -9,10 +9,11 @@
         <div class="page-header min-vh-100"
              style="background-image: url('{{asset('assets/img/bg.jpg')}}');
                  background-color: rgba(0,0,0,0.5);">
-            <div style="background-color: black; opacity: 0.7; height: 100%; width: 100%; position: absolute"></div>
+            <div style="background-color: black; opacity: 0.7;
+            height: 100%; width: 100%; position: absolute"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 text-left mx-auto">
+                    <div class="col-lg-6 text-left">
                         <p class="lead mt-0" style="color: white; font-size: 150%">
                             <img src="{{asset('./assets/img/logos/soril.png')}}"
                                  class="w-50 border-radius-xl position-relative z-index-5" alt=""> <br>

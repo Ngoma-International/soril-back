@@ -407,6 +407,12 @@
         </div>
     </div>
 </footer>
+
+<style>
+    li a {
+        font-weight: normal!important;
+    }
+</style>
 <!--   Core JS Files   -->
 <script src="{{asset('assets/js/core/popper.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/js/core/bootstrap.min.js')}}" type="text/javascript"></script>
