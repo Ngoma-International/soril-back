@@ -15,7 +15,7 @@
                     <div class="col-lg-6 text-left mx-auto">
                         <p class="lead mt-0" style="color: white; font-size: 150%">
                             <img src="{{asset('./assets/img/logos/soril.png')}}"
-                                 class="w-75 border-radius-xl position-relative z-index-5" alt=""> <br>
+                                 class="w-50 border-radius-xl position-relative z-index-5" alt=""> <br>
                             Making African Organisations and Institutions <br>
                             More Effective and resilient through risk leadership.
                         </p>
@@ -71,11 +71,6 @@
                             </div>
                             <hr class="vertical dark">
                             <div class="card-body">
-                                <a href="javascript:;">
-                                    <h5 class="mt-0">
-                                        THE CERTIFIED AFRICAN RISK LEADER
-                                    </h5>
-                                </a>
                                 <p class="text-sm mb-0" style="color: black">
                                     The Certified African Risk Leader course (CARL)
                                     is designed to equip participants with the knowledge
@@ -107,16 +102,10 @@
                             </div>
                             <hr class="vertical dark">
                             <div class="card-body">
-                                <a href="javascript:;">
-                                    <h5 class="mt-0">
-                                        THE AFRICAN JOURNAL OF RISK LEADERSHIP
-                                    </h5>
-                                </a>
                                 <p class="text-sm mb-0" style="color: black">
-                                    The African Journal of Risk Management (AJRM)
-                                    is published quarterly online only on behalf of on behalf
-                                    of the African Risk Management Society.
-
+                                    The African Journal of Risk Management (AJRM) is published quarterly online only on behalf of on behalf of the African Risk Management Society.
+                                    <br>
+                                    The mission of the ARJM is to create, stimulate and perpetuate a culture of information sharing and publishing amongst researchers and practitioners of risk management in African in ways that will contribute.
                                 </p>
 
                                 <br>
