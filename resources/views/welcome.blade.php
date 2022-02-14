@@ -7,55 +7,47 @@
 @section('content')
     <header class="header-2">
         <div class="page-header min-vh-100"
-             style="background-image: url('{{asset('assets/img/Business_with_ESA_pillars.jpg')}}');">
+             style="background-image: url('{{asset('assets/img/bg.jpg')}}');
+                 background-color: rgba(0,0,0,0.5);">
+            <div style="background-color: black; opacity: 0.7; height: 100%; width: 100%; position: absolute"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 text-center mx-auto">
-                        <p class="lead mt-0" style="color: black;">
+                    <div class="col-lg-6 text-left mx-auto">
+                        <p class="lead mt-0" style="color: white; font-size: 150%">
                             <img src="{{asset('./assets/img/logos/soril.png')}}"
-                                 class="w-100 border-radius-xl position-relative z-index-5" alt=""> <br>
-                            MAKING AFRICAN ORGANISATIONS AND INSTITUTIONS<br>
-                            MORE EFFECTIVE AND RESILIENT THROUGH RISK LEADERSHIP
+                                 class="w-75 border-radius-xl position-relative z-index-5" alt=""> <br>
+                            Making African Organisations and Institutions <br>
+                            More Effective and resilient through risk leadership.
                         </p>
                     </div>
                     <div class="col-lg-6 text-center">
                         <div class="text-center"
-                             style="border-radius: 5%; width: 60%; margin: auto; background-color: rgba(250, 250, 250, .5); padding: 10px; margin-top: 70px">
-                            <h4 style="color:black">{{$annual->titre}}</h4>
+                             style="border-radius: 0%; width: 80%; margin: auto;
+                             border-top: 6px solid #6092fe;
+                             color: #FFFFFF;
+                             background: rgba(18, 19, 49, 0.62); padding: 10px; margin-top: 5px">
+                            <h4 style="color: white; text-transform: capitalize">{{$annual->titre}}</h4>
 
-                            <p style="color: black; font-weight: normal">
+                            <p>
                                 {{$annual->lieu}} | {{$annual->ville}}
                             </p>
 
-                            <p style="color: black; font-weight: normal; margin: 5px!important;">
+                            <p>
                                 {{ Carbon\Carbon::parse($annual->date)->format('F, d Y') }}
                                 -
                                 Durée : {{$annual->duree}} day(s)
                             </p>
 
-                            <p style="color:black; margin: 5px!important;">
+                            <p>
                                 <i>{{$annual->description}}</i>
                             </p>
-                            <a href="{{route('conference', $annual->id)}}" style="margin:0px!important; color:black!important;" target="_blank"
+                            <a href="{{route('conference', $annual->id)}}" style="margin:0px!important;
+                            background-color: #6092fe;
+                            color:white!important;" target="_blank"
                                class="btn btn-outline-white mt-5 up btn-round">View More ...</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="position-absolute w-100 z-index-1 bottom-0">
-                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto">
-                    <defs>
-                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                    </defs>
-                    <g class="moving-waves">
-                        <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40" />
-                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)" />
-                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)" />
-                        <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)" />
-                        <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)" />
-                        <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95" />
-                    </g>
-                </svg>
             </div>
         </div>
     </header>
