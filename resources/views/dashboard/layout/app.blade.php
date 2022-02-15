@@ -128,6 +128,10 @@
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
+                                        <a href="{{route('auteurs.index')}}" class="nk-menu-link">
+                                            <span class="nk-menu-text">Auteurs</span></a>
+                                    </li>
+                                    <li class="nk-menu-item">
                                         <a href="{{route('abonnement.index')}}" class="nk-menu-link">
                                             <span class="nk-menu-text">Abonnements</span></a>
                                     </li>

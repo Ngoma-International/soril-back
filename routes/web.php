@@ -166,6 +166,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('abonnement', \App\Http\Controllers\PublicationAdministration::class);
     Route::resource('articles', \App\Http\Controllers\ArticleAdministration::class);
     Route::resource('profileaffilie', \App\Http\Controllers\ProfileAffile::class);
+
+    Route::resource('auteurs', \App\Http\Controllers\auteursAdministration::class);
 });
 
 
