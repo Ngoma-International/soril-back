@@ -145,11 +145,10 @@
                             </li>
 
                             <li class="nav-item my-auto ms-3 ms-lg-0 ml-5">
-                                <a>
-                                    <button type="button" class="btn bg-gradient-info w-auto me-1 mb-0" data-bs-toggle="modal" data-bs-target="#login">
+                                    <a type="button" class="btn bg-gradient-info w-auto me-1 mb-0"
+                                       href="{{route('login')}}">
                                         LOGIN
-                                    </button>
-                                </a>
+                                    </a>
                             </li>
 
                             <?php
