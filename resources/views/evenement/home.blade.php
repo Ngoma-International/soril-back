@@ -38,106 +38,94 @@
     <section class="py-2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="row justify-content-center text-center my-sm-1">
-                        <h2 class="text-dark mb-0">The Annual Conference</h2>
+                <div class="col-lg-6">
+                    <div class="col-lg-12">
+                        <div class="row justify-content-center text-center my-sm-1">
+                            <h2 class="text-dark mb-0">The Annual Conference</h2>
+                        </div>
+                        <br>
+                        <p style="color: black">
+                            The biggest meeting of risk leaders, The Annual Risk Leaders’ Conference, takes place each year in different African capital cities during the first week of October.
+                            <br>
+                            <br>
+                            This conference brings together Arimas individual members and corporate members, representatives of risk management associations, risk management practitioners, researchers, regulators, and policy-makers to share their insights on the main issues that affect risk leadership and management in current African risk landscape and how to advance the practice.
+                        </p>
                     </div>
-                    <br>
-                    <p style="color: black">
-                        The biggest meeting of risk leaders, The Annual Risk Leaders’ Conference, takes place each year in different African capital cities during the first week of October.
-                        <br>
-                        <br>
-                        This conference brings together Arimas individual members and corporate members, representatives of risk management associations, risk management practitioners, researchers, regulators, and policy-makers to share their insights on the main issues that affect risk leadership and management in current African risk landscape and how to advance the practice.
-                    </p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 ms-auto me-auto p-lg-4 mt-lg-0 mt-4">
-                        <div class="card card-background card-background-mask-dark tilt" data-tilt>
-                            <div class="full-background"
-                                 style="background-image: url('https://perspectives-cblacp.eu/wp-content/uploads/2020/10/Aerial-view-of-Kigali-Convention-Centre-1-1024x492.jpg')"></div>
-                            <div class="card-body pt-0 text-center">
-                                <h1 class="text-white up mb-0">{{$annual->titre}}</h1>
+                    <div class="row">
+                        <div class="col-lg-12 ms-auto me-auto p-lg-4 mt-lg-0 mt-4">
+                            <div class="card card-background card-background-mask-dark tilt" data-tilt>
+                                <div class="full-background"
+                                     style="background-image: url('https://perspectives-cblacp.eu/wp-content/uploads/2020/10/Aerial-view-of-Kigali-Convention-Centre-1-1024x492.jpg')"></div>
+                                <div class="card-body pt-0 text-center">
+                                    <h1 class="text-white up mb-0">{{$annual->titre}}</h1>
 
-                                <p style="color: white; font-weight: bold">
-                                    {{$annual->lieu}} | {{$annual->ville}}
-                                </p>
+                                    <p style="color: white; font-weight: bold">
+                                        {{$annual->lieu}} | {{$annual->ville}}
+                                    </p>
 
-                                <p style="color: white; font-weight: bold">
-                                    {{ Carbon\Carbon::parse($annual->date)->format('F, d Y') }}
+                                    <p style="color: white; font-weight: bold">
+                                        {{ Carbon\Carbon::parse($annual->date)->format('F, d Y') }}
+                                        <br>
+                                        Durée : {{$annual->duree}} jour(s)
+                                    </p>
+
                                     <br>
-                                    Durée : {{$annual->duree}} jour(s)
-                                </p>
 
-                                <br>
-
-                                <h4 class="text-white">
-                                    {{$annual->description}}
-                                </h4>
-                                <a href="{{route('conference', $annual->id)}}" target="_blank"
-                                   class="btn btn-outline-white mt-5 up btn-round">View More ...</a>
+                                    <h4 class="text-white">
+                                        {{$annual->description}}
+                                    </h4>
+                                    <a href="{{route('conference', $annual->id)}}" target="_blank"
+                                       class="btn btn-outline-white mt-5 up btn-round">View More ...</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <a href="{{route('opportunity')}}" class="btn bg-gradient-dark w-auto me-1 mb-0">See Sponsorship Opportunities</a>
-                </div>
-            </div>
-            <br>
-            <br>
-            <div class="row">
-                <div class="row justify-content-center text-center my-sm-1">
-                    <h2 class="text-dark mb-0">Upcoming Seminars</h2>
-                </div>
-                <div class="col-lg-12 ms-auto mt-lg-0 mt-0">
-                    <br>
-                    <p style="color:black">
-                        Throughout the year we have a rolling programme of seminars that are held in different cities around the continents.
-                        <br><br>
-                        These seminars give participants valuable and unique insights into risk management and risk leadership and are and are an opportunity for them to network
-                    </p>
-                </div>
-
-                <div class="col-lg-12">
                     <div class="row">
-
-                        @forelse($events as $event)
-                            <div class="col-md-4 mt-md-2">
-                                <a href="{{route('conference', $event->id)}}">
-                                    <div class="card card-background card-background-mask-{{$color[$loop->index]}} tilt" data-tilt>
-                                        <div class="full-background"
-                                             style="background-image: url('https://perspectives-cblacp.eu/wp-content/uploads/2020/10/Aerial-view-of-Kigali-Convention-Centre-1-1024x492.jpg')"></div>
-                                        <div class="card-body pt-3 text-center">
-                                            <h4 class="text-white">{{$event->titre}}</h4>
-
-                                            <p style="font-size: 75%; color: white; font-weight: bold">
-                                                <i class="fa fa-calendar me-1"></i> {{ Carbon\Carbon::parse($event->date)->format('F, d Y') }}
-                                            </p>
-
-                                            <p style="color: white; font-weight: bold">
-                                                <i class="fa fa-map-marker me-1"></i> {{$event->lieu}} | {{$event->ville}}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        @empty
-                        @endforelse
-
+                        <a href="{{route('opportunity')}}" class="btn bg-gradient-dark w-auto me-1 mb-0">See Sponsorship Opportunities</a>
                     </div>
                 </div>
-            </div>
-            <br>
-        </div>
-    </section>
+                <div class="col-lg-6">
+                    <div class="row justify-content-center text-center my-sm-1">
+                        <h2 class="text-dark mb-0">Upcoming Seminars</h2>
+                    </div>
+                    <div class="col-lg-12 ms-auto mt-lg-0 mt-0">
+                        <br>
+                        <p style="color:black">
+                            Throughout the year we have a rolling programme of seminars that are held in different cities around the continents.
+                            <br><br>
+                            These seminars give participants valuable and unique insights into risk management and risk leadership and are and are an opportunity for them to network
+                        </p>
+                    </div>
 
-    <hr class="horizontal dark my-5">
+                    <div class="col-lg-12">
+                        <div class="row">
 
+                            @forelse($events as $event)
+                                <div class="col-md-4 mt-md-2">
+                                    <a href="{{route('conference', $event->id)}}">
+                                        <div class="card card-background card-background-mask-{{$color[$loop->index]}} tilt" data-tilt>
+                                            <div class="full-background"
+                                                 style="background-image: url('https://perspectives-cblacp.eu/wp-content/uploads/2020/10/Aerial-view-of-Kigali-Convention-Centre-1-1024x492.jpg')"></div>
+                                            <div class="card-body pt-3 text-center">
+                                                <h4 class="text-white">{{$event->titre}}</h4>
 
-    <section class="my-0 py-0">
-        <div class="container mt-sm-5 mt-1">
-            <div class="row">
+                                                <p style="font-size: 75%; color: white; font-weight: bold">
+                                                    <i class="fa fa-calendar me-1"></i> {{ Carbon\Carbon::parse($event->date)->format('F, d Y') }}
+                                                </p>
 
+                                                <p style="color: white; font-weight: bold">
+                                                    <i class="fa fa-map-marker me-1"></i> {{$event->lieu}} | {{$event->ville}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @empty
+                            @endforelse
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
