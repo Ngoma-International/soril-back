@@ -47,11 +47,15 @@ class AuthorController extends Controller
         $author = Author::all();
         foreach($author as $auth){
             if($auth->email == $request->email){
-                if($auth->password == $request->password){
-                    $request->session()->put('author', $auth->id);
-                    return redirect('authorProfile');
+                if($auth->status){
+                    if($auth->password == $request->password){
+                        $request->session()->put('author', $auth->id);
+                        return redirect('authorProfile');
+                    } else {
+                        return back()->with('message','Password Error, check your password. If you wrong your password, contact an administrator');
+                    }
                 } else {
-                    return back()->with('message','Password Error, check your password. If you wrong your password, contact an administrator');
+                    return back()->with('message', 'Your account it is not activate, please contact an administrator');
                 }
             } else {
                 return back()->with('message', 'Check your email, if No account, please register');

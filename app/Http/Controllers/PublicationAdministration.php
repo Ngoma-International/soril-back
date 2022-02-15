@@ -17,7 +17,7 @@ class PublicationAdministration extends Controller
     public function index()
     {
         $abonnements = abonnement::all();
-        $articles = Article::all();
+        $articles = Article::where('status', 1)->get();
         $abonnes = Abonne::all();
         return view('dashboard.membres.abonnement', [
            'abonnements'=>$abonnements,
