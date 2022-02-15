@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="image" class="col-4 col-form-label">Image</label>
+                    <label for="image" class="col-4 col-form-label">File</label>
                     <div class="col-8">
                         <input id="image" name="image" type="file" class="form-control" required="required">
                     </div>

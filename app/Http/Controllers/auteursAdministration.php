@@ -121,6 +121,7 @@ class auteursAdministration extends Controller
      */
     public function destroy($id)
     {
-        //
+        Author::where('id', $id)->delete();
+        return back()->with('message', 'Othor deleted');
     }
 }

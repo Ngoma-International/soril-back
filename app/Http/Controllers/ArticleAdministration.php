@@ -72,7 +72,33 @@ class ArticleAdministration extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if($id == 0){
+            Article::where('id', $request->name)
+                ->update([
+                    'status'=>!$request->statut
+                ]);
+            return back()->with('message', 'Statut changé');
+        } else {
+            if($request->image != null){
+                $name = time().'.'.request()->image->getClientOriginalExtension();
+                $request->image->move(public_path('docs/articles'), $name);
+
+                Article::where('id', $request->name)->update(
+                    [
+                        'manuscrit'=>'docs/articles'.$name
+                    ],
+                );
+            }
+
+            Article::where('id', $request->name)->update(
+                [
+                    'type'=>$request->type,
+                    'title'=>$request->title,
+                    'note'=>$request->note,
+                ],
+            );
+            return back()->with('message', 'Articles Update');
+        }
     }
 
     /**

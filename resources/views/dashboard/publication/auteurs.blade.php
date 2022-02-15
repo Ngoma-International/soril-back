@@ -135,7 +135,7 @@
                                                         </a>
                                                     </li>
                                                     <li class="nk-tb-action">
-                                                        <form action="{{ route('corporate.destroy' , $sec->id)}}" method="POST">
+                                                        <form action="{{ route('auteurs.destroy' , $sec->id)}}" method="POST">
                                                             <input name="_method" type="hidden" value="DELETE">
                                                             {{ csrf_field() }}
 

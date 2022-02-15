@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers.">
     <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="{{asset('favicon.png')}}">
+    <link rel="shortcut icon" href="{{asset('assets/img/logos/icon.png')}}">
     <!-- Page Title  -->
     <title>Irma Admin Dashboard</title>
     <!-- StyleSheets  -->
@@ -131,10 +131,10 @@
                                         <a href="{{route('auteurs.index')}}" class="nk-menu-link">
                                             <span class="nk-menu-text">Auteurs</span></a>
                                     </li>
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('abonnement.index')}}" class="nk-menu-link">
-                                            <span class="nk-menu-text">Abonnements</span></a>
-                                    </li>
+{{--                                    <li class="nk-menu-item">--}}
+{{--                                        <a href="{{route('abonnement.index')}}" class="nk-menu-link">--}}
+{{--                                            <span class="nk-menu-text">Abonnements</span></a>--}}
+{{--                                    </li>--}}
                                     <li class="nk-menu-item">
                                         <a href="{{route('articles.index')}}" class="nk-menu-link">
                                             <span class="nk-menu-text">Articles</span></a>
