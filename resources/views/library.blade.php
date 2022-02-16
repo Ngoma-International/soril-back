@@ -85,7 +85,8 @@
                                         Author : <b>{{$books->first()->bo_author}}</b>
                                     </p>
                                     <div class="buttons">
-                                        <button type="button" class="btn bg-gradient-info mt-4">Read More</button>
+                                        <a type="button" href="https://www.library.soril.org/public/?link={{asset($books->first()->bo_file)}}"
+                                           class="btn bg-gradient-info mt-4" target="_blank" rel="noopener noreferrer">Read More</a>
                                         <br>
                                         <a href="#section-2" class="btn bg-gradient-info mt-4">MORE BOOKS</a>
                                     </div>
@@ -139,7 +140,8 @@
                                                         <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
                                                     </div>
                                                     <div class="card-body">
-                                                        <a href="javascript:;">
+                                                        <a href="https://www.library.soril.org/public/?link={{asset($items->first()->bo_file)}}"
+                                                           target="_blank" rel="noopener noreferrer">
                                                             <h5 class="mt-3">
                                                                 {{$items->bo_title}}
                                                             </h5>
@@ -193,7 +195,8 @@
                                                         <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
                                                     </div>
                                                     <div class="card-body">
-                                                        <a href="javascript:;">
+                                                        <a href="https://www.library.soril.org/public/?link={{asset($items->first()->bo_file)}}"
+                                                           target="_blank" rel="noopener noreferrer">
                                                             <h5 class="mt-3">
                                                                 {{$items->bo_title}}
                                                             </h5>
@@ -246,7 +249,8 @@
                                                         <div class="colored-shadow" style="background-image: url(&quot;https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/funny.jpg&quot;);"></div>
                                                     </div>
                                                     <div class="card-body">
-                                                        <a href="javascript:;">
+                                                        <a href="https://www.library.soril.org/public/?link={{asset($items->first()->bo_file)}}"
+                                                           target="_blank" rel="noopener noreferrer">
                                                             <h5 class="mt-3">
                                                                 {{$items->bo_title}}
                                                             </h5>
