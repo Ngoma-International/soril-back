@@ -7,12 +7,42 @@
 @section('content')
     <!-- -------- START HEADER 7 w/ text and video ------- -->
     <header class="bg-gradient-dark">
-        <div class="page-header min-vh-50" style="background-image: url('assets/img/office-dark.jpg');">
+        <div class="page-header min-vh-75" style="background-image: url('assets/img/office-dark.jpg');">
             <span class="mask bg-gradient-dark opacity-8"></span>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center mx-auto my-auto">
+                    <div class="col-lg-6 text-center mx-auto my-auto">
                         <h1 class="text-white">Member Associations</h1>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        @php
+                            $annual = \App\Models\Evenement::where('typeEvent', 'annual')->first();
+                        @endphp
+                        <div class="text-center"
+                             style="border-radius: 0%; width: 80%; margin: auto;
+                             border-top: 6px solid #6092fe;
+                             color: #FFFFFF;
+                             background: rgba(18, 19, 49, 1); padding: 10px; margin-top: 5px">
+                            <h4 style="color: white; text-transform: capitalize">{{$annual->titre}}</h4>
+
+                            <p>
+                                {{$annual->lieu}} | {{$annual->ville}}
+                            </p>
+
+                            <p>
+                                {{ Carbon\Carbon::parse($annual->date)->format('F, d Y') }}
+                                -
+                                Durée : {{$annual->duree}} day(s)
+                            </p>
+
+                            <p>
+                                <i>{{$annual->description}}</i>
+                            </p>
+                            <a href="{{route('conference', $annual->id)}}" style="margin:0px!important;
+                            background-color: #6092fe;
+                            color:white!important;" target="_blank"
+                               class="btn btn-outline-white mt-5 up btn-round">View More ...</a>
+                        </div>
                     </div>
                 </div>
             </div>

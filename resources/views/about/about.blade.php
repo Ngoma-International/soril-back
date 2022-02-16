@@ -46,12 +46,43 @@
                 </div>
             @endif
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-5">
                     <h2 class="text-gradient text-danger mb-0 mt-2">Who We Are</h2>
                     <p style="color: black">The African Risk Management Society (ARiMaS) is a Non-Profit Organisation representing risk leaders from around the African continent and provides them with professional support. ARiMaS also partners with African national and regional risk management associations, institutes and academic institutions to advance risk leadership in Africa.
                         <br><br>
                         ARiMAs also operates as a coalition of national risk management associations to advance in Africa both the risk management practice and risk leadership.
                     </p>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6 text-center">
+                    @php
+                        $annual = \App\Models\Evenement::where('typeEvent', 'annual')->first();
+                    @endphp
+                    <div class="text-center"
+                         style="border-radius: 0%; width: 80%; margin: auto;
+                             border-top: 6px solid #6092fe;
+                             color: #FFFFFF;
+                             background: rgba(18, 19, 49, 1); padding: 10px; margin-top: 5px">
+                        <h4 style="color: white; text-transform: capitalize">{{$annual->titre}}</h4>
+
+                        <p>
+                            {{$annual->lieu}} | {{$annual->ville}}
+                        </p>
+
+                        <p>
+                            {{ Carbon\Carbon::parse($annual->date)->format('F, d Y') }}
+                            -
+                            Durée : {{$annual->duree}} day(s)
+                        </p>
+
+                        <p>
+                            <i>{{$annual->description}}</i>
+                        </p>
+                        <a href="{{route('conference', $annual->id)}}" style="margin:0px!important;
+                            background-color: #6092fe;
+                            color:white!important;" target="_blank"
+                           class="btn btn-outline-white mt-5 up btn-round">View More ...</a>
+                    </div>
                 </div>
             </div>
         </div>
