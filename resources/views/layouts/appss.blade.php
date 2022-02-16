@@ -81,7 +81,7 @@
                                 <div class="dropdown-menu dropdown-menu-animation dropdown-md p-3 border-radius-lg mt-0 mt-lg-3" aria-labelledby="dropdownMenuPages">
                                     <div class="d-none d-lg-block">
                                         <a href="{{route('individual')}}" class="dropdown-item border-radius-md">
-                                            <span class="ps-3">individual Membership</span>
+                                            <span class="ps-3">Individual Membership</span>
                                         </a>
                                         <a href="{{route('collective')}}" class="dropdown-item border-radius-md">
                                             <span class="ps-3">Coorporate Membership</span>
