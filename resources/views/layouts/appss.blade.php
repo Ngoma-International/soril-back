@@ -44,8 +44,8 @@
         <span class="navbar-toggler-bar bar3"></span>
       </span>
                     </button>
-                    <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
-                        <ul class="navbar-nav navbar-nav-hover col-12 ps-lg-1 w-100">
+                    <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100 container-ul" id="navigation">
+                        <ul class="navbar-nav navbar-nav-hover col-12 ps-lg-1 w-100 liste-ul">
                             <li class="nav-item mx-2">
                                 <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
                                    id="dropdownMenuPages" href="{{route('home')}}"
@@ -136,38 +136,12 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item mx-2">
-                                <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                                   id="dropdownMenuPages" href="{{route('moreinfo')}}"
-                                   style="color: black; font-weight: bold;">
-                                    More Information
-                                </a>
-                            </li>
-
-                            <li class="nav-item my-auto ms-3 ms-lg-0 ml-5">
+                            <li class="nav-item my-auto ms-3 ms-lg-0 ml-5 login-button">
                                     <a type="button" class="btn bg-gradient-info w-auto me-1 mb-0"
                                        href="{{route('login')}}">
                                         LOGIN
                                     </a>
                             </li>
-
-                            <?php
-                            if((isset($_GET["page"]))){
-                            if(!(empty(htmlspecialchars($_GET["page"])))){
-                            ?>
-                            <li class="nav-item my-auto ms-3 ms-lg-2">
-                                <a href="" class="info">
-                                    <i class="fa fa-shopping-cart fa-2x"></i>
-                                    <span style="color:black"
-                                          class="badge badge-md badge-circle badge-floating badge-danger border-dark">
-              0
-            </span>
-                                </a>
-                            </li>
-                            <?php
-                            }
-                            }
-                            ?>
                         </ul>
                     </div>
                 </div>
@@ -410,6 +384,22 @@
 <style>
     li a {
         font-weight: normal!important;
+        margin: 10px!important;
+    }
+
+    .container-ul{
+        align-content: center;
+        text-align: center;
+        margin: auto;
+    }
+
+    .liste-ul{
+        padding-left: 20px!important;
+    }
+
+    .login-button {
+        position: absolute;
+        right: 25px!important;
     }
 </style>
 <!--   Core JS Files   -->
