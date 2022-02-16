@@ -98,7 +98,7 @@ class HomeController extends Controller
             ]
         );
 
-        return Redirect::back()->with('message','Candidature envoyé avec succèss.');
+        return Redirect::back()->with('message','Your candidature as send successfully.');
     }
 
     public function pdf(Request $request){
