@@ -97,6 +97,8 @@
     </div>
 
     <header id="home" class="header-2">
+        <div style="background-color: black; opacity: 0.7;
+            height: 100%; width: 100%; position: absolute"></div>
         <div class="page-header min-vh-100 dark"
              style="background-image: url('{{asset('assets/img/bg.jpg')}}');">
             <div class="container">
