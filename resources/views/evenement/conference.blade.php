@@ -82,7 +82,7 @@
 
                                 <li class="nav-item mx-2">
                                     <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                                       id="dropdownMenuPages" href="#sponsosrs"
+                                       id="dropdownMenuPages" href="#sponsors"
                                        style="color: black; font-weight: bold;">
                                         Sponsors
                                     </a>
@@ -242,7 +242,7 @@
 
     <hr class="horizontal dark my-6">
 
-    <section id="schedule" class="my-6">
+    <section id="registration" class="my-6">
         <div class="container-fluid">
             <div class="row text-center">
                 <h2>REGISTRATION</h2>>
@@ -254,7 +254,9 @@
                             <div class="row">
                                 <div class="col-md-7 mx-auto text-center">
                                     <h1 class="text-white">Price : {{$annual->prix}} $</h1>
-                                    <a href="{{route('regEvent', ['id'=> $annual->id])}}"
+                                    <a
+                                       type="button"
+                                       data-bs-toggle="modal" data-bs-target="#registration-modal"
                                        class="btn btn-white btn-lg mb-3 mb-sm-0">REGISTER NOW</a>
                                 </div>
                             </div>
@@ -267,7 +269,7 @@
 
     <hr class="horizontal dark my-4">
 
-    <section class="pt-4 pb-6" id="sponsosrs">
+    <section class="pt-4 pb-6" id="sponsors">
         <div class="container text-center">
             <h2>SPONSORS</h2>
             <br>
@@ -387,6 +389,276 @@
         </div>
     </div>
 </div>
+
+    <div class="modal fade" id="registration-modal" tabindex="-1" aria-labelledby="biographieModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">MIMILE MUKUNA Maisha</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{url('register_evenement_post')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="input-group">
+                            <div class="form-group label-floating">
+                                <input name="id" id="id" type="hidden" value="{{$annual->id}}" required="">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-input col-md-6">
+                                <label class="control-label" style="">Title *</label>
+                                <select name="title" id="title" class="form-control" style="" required="">
+                                    <option value="mr">Monsieur</option>
+                                    <option value="mrs">Madame</option>
+                                    <option value="ms">Mademoiselle</option>
+                                </select>
+
+
+                            </div>
+
+
+
+                            <div class="form-input col-md-5">
+                                <label>Prénom
+                                    <span class="red">*</span></label>
+                                <input type="text" class="form-control shape" required="" name="firstName" id="firstName">
+                            </div>
+                            <div class="form-input col-md-5">
+                                <label>
+                                    Nom de Famille <span class="red">*</span></label>
+                                <input type="text" class="form-control shape" required="" name="lastName" id="lastName">
+                            </div>
+                            <div class="form-input col-md-5">
+                                <label>
+                                    deuxième nom<span class="red">*</span></label>
+                                <input type="text" class="form-control shape" name="middleName" id="middleName">
+                            </div>
+                            <div class="form-input col-md-5">
+                                <label>
+                                    Email <span class="red">*</span></label>
+                                <input type="email" class="form-control shape" required="" name="email" id="email">
+                            </div>
+                            <div class="form-input col-md-5">
+                                <label>
+                                    Pays<span class="red">*</span></label>
+                                <select id="pays" name="pays" class="form-control">
+                                    @forelse (\App\Models\Country::all() as $item)
+                                        <option value="{{$item->code}}">{{$item->name}} </option>
+                                    @empty
+
+                                    @endforelse
+                                </select>
+                            </div>
+                            <div class="form-input col-md-5">
+                                <label>
+                                    Ville <span class="red">*</span></label>
+                                <input type="text" class="form-control shape" required="" name="ville" id="ville">
+                            </div>
+
+                            <div class="form-input col-md-5">
+                                <label>
+                                    Province | Etat *<span class="red">*</span></label>
+                                <input type="text" class="form-control shape" required="" name="province" id="province">
+                            </div>
+                            <div class="form-input col-md-5">
+                                <label>
+                                    Nom de la Société <span class="red">*</span></label>
+                                <input type="text" class="form-control shape" required="" name="company" id="company">
+                            </div>
+                            <div class="form-input col-md-5">
+                                <label>
+                                    Fonction/Titre <span class="red">*</span></label>
+                                <input type="text" class="form-control shape" required="" name="position" id="position">
+                            </div>
+                            <div class="form-input col-md-5">
+                                <label>
+                                    Département <span class="red">*</span></label>
+                                <input type="text" class="form-control shape" required="" name="departement" id="departement">
+                            </div>
+                            <div class="form-input col-md-5">
+                                <label>
+                                    Secteur<span class="red">*</span></label>
+
+                                <select class=" shape" style="color: #fff; background-color:#54585c;" id="industrie" name="industrie">
+                                    <option>Accounting</option>
+                                    <option>Airlines/Aviation</option>
+                                    <option>Alternative Dispute Resolution</option>
+                                    <option>Alternative Medicine</option>
+                                    <option>Animation</option>
+                                    <option>Apparel/Fashion</option>
+                                    <option>Architecture/Planning</option>
+                                    <option>Arts/Crafts</option>
+                                    <option>Automotive</option>
+                                    <option>Aviation/Aerospace</option>
+                                    <option>Banking/Mortgage</option>
+                                    <option>Biotechnology/Greentech</option>
+                                    <option>Broadcast Media</option>
+                                    <option>Building Materials</option>
+                                    <option>Business Supplies/Equipment</option>
+                                    <option>Capital Markets/Hedge Fund/Private Equity</option>
+                                    <option>Chemicals</option>
+                                    <option>Civic/Social Organization</option>
+                                    <option>Civil Engineering</option>
+                                    <option>Commercial Real Estate</option>
+                                    <option>Computer Games</option>
+                                    <option>Computer Hardware</option>
+                                    <option>Computer Networking</option>
+                                    <option>Computer Software/Engineering</option>
+                                    <option>Computer/Network Security</option>
+                                    <option>Construction</option>
+                                    <option>Consumer Electronics</option>
+                                    <option>Consumer Goods</option>
+                                    <option>Consumer Services</option>
+                                    <option>Cosmetics</option>
+                                    <option>Dairy</option>
+                                    <option>Defense/Space</option>
+                                    <option>Design</option>
+                                    <option>E-Learning</option>
+                                    <option>Education Management</option>
+                                    <option>Electrical/Electronic Manufacturing</option>
+                                    <option>Entertainment/Movie Production</option>
+                                    <option>Environmental Services</option>
+                                    <option>Events Services</option>
+                                    <option>Executive Office</option>
+                                    <option>Facilities Services</option>
+                                    <option>Farming</option>
+                                    <option>Financial Services</option>
+                                    <option>Fine Art</option>
+                                    <option>Fishery</option>
+                                    <option>Food Production</option>
+                                    <option>Food/Beverages</option>
+                                    <option>Fundraising</option>
+                                    <option>Furniture</option>
+                                    <option>Gambling/Casinos</option>
+                                    <option>Glass/Ceramics/Concrete</option>
+                                    <option>Government Administration</option>
+                                    <option>Government Relations</option>
+                                    <option>Graphic Design/Web Design</option>
+                                    <option>Health/Fitness</option>
+                                    <option>Higher Education/Acadamia</option>
+                                    <option>Hospital/Health Care</option>
+                                    <option>Hospitality</option>
+                                    <option>Human Resources/HR</option>
+                                    <option>Import/Export</option>
+                                    <option>Individual/Family Services</option>
+                                    <option>Industrial Automation</option>
+                                    <option>Information Services</option>
+                                    <option>Information Technology/IT</option>
+                                    <option>Insurance</option>
+                                    <option>International Affairs</option>
+                                    <option>International Trade/Development</option>
+                                    <option>Internet</option>
+                                    <option>Investment Banking/Venture</option>
+                                    <option>Investment Management/Hedge Fund/Private Equity</option>
+                                    <option>Judiciary</option>
+                                    <option>Law Enforcement</option>
+                                    <option>Law Practice/Law Firms</option>
+                                    <option>Legal Services</option>
+                                    <option>Legislative Office</option>
+                                    <option>Leisure/Travel</option>
+                                    <option>Library</option>
+                                    <option>Logistics/Procurement</option>
+                                    <option>Luxury Goods/Jewelry</option>
+                                    <option>Machinery</option>
+                                    <option>Management Consulting</option>
+                                    <option>Maritime</option>
+                                    <option>Market Research</option>
+                                    <option>Marketing/Advertising/Sales</option>
+                                    <option>Mechanical or Industrial Engineering</option>
+                                    <option>Media Production</option>
+                                    <option>Medical Equipment</option>
+                                    <option>Medical Practice</option>
+                                    <option>Mental Health Care</option>
+                                    <option>Military Industry</option>
+                                    <option>Mining/Metals</option>
+                                    <option>Motion Pictures/Film</option>
+                                    <option>Museums/Institutions</option>
+                                    <option>Music</option>
+                                    <option>Nanotechnology</option>
+                                    <option>Newspapers/Journalism</option>
+                                    <option>Non-Profit/Volunteering</option>
+                                    <option>Oil/Energy/Solar/Greentech</option>
+                                    <option>Online Publishing</option>
+                                    <option>Other Industry</option>
+                                    <option>Outsourcing/Offshoring</option>
+                                    <option>Package/Freight Delivery</option>
+                                    <option>Packaging/Containers</option>
+                                    <option>Paper/Forest Products</option>
+                                    <option>Performing Arts</option>
+                                    <option>Pharmaceuticals</option>
+                                    <option>Philanthropy</option>
+                                    <option>Photography</option>
+                                    <option>Plastics</option>
+                                    <option>Political Organization</option>
+                                    <option>Primary/Secondary Education</option>
+                                    <option>Printing</option>
+                                    <option>Professional Training</option>
+                                    <option>Program Development</option>
+                                    <option>Public Relations/PR</option>
+                                    <option>Public Safety</option>
+                                    <option>Publishing Industry</option>
+                                    <option>Railroad Manufacture</option>
+                                    <option>Ranching</option>
+                                    <option>Real Estate/Mortgage</option>
+                                    <option>Recreational Facilities/Services</option>
+                                    <option>Religious Institutions</option>
+                                    <option>Renewables/Environment</option>
+                                    <option>Research Industry</option>
+                                    <option>Restaurants</option>
+                                    <option>Retail Industry</option>
+                                    <option>Security/Investigations</option>
+                                    <option>Semiconductors</option>
+                                    <option>Shipbuilding</option>
+                                    <option>Sporting Goods</option>
+                                    <option>Sports</option>
+                                    <option>Staffing/Recruiting</option>
+                                    <option>Supermarkets</option>
+                                    <option>Telecommunications</option>
+                                    <option>Textiles</option>
+                                    <option>Think Tanks</option>
+                                    <option>Tobacco</option>
+                                    <option>Translation/Localization</option>
+                                    <option>Transportation</option>
+                                    <option>Utilities</option>
+                                    <option>Venture Capital/VC</option>
+                                    <option>Veterinary</option>
+                                    <option>Warehousing</option>
+                                    <option>Wholesale</option>
+                                    <option>Wine/Spirits</option>
+                                    <option>Wireless</option>
+                                    <option>Writing/Editing</option>
+                                </select>
+
+                            </div>
+                            <div class="form-input col-md-5">
+                                <label>
+                                    Numéro de Contact <span class="red">*</span></label>
+                                <input type="tel" class="form-control shape" required="" name="phone" id="phone">
+                            </div>
+                            <div class="form-input col-md-5">
+                                <label>
+
+                                    bureau tel <span class="red">*</span></label>
+                                <input type="tel" class="form-control shape" required="" name="phoneBureau" id="phoneBureau">
+                            </div>
+
+
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div class="form-input margin-top-20 clearfix col-md-5">
+                            <input type="submit" class="btn btn-lg main-bg btn-block shape" value="Soumettre">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn bg-gradient-info w-auto me-1 mb-0" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <!--   Core JS Files   -->
 <script src="{{asset('assets/js/core/popper.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/js/core/bootstrap.min.js')}}" type="text/javascript"></script>
