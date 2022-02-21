@@ -23,7 +23,7 @@
                             <a style="color:white" href="#learnMore">
                                 Learn more about Risk Leadership
                                 <br>
-                                in the President's Coner
+                                in the President's Coner.
                             </a>
                         </p>
                     </div>
