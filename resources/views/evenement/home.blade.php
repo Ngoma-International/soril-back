@@ -80,9 +80,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <a href="{{route('opportunity')}}" class="btn bg-gradient-dark w-auto me-1 mb-0">See Sponsorship Opportunities</a>
-                    </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="row justify-content-center text-center my-sm-1">

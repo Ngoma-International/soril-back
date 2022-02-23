@@ -296,7 +296,7 @@
                                                                         </div>
                                                                         <div class="col-md-6">
                                                                             <div class="form-group">
-                                                                                <label class="form-label" for="email">Pre-requis</label>
+                                                                                <label class="form-label" for="email">Venue</label>
                                                                                 <input type="text" class="form-control form-control-lg"
                                                                                        name="prerequis" value="{{$sec->prerequis}}"
                                                                                        placeholder="Prerequis ici">
@@ -534,10 +534,10 @@
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-group">
-                                                                            <label class="form-label" for="email">Pre-requis</label>
+                                                                            <label class="form-label" for="email">Venue</label>
                                                                             <input type="text" class="form-control form-control-lg"
                                                                                    name="prerequis" required
-                                                                                   placeholder="Prerequis ici">
+                                                                                   placeholder="Venue ici">
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-6">

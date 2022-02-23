@@ -97,6 +97,8 @@
                     <li><a href="#speakers" class="js-target-scroll">Speakers</a></li>
                     <li><a href="#schedule" class="js-target-scroll">Schedule</a></li>
                     <li><a href="#sponsors" class="js-target-scroll">Sponsors</a></li>
+                    <li><a href="#venue" class="js-target-scroll">Venue</a></li>
+                    <li><a href="https://www.soril.org" class="js-target-scroll">Back To Soril</a></li>
                 </ul>
             </div>
         </div>
@@ -235,10 +237,6 @@
             <div class="conference-start-box width50-right">
                 <h2>Conference Start<br>
                     {{ Carbon\Carbon::parse($annual->date)->format('F, d Y') }},</h2>
-{{--                <div class="spekers-tickets-box">--}}
-{{--                    <div class="spekers-tickets-info"> <i class="fa fa-microphone" aria-hidden="true"></i> <span class="summary">8 Speakers</span> </div>--}}
-{{--                    <div class="spekers-tickets-info"> <i class="fa fa-ticket" aria-hidden="true"></i> <span class="summary">250 Tickets</span> </div>--}}
-{{--                </div>--}}
                 <p>{{$annual->apercu}}</p>
             </div>
         </div>
@@ -250,9 +248,8 @@
             <div class="conference-content-box width50-left">
                 <p>{{$annual->participer}}</p>
                 <div class="conference-price">
-                    <p>Starting at :</p>
-                    <span class="conference-amount">${{$annual->prix}}</span> </div>
-                <a href="#" class="btn btn-lg-boder-w" data-toggle="modal" data-target="#registration_form" >Booking Today</a> </div>
+                <a href="{{route('opportunity')}}" class="btn btn-lg-boder-w" >Sponsorship Opportunity</a>
+            </div>
         </div>
     </div>
 </section>
@@ -411,6 +408,39 @@
 </section>
 <!-- /Schedule -->
 
+<!-- Pricinig -->
+<section id="pricing" class="registration-price section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Heading -->
+            <div class="col-md-12">
+                <div class="heading-sec">
+                    <div class="section-header text-center">
+                        <h2>Booking Price</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- /Heading -->
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-xs-12 pricing_wrap">
+                <div class="regi-price-table border-box">
+                    <div class="table-price-box secondary-bg" style="display: block!important; width: 100%">
+                        <h5>Price per person</h5>
+                        <div class="regi-price-box">
+                            <p>${{$annual->prix}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="regi-price-btn-box">
+                <a href="#" class="btn btn-lg-boder-r" data-toggle="modal" data-target="#registration_form" >Booking Today</a> </div>
+        </div>
+    </div>
+</section>
+<!-- /Pricinig -->
+
 <!-- Sponsors -->
 <section id="sponsors" class="section-padding primary-bg">
     <div class="container">
@@ -452,6 +482,35 @@
     </div>
 </section>
 <!-- /Sponsors -->
+
+<!-- Conference Venue -->
+<section id="venue" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Heading -->
+            <div class="col-md-12">
+                <div class="heading-sec">
+                    <div class="section-header text-center">
+                        <h2>Conference Venue</h2>
+                </div>
+            </div>
+            <!-- /Heading -->
+        </div>
+            <div class="col-md-12">
+                <div class="contact-info-box border-box">
+                    <div class="contact-info-details">
+                        <div class="direction-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <h5>{{$annual->prerequis}} {{$annual->lieu}} {{$annual->ville}}</h5>
+                    </div>
+                    <div class="contact-info-details">
+                        <div class="direction-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                        <h5><a  href="mailto:reservations@soril.org">reservations@soril.org</a></h5>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<!-- /Conference Venue -->
 
 <!--Back to top-->
 <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
