@@ -399,7 +399,8 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{url('register_evenement_post')}}" method="POST" enctype="multipart/form-data">
+                <form
+                    action="{{url('register_evenement_post')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="input-group">
                         <div class="form-group label-floating">

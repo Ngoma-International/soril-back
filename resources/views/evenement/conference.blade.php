@@ -349,11 +349,12 @@
                         @if($programs != null)
                             @foreach ($programs->unique('date') as $program)
                                 @if($loop->index == 0)
-                                    <li><a class="active" href="#day1" data-toggle="tab">
+                                    <li><a class="active" href="#day{{$loop->index}}" data-toggle="tab">
                                             {{ Carbon\Carbon::parse($program->date)->format('F, d Y') }}</a>
                                     </li>
                                 @else
-                                    <li><a href="#day2" data-toggle="tab">{{ Carbon\Carbon::parse($program->date)->format('F, d Y') }}</a></li>
+                                    <li><a href="#day{{$loop->index}}"
+                                           data-toggle="tab">{{ Carbon\Carbon::parse($program->date)->format('F, d Y') }}</a></li>
                                 @endif
                             @endforeach
                         @endif
@@ -361,474 +362,79 @@
                 </div>
                 <div id="my-tab-content" class="tab-content">
                     <!--Day 1 schedule-->
-                    <div class="tab-pane active" id="day1">
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">08:00</span> <span class="time-schedule">am</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_1.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Una Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a  href="#collapse1" data-toggle="collapse" role="button" class="conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse1" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                                            dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
+                    @if($programs != null)
+                        @foreach ($programs->unique('date') as $program)
+                            @if($loop->index == 0)
+                                <div class="tab-pane active" id="day{{$loop->index}}">
+                                    @forelse ($programs as $item)
+                                        @forelse ($anims as $anim)
+                                            @if ($program->facilitator == $anim->id)
+                                                @if ($item->date == $program->date)
+                                                    <div class="conference-time-list">
+                                                        <div class="conf-user-time">
+                                                            <span class="time">{{ Carbon\Carbon::parse($item->time)->format('h:i') }}</span>
+                                                            <span class="time-schedule">{{ Carbon\Carbon::parse($item->time)->format('A') }}</span>
+                                                        </div>
+                                                        <div class="conf-user-img">
+                                                            <img class="img-fluid center-block" src="{{asset($anim->image)}}" alt=""> </div>
+                                                        <div class="conf-user-info">
+                                                            <h5>{{$item->title}}</h5>
+                                                            <h6>By {{$anim->prenom . ' ' . $anim->nom}}</h6>
+                                                            <a  href="#collapse1" data-toggle="collapse" role="button" class="conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
+                                                            <div role="tabpanel" class="collapse" id="collapse1" aria-expanded="false" style="height: 0px;">
+                                                                <div class="conf-user-content">
+                                                                    <p>{{$item->header}}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            @endif
+                                        @empty
+                                        @endforelse
+                                    @empty
+                                    @endforelse
                                 </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">10:00</span> <span class="time-schedule">am</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_2.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Una Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a  href="#collapse2" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse2" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                                            dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
+                            @else
+                                <div class="tab-pane" id="day{{$loop->index}}">
+                                    @forelse ($programs as $item)
+                                        @forelse ($anims as $anim)
+                                            @if ($program->facilitator == $anim->id)
+                                                @if ($item->date == $program->date)
+                                                    <div class="conference-time-list">
+                                                        <div class="conf-user-time">
+                                                            <span class="time">{{ Carbon\Carbon::parse($item->time)->format('h:i') }}</span>
+                                                            <span class="time-schedule">{{ Carbon\Carbon::parse($item->time)->format('A') }}</span>
+                                                        </div>
+                                                        <div class="conf-user-img">
+                                                            <img class="img-fluid center-block" src="{{asset($anim->image)}}" alt=""> </div>
+                                                        <div class="conf-user-info">
+                                                            <h5>{{$item->title}}</h5>
+                                                            <h6>By {{$anim->prenom . ' ' . $anim->nom}}</h6>
+                                                            <a  href="#collapse1" data-toggle="collapse" role="button" class="conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
+                                                            <div role="tabpanel" class="collapse" id="collapse1" aria-expanded="false" style="height: 0px;">
+                                                                <div class="conf-user-content">
+                                                                    <p>{{$item->header}}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endif
+                                            @endif
+                                        @empty
+                                        @endforelse
+                                    @empty
+                                    @endforelse
                                 </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">12:00</span> <span class="time-schedule">pm</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_3.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Lunch</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a  href="#collapse3" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse3" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                                            dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">02:00</span> <span class="time-schedule">pm</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_4.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Una Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a  href="#collapse4" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse4" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-                                            dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">04:00</span> <span class="time-schedule">pm</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_5.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Una Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a  href="#collapse5" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse5" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Day 1 schedule-->
-
-                    <!--Day 2 schedule-->
-                    <div class="tab-pane" id="day2">
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">08:00</span> <span class="time-schedule">am</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_6.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a  href="#collapse6" data-toggle="collapse" role="button" class="conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse6" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">10:00</span> <span class="time-schedule">am</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_7.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a href="#collapse7" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse7" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">12:00</span> <span class="time-schedule">pm</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_8.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Lunch</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a href="#collapse8" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse8" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">02:00</span> <span class="time-schedule">pm</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_1.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Una Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a href="#collapse9" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse9" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">04:00</span> <span class="time-schedule">pm</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_2.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Una Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a href="#collapse10" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse10" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Day 2 schedule-->
-
-                    <!--Day 3 schedule-->
-                    <div class="tab-pane" id="day3">
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">08:00</span> <span class="time-schedule">am</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_4.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Una Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a href="#collapse11" data-toggle="collapse" role="button" class="conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse11" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">10:00</span> <span class="time-schedule">am</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_5.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Una Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a href="#collapse12" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse12" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">12:00</span> <span class="time-schedule">pm</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_1.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Lunch</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a href="#collapse13" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse13" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">02:00</span> <span class="time-schedule">pm</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_2.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Una Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a href="#collapse14" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse14" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="conference-time-list">
-                            <div class="conf-user-time"> <span class="time">04:00</span> <span class="time-schedule">pm</span> </div>
-                            <div class="conf-user-img"> <img class="img-fluid center-block" src="assets/images/spearker_8.jpg" alt=""> </div>
-                            <div class="conf-user-info">
-                                <h5>Una Kravets</h5>
-                                <h6>ui engineer at DigitalOcean</h6>
-                                <a href="#collapse15" data-toggle="collapse" role="button" class="collapsed conf-close" aria-expanded="false"> <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
-                                <div role="tabpanel" class="collapse" id="collapse15" aria-expanded="false" style="height: 0px;">
-                                    <div class="conf-user-content">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/Day 3 schedule-->
+                            @endif
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- /Schedule -->
-
-<!-- Pricinig -->
-<section id="pricing" class="registration-price section-padding">
-    <div class="container">
-        <div class="row">
-            <!-- Heading -->
-            <div class="col-md-12">
-                <div class="heading-sec">
-                    <div class="section-header text-center">
-                        <h2>Booking Price</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- /Heading -->
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-xs-12 pricing_wrap">
-                <div class="regi-price-table border-box">
-                    <div class="table-price-box secondary-bg">
-                        <h5>Front Seat</h5>
-                        <div class="regi-price-box">
-                            <p>$99</p>
-                        </div>
-                    </div>
-                    <div class="table-price-detail">
-                        <ul>
-                            <li><i class="fa fa-check" aria-hidden="true"></i>Seat</li>
-                            <li><i class="fa fa-times" aria-hidden="true"></i>Coffee Break</li>
-                            <li><i class="fa fa-times" aria-hidden="true"></i>Certificate</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xs-12 pricing_wrap">
-                <div class="regi-price-table border-box">
-                    <div class="table-price-box secondary-bg">
-                        <h5>Middle Seat</h5>
-                        <div class="regi-price-box">
-                            <p>$199</p>
-                        </div>
-                    </div>
-                    <div class="table-price-detail">
-                        <ul>
-                            <li><i class="fa fa-check" aria-hidden="true"></i>Seat</li>
-                            <li><i class="fa fa-times" aria-hidden="true"></i>Coffee Break</li>
-                            <li><i class="fa fa-times" aria-hidden="true"></i>Certificate</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xs-12 pricing_wrap">
-                <div class="regi-price-table border-box">
-                    <div class="table-price-box secondary-bg">
-                        <h5>Back Seat</h5>
-                        <div class="regi-price-box">
-                            <p>$299</p>
-                        </div>
-                    </div>
-                    <div class="table-price-detail">
-                        <ul>
-                            <li><i class="fa fa-check" aria-hidden="true"></i>Seat</li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i>Coffee Break</li>
-                            <li><i class="fa fa-times" aria-hidden="true"></i>Certificate</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-xs-12 pricing_wrap">
-                <div class="regi-price-table border-box">
-                    <div class="table-price-box secondary-bg">
-                        <h5>VIP</h5>
-                        <div class="regi-price-box">
-                            <p>$399</p>
-                        </div>
-                    </div>
-                    <div class="table-price-detail">
-                        <ul>
-                            <li><i class="fa fa-check" aria-hidden="true"></i>Seat</li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i>Coffee Break</li>
-                            <li><i class="fa fa-check" aria-hidden="true"></i>Certificate</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="regi-price-btn-box"> <a href="#" class="btn btn-lg-boder-r" data-toggle="modal" data-target="#registration_form" >Booking Today</a> </div>
-        </div>
-    </div>
-</section>
-<!-- /Pricinig -->
-
-<!-- FAQ -->
-<section id="faq" class="secondary-bg vc_row">
-    <div class=" col-md-6 vc_col section-padding">
-        <div class="vc_column-inner">
-            <div class="faq-box-m width50-right">
-                <h2>Some Questions ?</h2>
-                <div role="tablist" id="accordion1" class="panel-group">
-                    <!-- accordion 1 -->
-                    <div class="panel panel-default">
-                        <div role="tab" class="panel-heading">
-                            <h4 class="panel-title"> <a href="#collapse03" data-parent="#accordion1" data-toggle="collapse" role="button" class="collapsed" aria-expanded="false"> Lorem Ipsum is simply dummy text ? </a> </h4>
-                        </div>
-                        <div role="tabpanel" class="panel-collapse collapse" id="collapse03" aria-expanded="false" style="height: 0px;">
-                            <div class="panel-body">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                                    The point of using Lorem Ipsum is that it has a more-or-less normal .distribution of letters, as opposed. </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- accordion 2 -->
-                    <div class="panel panel-default">
-                        <div role="tab" class="panel-heading">
-                            <h4 class="panel-title"> <a href="#collapse02" data-parent="#accordion1" data-toggle="collapse" role="button" class="collapsed" aria-expanded="false"> There are many variations ? </a> </h4>
-                        </div>
-                        <div role="tabpanel" class="panel-collapse collapse" id="collapse02" aria-expanded="false" style="height: 0px;">
-                            <div class="panel-body">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal .distribution of letters, as opposed. </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- accordion 3 -->
-                    <div class="panel panel-default">
-                        <div role="tab" class="panel-heading">
-                            <h4 class="panel-title"> <a href="#collapse01" data-parent="#accordion1" data-toggle="collapse" role="button" aria-expanded="true" class=""> Lorem Ipsum is simply dummy text ? </a> </h4>
-                        </div>
-                        <div role="tabpanel" class="panel-collapse collapse in" id="collapse01" aria-expanded="true" style="">
-                            <div class="panel-body">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal .distribution of letters, as opposed. </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- accordion 4 -->
-                    <div class="panel panel-default">
-                        <div role="tab" class="panel-heading">
-                            <h4 class="panel-title"> <a href="#collapse04" data-parent="#accordion1" data-toggle="collapse" role="button" class="collapsed" aria-expanded="false"> There are many variations ? </a> </h4>
-                        </div>
-                        <div role="tabpanel" class="panel-collapse collapse" id="collapse04" aria-expanded="false" style="height: 0px;">
-                            <div class="panel-body">
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal. distribution of letters, as opposed. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 vc_col section-padding">
-        <div class="vc_column-inner">
-            <div class="sport-video-box width50-left">
-                <h2>Lorem Ipsum is simply dummy text of the printing.</h2>
-                <div class="video-box">
-                    <iframe class="mfp-iframe" src="https://www.youtube.com/embed/rqSoXtKMU3Q" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="section-conference-bg faq_bg"></div>
-        <div class="red-overlay"></div>
-    </div>
-</section>
-<!-- /FAQ -->
-
-<!-- Blog -->
-<section id="blog" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <!-- Heading -->
-            <div class="col-md-12">
-                <div class="heading-sec">
-                    <div class="section-header text-center">
-                        <h2>Latest News</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- /Heading -->
-
-            <div class="col-md-4 col-sm-4">
-                <div class="blog_wrap">
-                    <div class="blog_img margin-btm-20">
-                        <a href="#"><img src="assets/images/blog_800x510.jpg" alt="image"></a>
-                    </div>
-                    <div class="blog_meta">
-                        <p>Posted on November 30, 2020</p>
-                    </div>
-                    <h5><a href="#">How To Build Your Event Brand</a></h5>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-4">
-                <div class="blog_wrap">
-                    <div class="blog_img margin-btm-20">
-                        <a href="#"><img src="assets/images/blog_800x510_2.jpg" alt="image"></a>
-                    </div>
-                    <div class="blog_meta">
-                        <p>Posted on November 28, 2020</p>
-                    </div>
-                    <h5><a href="#">How To Get Started In Event Planning</a></h5>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 col-sm-4">
-                <div class="blog_wrap">
-                    <div class="blog_img margin-btm-20">
-                        <a href="#"><img src="assets/images/blog_800x510_3.jpg" alt="image"></a>
-                    </div>
-                    <div class="blog_meta">
-                        <p>Posted on October 30, 2020</p>
-                    </div>
-                    <h5><a href="#">The standard chunk of Lorem Ipsum used since</a></h5>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /Blog -->
-
-<!-- Newsletter -->
-<section class="section-padding newslette-padding secondary-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <iframe src="newsletter.html" class="newslette-iframe" style="background:#222;" scrolling="no"></iframe>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /Newsletter -->
 
 <!-- Sponsors -->
 <section id="sponsors" class="section-padding primary-bg">
@@ -839,7 +445,6 @@
                 <div class="heading-sec">
                     <div class="section-header text-center">
                         <h2>Our Sponsors</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                     </div>
                 </div>
             </div>
@@ -849,13 +454,22 @@
             <div class="col-md-12">
                 <div class="sponsors-list">
                     <ul>
-                        <li> <a href="#"><img src="assets/images/sponsors-list-1.png" alt="sponsors"/></a></li>
-                        <li> <a href="#"><img src="assets/images/sponsors-list-2.png" alt="sponsors"/></a></li>
-                        <li> <a href="#"><img src="assets/images/sponsors-list-3.png" alt="sponsors"/></a></li>
-                        <li> <a href="#"><img src="assets/images/sponsors-list-4.png" alt="sponsors"/></a></li>
-                        <li> <a href="#"><img src="assets/images/sponsors-list-1.png" alt="sponsors"/></a></li>
-                        <li> <a href="#"><img src="assets/images/sponsors-list-2.png" alt="sponsors"/></a></li>
-                        <li> <a href="#"><img src="assets/images/sponsors-list-3.png" alt="sponsors"/></a></li>
+                        @forelse(\App\Models\SponsorEvent::all() as $spon)
+                            @forelse(\App\Models\Sponsor::all() as $spons)
+                                @if($spon->sponsor_id == $spons->id)
+                                    @if($spon->evenement_id == $annual->id)
+                                        <li> <a href="#">
+                                                <img src="{{asset($spons->image)}}"
+                                                     style="width: 20%"
+                                                     alt="{{$spons->organisation}}"/></a>
+                                            <p>{{$spons->organisation}}</p>
+                                        </li>
+                                    @endif
+                                @endif
+                            @empty
+                            @endforelse
+                        @empty
+                        @endforelse
                     </ul>
                 </div>
             </div>
@@ -863,81 +477,6 @@
     </div>
 </section>
 <!-- /Sponsors -->
-
-<!-- Conference Venue -->
-<section id="venue" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <!-- Heading -->
-            <div class="col-md-12">
-                <div class="heading-sec">
-                    <div class="section-header text-center">
-                        <h2>Conference Venue</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- /Heading -->
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="contact-info-box border-box">
-                    <div class="contact-info-details">
-                        <div class="direction-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <h5>PO Box 1025MNO Collins Street West Victoria 8007 Australia</h5>
-                    </div>
-                    <div class="contact-info-details">
-                        <div class="direction-icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                        <h5><a href="tel:+61-123-456-7890">+61-123-456-789</a></h5>
-                    </div>
-                    <div class="contact-info-details">
-                        <div class="direction-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-                        <h5><a  href="mailto:contact@demoweburl.com">contact@exampleurl.com</a></h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="g-map-m">
-                    <div id="js-gmap" class="gmap js-gmap"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /Conference Venue -->
-
-<!--Footer-->
-<footer class="secondary-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="footer-social-tab">
-                    <ul>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
-                <div class="footer-logo-text">
-                    <p>BeEvent</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copyright fourth-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p>Copyright &copy; 2020 <a href="#">BeEvent</a>. All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!--/Footer-->
 
 <!--Back to top-->
 <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
@@ -952,40 +491,244 @@
                 <h3>Reserve Your Seat</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
-            <form class="paypal-form" action="http://themes.webmasterdriver.net/BeEvent/demo-1/with-paypal/paypal/index.php" method="post">
+            <form class="paypal-form"
+                  action="{{url('register_evenement_post')}}" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <input class="form-control" name="payer_fname" type="text" placeholder="Full Name" required="">
+                    <input type="hidden" name="id" value="{{$annual->id}}">
                 </div>
 
                 <div class="form-group">
-                    <input class="form-control" name="payer_email" type="email" placeholder="Email Address" required="">
-                </div>
-
-                <div class="form-group">
-                    <input class="form-control" name="phone" type="text" placeholder="Phone Number" required="">
-                </div>
-
-
-                <div class="form-group">
-                    <select class="form-control" name="product_quantity" required="">
-                        <option value="">Number of Seats</option>
-                        <option value="1">1 Seat</option>
-                        <option value="2">2 Seats</option>
-                        <option value="3">3 Seats</option>
-                        <option value="4">4 Seats</option>
-                        <option value="5">5 Seats</option>
+                    <label class="control-label" style="">Title *</label>
+                    <select name="title" id="title" class="form-control" style="" required="">
+                        <option value="mr">Monsieur</option>
+                        <option value="mrs">Madame</option>
+                        <option value="ms">Mademoiselle</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <select class="form-control" name="product_name" required="">
-                        <option value="">Choose a Plan</option>
-                        <option value="FrontSeat">Front Seat ($99/1 Seat)</option>
-                        <option value="MiddleSeat">Middle Seat ($199/1 Seat)</option>
-                        <option value="BackSeat">Back Seat ($299/1 Seat)</option>
-                        <option value="VIP">VIP ($399/1 Seat)</option>
+                    <label>Prénom
+                        <span class="red">*</span></label>
+                    <input type="text" class="form-control shape" required="" name="firstName" id="firstName">
+                </div>
+                <div class="form-group">
+                    <label>
+                        Nom de Famille <span class="red">*</span></label>
+                    <input type="text" class="form-control shape" required="" name="lastName" id="lastName">
+                </div>
+                <div class="form-group">
+                    <label>
+                        deuxième nom<span class="red">*</span></label>
+                    <input type="text" class="form-control shape" name="middleName" id="middleName">
+                </div>
+                <div class="form-group">
+                    <label>
+                        Email <span class="red">*</span></label>
+                    <input type="email" class="form-control shape" required="" name="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label>
+                        Pays<span class="red">*</span></label>
+                    <select id="pays" name="pays" class="form-control">
+                        @forelse (\App\Models\Country::all() as $item)
+                            <option value="{{$item->code}}">{{$item->name}} </option>
+                        @empty
+
+                        @endforelse
                     </select>
+                </div>
+                <div class="form-group">
+                    <label>
+                        Ville <span class="red">*</span></label>
+                    <input type="text" class="form-control shape" required="" name="ville" id="ville">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        Province | Etat *<span class="red">*</span></label>
+                    <input type="text" class="form-control shape" required="" name="province" id="province">
+                </div>
+                <div class="form-group">
+                    <label>
+                        Nom de la Société <span class="red">*</span></label>
+                    <input type="text" class="form-control shape" required="" name="company" id="company">
+                </div>
+                <div class="form-group">
+                    <label>
+                        Fonction/Titre <span class="red">*</span></label>
+                    <input type="text" class="form-control shape" required="" name="position" id="position">
+                </div>
+                <div class="form-group">
+                    <label>
+                        Département <span class="red">*</span></label>
+                    <input type="text" class="form-control shape" required="" name="departement" id="departement">
+                </div>
+                <div class="form-group">
+                    <label>
+                        Secteur<span class="red">*</span></label>
+
+                    <select class="form-control" style="color: #fff; background-color:#54585c;" id="industrie" name="industrie">
+                        <option>Accounting</option>
+                        <option>Airlines/Aviation</option>
+                        <option>Alternative Dispute Resolution</option>
+                        <option>Alternative Medicine</option>
+                        <option>Animation</option>
+                        <option>Apparel/Fashion</option>
+                        <option>Architecture/Planning</option>
+                        <option>Arts/Crafts</option>
+                        <option>Automotive</option>
+                        <option>Aviation/Aerospace</option>
+                        <option>Banking/Mortgage</option>
+                        <option>Biotechnology/Greentech</option>
+                        <option>Broadcast Media</option>
+                        <option>Building Materials</option>
+                        <option>Business Supplies/Equipment</option>
+                        <option>Capital Markets/Hedge Fund/Private Equity</option>
+                        <option>Chemicals</option>
+                        <option>Civic/Social Organization</option>
+                        <option>Civil Engineering</option>
+                        <option>Commercial Real Estate</option>
+                        <option>Computer Games</option>
+                        <option>Computer Hardware</option>
+                        <option>Computer Networking</option>
+                        <option>Computer Software/Engineering</option>
+                        <option>Computer/Network Security</option>
+                        <option>Construction</option>
+                        <option>Consumer Electronics</option>
+                        <option>Consumer Goods</option>
+                        <option>Consumer Services</option>
+                        <option>Cosmetics</option>
+                        <option>Dairy</option>
+                        <option>Defense/Space</option>
+                        <option>Design</option>
+                        <option>E-Learning</option>
+                        <option>Education Management</option>
+                        <option>Electrical/Electronic Manufacturing</option>
+                        <option>Entertainment/Movie Production</option>
+                        <option>Environmental Services</option>
+                        <option>Events Services</option>
+                        <option>Executive Office</option>
+                        <option>Facilities Services</option>
+                        <option>Farming</option>
+                        <option>Financial Services</option>
+                        <option>Fine Art</option>
+                        <option>Fishery</option>
+                        <option>Food Production</option>
+                        <option>Food/Beverages</option>
+                        <option>Fundraising</option>
+                        <option>Furniture</option>
+                        <option>Gambling/Casinos</option>
+                        <option>Glass/Ceramics/Concrete</option>
+                        <option>Government Administration</option>
+                        <option>Government Relations</option>
+                        <option>Graphic Design/Web Design</option>
+                        <option>Health/Fitness</option>
+                        <option>Higher Education/Acadamia</option>
+                        <option>Hospital/Health Care</option>
+                        <option>Hospitality</option>
+                        <option>Human Resources/HR</option>
+                        <option>Import/Export</option>
+                        <option>Individual/Family Services</option>
+                        <option>Industrial Automation</option>
+                        <option>Information Services</option>
+                        <option>Information Technology/IT</option>
+                        <option>Insurance</option>
+                        <option>International Affairs</option>
+                        <option>International Trade/Development</option>
+                        <option>Internet</option>
+                        <option>Investment Banking/Venture</option>
+                        <option>Investment Management/Hedge Fund/Private Equity</option>
+                        <option>Judiciary</option>
+                        <option>Law Enforcement</option>
+                        <option>Law Practice/Law Firms</option>
+                        <option>Legal Services</option>
+                        <option>Legislative Office</option>
+                        <option>Leisure/Travel</option>
+                        <option>Library</option>
+                        <option>Logistics/Procurement</option>
+                        <option>Luxury Goods/Jewelry</option>
+                        <option>Machinery</option>
+                        <option>Management Consulting</option>
+                        <option>Maritime</option>
+                        <option>Market Research</option>
+                        <option>Marketing/Advertising/Sales</option>
+                        <option>Mechanical or Industrial Engineering</option>
+                        <option>Media Production</option>
+                        <option>Medical Equipment</option>
+                        <option>Medical Practice</option>
+                        <option>Mental Health Care</option>
+                        <option>Military Industry</option>
+                        <option>Mining/Metals</option>
+                        <option>Motion Pictures/Film</option>
+                        <option>Museums/Institutions</option>
+                        <option>Music</option>
+                        <option>Nanotechnology</option>
+                        <option>Newspapers/Journalism</option>
+                        <option>Non-Profit/Volunteering</option>
+                        <option>Oil/Energy/Solar/Greentech</option>
+                        <option>Online Publishing</option>
+                        <option>Other Industry</option>
+                        <option>Outsourcing/Offshoring</option>
+                        <option>Package/Freight Delivery</option>
+                        <option>Packaging/Containers</option>
+                        <option>Paper/Forest Products</option>
+                        <option>Performing Arts</option>
+                        <option>Pharmaceuticals</option>
+                        <option>Philanthropy</option>
+                        <option>Photography</option>
+                        <option>Plastics</option>
+                        <option>Political Organization</option>
+                        <option>Primary/Secondary Education</option>
+                        <option>Printing</option>
+                        <option>Professional Training</option>
+                        <option>Program Development</option>
+                        <option>Public Relations/PR</option>
+                        <option>Public Safety</option>
+                        <option>Publishing Industry</option>
+                        <option>Railroad Manufacture</option>
+                        <option>Ranching</option>
+                        <option>Real Estate/Mortgage</option>
+                        <option>Recreational Facilities/Services</option>
+                        <option>Religious Institutions</option>
+                        <option>Renewables/Environment</option>
+                        <option>Research Industry</option>
+                        <option>Restaurants</option>
+                        <option>Retail Industry</option>
+                        <option>Security/Investigations</option>
+                        <option>Semiconductors</option>
+                        <option>Shipbuilding</option>
+                        <option>Sporting Goods</option>
+                        <option>Sports</option>
+                        <option>Staffing/Recruiting</option>
+                        <option>Supermarkets</option>
+                        <option>Telecommunications</option>
+                        <option>Textiles</option>
+                        <option>Think Tanks</option>
+                        <option>Tobacco</option>
+                        <option>Translation/Localization</option>
+                        <option>Transportation</option>
+                        <option>Utilities</option>
+                        <option>Venture Capital/VC</option>
+                        <option>Veterinary</option>
+                        <option>Warehousing</option>
+                        <option>Wholesale</option>
+                        <option>Wine/Spirits</option>
+                        <option>Wireless</option>
+                        <option>Writing/Editing</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label>
+                        Numéro de Contact <span class="red">*</span></label>
+                    <input type="tel" class="form-control shape" required="" name="phone" id="phone">
+                </div>
+                <div class="form-group">
+                    <label>
+
+                        bureau tel <span class="red">*</span></label>
+                    <input type="tel" class="form-control shape" required="" name="phoneBureau" id="phoneBureau">
                 </div>
 
                 <div class="form-group">
