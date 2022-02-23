@@ -77,7 +77,7 @@ class EvenementController extends Controller
         $annual = Evenement::where('id', $id)->firstOrFail();
         $anim = Animateur::where('id', $annual->animateur)->get()->first();
         $anims = Animateur::all();
-        $program = EventProgramme::where('evenement_id', $annual->id)->orderBy('id', 'desc')->get();
+        $program = EventProgramme::where('evenement_id', $annual->id)->orderBy('date', 'asc')->get();
         return view('evenement.conference',
         [
             'annual'=>$annual,
