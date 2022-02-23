@@ -96,32 +96,7 @@
                     <li><a href="#about" class="js-target-scroll">About Us</a></li>
                     <li><a href="#speakers" class="js-target-scroll">Speakers</a></li>
                     <li><a href="#schedule" class="js-target-scroll">Schedule</a></li>
-                    <li><a href="#pricing" class="js-target-scroll">Pricing</a></li>
-                    <li><a href="#faq" class="js-target-scroll">FAQ</a></li>
-                    <li class="dropdown">
-                        <a href="#blog" class="js-target-scroll">Blog</a>
-                        <span class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></span>
-                        <ul class="dropdown-menu">
-                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                            <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                            <li><a href="blog-grid.html">Blog Grid Style</a></li>
-                            <li><a href="blog-single.html">Blog Single</a></li>
-                        </ul>
-                    </li>
                     <li><a href="#sponsors" class="js-target-scroll">Sponsors</a></li>
-                    <li><a href="#venue" class="js-target-scroll">Venue</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="js-target-scroll">Elements</a>
-                        <span class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></span>
-                        <ul class="dropdown-menu">
-                            <li><a href="about-us.html">About Us</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
-                            <li><a href="schedule.html">Schedule</a></li>
-                            <li><a href="speakers.html">Speakers</a></li>
-                            <li><a href="sponsors.html">Sponsors</a></li>
-                            <li><a href="venue.html">Venue</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </div>
