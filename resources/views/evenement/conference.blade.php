@@ -96,8 +96,8 @@
                     <li><a href="#about" class="js-target-scroll">About Us</a></li>
                     <li><a href="#speakers" class="js-target-scroll">Speakers</a></li>
                     <li><a href="#schedule" class="js-target-scroll">Schedule</a></li>
-                    <li><a href="#sponsors" class="js-target-scroll">Sponsors</a></li>
                     <li><a href="#venue" class="js-target-scroll">Venue</a></li>
+                    <li><a href="#sponsors" class="js-target-scroll">Sponsors</a></li>
                     <li><a href="https://www.soril.org" class="js-target-scroll">Back To Soril</a></li>
                 </ul>
             </div>
@@ -158,7 +158,11 @@
                 <div class="container">
                     <div class="banner-content">
                         <div class="banner-tagline text-center">
-                            <h1>The Annual Conference</h1>
+                            @if($annual->typeEvent == 'annual')
+                                <h1>The Annual Conference</h1>
+                            @else
+                                <h1>{{$annual->type}}</h1>
+                            @endif
                             <p>{{$annual->duree}} Day(s) conference(s). - {{$annual->sousTitre}}</p>
                         </div>
                     </div>
@@ -243,33 +247,10 @@
         <div class="section-conference-bg"></div>
         <div class="red-overlay"></div>
     </div>
-    <div class="col-md-6 vc_col section-padding">
-        <div class="vc_column-inner">
-            <div class="conference-content-box width50-left">
-                <p>{{$annual->participer}}</p>
-                <div class="conference-price">
-                <a href="{{route('opportunity')}}" class="btn btn-lg-boder-w" >Sponsorship Opportunity</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /Conference info -->
-
-<!-- Speakers -->
-<section  id="speakers" class="spearker-section section-padding">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="heading-sec">
-                    <div class="section-header text-center">
-                        <h2>Our Speaker</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
+    <div class="col-md-6 vc_col text-center">
+        <div class="row text-center">
             <!-- Heading -->
-            <div class="col-md-4">
+            <div class="col-md-12 text-center">
                 <div class="speaker-sec">
                     <div class="speaker-info-box text-center border-box">
                         <div class="spearker-img">
@@ -282,8 +263,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="section-header text-left">
+            <div class="col-md-12">
+                <div class="section-header text-center">
                     <h4>{{$anim->prenom . ' ' . $anim->nom}}</h4>
                     <p>
                         {{$anim->organisation . ' - ' . $anim->position}}
@@ -297,7 +278,58 @@
         </div>
     </div>
 </section>
-<!-- /Speakers -->
+<!-- /Conference info -->
+
+<!-- Speakers-3 -->
+<section id="speakers" class="speakers_3 spearker-section section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Heading -->
+            <div class="col-md-12">
+                <div class="heading-sec">
+                    <div class="section-header text-center">
+                        <h2>Our Speakers</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- /Heading -->
+        </div>
+        <div class="row">
+            @if($programs != null)
+                @foreach ($programs->unique('facilitator') as $program)
+                    @forelse ($anims as $anim)
+                        @if ($program->facilitator == $anim->id)
+                            <!-- speakers -->
+                                <div class="col-xs-12 col-sm-4 col-md-3">
+                                    <div class="speaker-sec">
+                                        <div class="speaker-info-box text-center border-box">
+                                            <div class="spearker-img">
+                                                <img
+                                                    src="{{asset($anim->image)}}" alt="" class="img-fluid center-block"> </div>
+                                            <div class="speaker-hover">
+                                                <div class="social-icons text-center"> <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </div>
+                                            </div>
+                                        </div>
+                                        <div class="speaker-info">
+                                            <h5><a>
+                                                    {{$anim->prenom . ' ' . $anim->nom}}
+                                                </a></h5>
+                                            <h6>
+                                                {{$anim->organisation . ' - ' . $anim->position}}
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /speakers -->
+                        @endif
+                    @empty
+                    @endforelse
+                @endforeach
+            @endif
+        </div>
+    </div>
+</section>
+<!-- /Speakers-3 -->
 
 <!-- Schedule -->
 <section id="schedule" class="conference-schedule section-padding secondary-bg">
@@ -308,7 +340,6 @@
                 <div class="heading-sec">
                     <div class="section-header text-center">
                         <h2>Conference Schedule</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                     </div>
                 </div>
             </div>
@@ -441,6 +472,35 @@
 </section>
 <!-- /Pricinig -->
 
+<!-- Conference Venue -->
+<section id="venue" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Heading -->
+            <div class="col-md-12">
+                <div class="heading-sec">
+                    <div class="section-header text-center">
+                        <h2>Conference Venue</h2>
+                </div>
+            </div>
+            <!-- /Heading -->
+        </div>
+            <div class="col-md-12">
+                <div class="contact-info-box border-box">
+                    <div class="contact-info-details">
+                        <div class="direction-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                        <h5>{{$annual->prerequis}} {{$annual->lieu}} {{$annual->ville}}</h5>
+                    </div>
+                    <div class="contact-info-details">
+                        <div class="direction-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                        <h5><a  href="mailto:reservations@soril.org">reservations@soril.org</a></h5>
+                    </div>
+                </div>
+            </div>
+    </div>
+</section>
+<!-- /Conference Venue -->
+
 <!-- Sponsors -->
 <section id="sponsors" class="section-padding primary-bg">
     <div class="container">
@@ -476,41 +536,17 @@
                         @empty
                         @endforelse
                     </ul>
+                    <div class="container">
+                        <div class="row text-center">
+                            <a href="{{route('opportunity')}}" class="btn btn-lg-boder-w" >Sponsorship Opportunity</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- /Sponsors -->
-
-<!-- Conference Venue -->
-<section id="venue" class="section-padding">
-    <div class="container">
-        <div class="row">
-            <!-- Heading -->
-            <div class="col-md-12">
-                <div class="heading-sec">
-                    <div class="section-header text-center">
-                        <h2>Conference Venue</h2>
-                </div>
-            </div>
-            <!-- /Heading -->
-        </div>
-            <div class="col-md-12">
-                <div class="contact-info-box border-box">
-                    <div class="contact-info-details">
-                        <div class="direction-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
-                        <h5>{{$annual->prerequis}} {{$annual->lieu}} {{$annual->ville}}</h5>
-                    </div>
-                    <div class="contact-info-details">
-                        <div class="direction-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
-                        <h5><a  href="mailto:reservations@soril.org">reservations@soril.org</a></h5>
-                    </div>
-                </div>
-            </div>
-    </div>
-</section>
-<!-- /Conference Venue -->
 
 <!--Back to top-->
 <div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
