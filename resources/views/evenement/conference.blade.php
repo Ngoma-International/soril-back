@@ -83,7 +83,7 @@
 </div>
 <!-- End Switcher -->
 <!-- Navigation -->
-<nav id="navigation" class="navigation">
+<nav id="navigation" class="navigation shownav">
     <div class="container">
         <div class="row">
             <div class="col-md-1 col-md-push-11 text-right">
@@ -252,20 +252,17 @@
             <!-- Heading -->
             <div class="col-md-12 text-center">
                 <div class="speaker-sec">
-                    <div class="speaker-info-box text-center border-box">
-                        <div class="spearker-img">
-                            <img src="{{asset($anim->image)}}"
+                    <div class="speaker-info-box text-center">
+                        <div class="spearker-img mt-5">
+                            <img src="{{asset($anim->image)}}" width="50%"
                                  alt="" class="img-fluid center-block">
-                        </div>
-                        <div class="speaker-hover">
-                            <div class="social-icons text-center"> <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a> </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="section-header text-center">
-                    <h4>{{$anim->prenom . ' ' . $anim->nom}}</h4>
+                    <h4 style="color: #f76d2b;">{{$anim->prenom . ' ' . $anim->nom}}</h4>
                     <p>
                         {{$anim->organisation . ' - ' . $anim->position}}
                     </p>
