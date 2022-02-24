@@ -250,10 +250,13 @@
     <div class="col-md-6 vc_col text-center">
         <div class="row text-center">
             <!-- Heading -->
+            <div class="col-md-12 text-center mt-5">
+                <h4>Keynote Speaker</h4>
+            </div>
             <div class="col-md-12 text-center">
                 <div class="speaker-sec">
                     <div class="speaker-info-box text-center">
-                        <div class="spearker-img mt-5">
+                        <div class="spearker-img">
                             <img src="{{asset($anim->image)}}" width="50%"
                                  alt="" class="img-fluid center-block">
                         </div>
