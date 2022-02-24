@@ -94,7 +94,7 @@ class AnimateurControlleur extends Controller
      */
     public function update(Request $request, $id)
     {
-        if($request->image != null)
+        if($request->file != null)
         {
             $name = time().'.'.request()->file->getClientOriginalExtension();
 
