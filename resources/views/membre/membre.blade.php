@@ -187,7 +187,7 @@
                                 </h5>
                             </a>
                             <p>
-                                Once you have sent your application form, you will automatically receive an invoice from ARiMaS. The invoice is payable by Bank transfer or online debit card.
+                                Once you have sent your application form, you will automatically receive an invoice from SoRil. The invoice is payable by Bank transfer or online debit card.
                                 <br>
                                 All bank charges for all payments by any method will be borne by the remitter.
                             </p>

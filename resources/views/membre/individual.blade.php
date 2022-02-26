@@ -75,7 +75,7 @@
                         Who Are Our Individual Members?
                     </h2>
                     <p style="color: black">
-                        ARiMaS’ individual membership is restricted to risk individuals who hold key executive positions within their firms, organisations or institutions. They lead the risk agenda in organisations.
+                        SoRil’ individual membership is restricted to risk individuals who hold key executive positions within their firms, organisations or institutions. They lead the risk agenda in organisations.
                         <br><br>
                         Risk leaders are typically senior management, Heads of Risk areas, C-level executives, Chief Risk Officers, board members, senior risk consultants as well as representatives of risk management associations and institutes.
                     </p>
@@ -130,7 +130,7 @@
                         <div id="whybecome" class="tab-pane active">
                             <h3 style="color:black">Why Become a Member?</h3>
                             <p>
-                                Being an ARiMaS member does not just open the door to exciting opportunities in your career and personal development. It also gives you access to a first-class range of services designed to support you in your professional life.
+                                Being an SoRil member does not just open the door to exciting opportunities in your career and personal development. It also gives you access to a first-class range of services designed to support you in your professional life.
                             </p>
 
                             <br>
@@ -141,7 +141,7 @@
                                         data-container="body"
                                         data-bs-toggle="popover"
                                         data-bs-placement="top"
-                                        data-bs-title="ARIMAS keeps you at the leading-edge of the profession with a range of benefits and services which include.">
+                                        data-bs-title="SoRil keeps you at the leading-edge of the profession with a range of benefits and services which include.">
                                     Member benefits and services
                                 </button>
 
@@ -150,12 +150,12 @@
                                         data-container="body"
                                         data-bs-toggle="popover"
                                         data-bs-placement="top"
-                                        data-bs-title="ARIMAS keeps you at the
+                                        data-bs-title="SoRil keeps you at the
                                     leading-edge of the profession with a
                                     range of benefits and services which include.
                                     "
                                 >
-                                    The ARIMAS designation - the choice among employers
+                                    The SoRil designation - the choice among employers
                                 </button>
                             </div>
                         </div>
@@ -166,7 +166,7 @@
                                 <br>
                                 If you’re a new member, welcome. You’ll start paying your annual membership subscription from 1 January following your admission. You’ll also pay a one-off admission fee.
                                 <br>
-                                The simplest and quickest way to pay your subscription is online, via myARiMaS, although there are other options available.
+                                The simplest and quickest way to pay your subscription is online, via mySoRil, although there are other options available.
                                 <br>
                                 Please remember to pay your fees on time to continue your membership.
                             </p>
@@ -177,7 +177,7 @@
                                         data-container="body"
                                         data-bs-toggle="popover"
                                         data-bs-placement="top"
-                                        data-bs-title="ARIMAS keeps you at the leading-edge of the profession with a range of benefits and services which include.">
+                                        data-bs-title="SoRil keeps you at the leading-edge of the profession with a range of benefits and services which include.">
                                     Member benefits and services
                                 </button>
 
@@ -186,19 +186,19 @@
                                         data-container="body"
                                         data-bs-toggle="popover"
                                         data-bs-placement="top"
-                                        data-bs-title="ARIMAS keeps you at the
+                                        data-bs-title="SoRil keeps you at the
                                     leading-edge of the profession with a
                                     range of benefits and services which include.
                                     "
                                 >
-                                    The ARIMAS designation - the choice among employers
+                                    The SoRil designation - the choice among employers
                                 </button>
                             </div>
                         </div>
                         <div id="reduced" class="tab-pane fade">
                             <h3 style="color:black">Reduced Fees</h3>
                             <p>
-                                Need a little help? ARiMaS offers two categories of reduced Fees:
+                                Need a little help? SoRil offers two categories of reduced Fees:
                             </p>
 
                             <div class="col-12 mx-auto">
@@ -207,7 +207,7 @@
                                         data-container="body"
                                         data-bs-toggle="popover"
                                         data-bs-placement="top"
-                                        data-bs-title="ARIMAS keeps you at the leading-edge of the profession with a range of benefits and services which include.">
+                                        data-bs-title="SoRil keeps you at the leading-edge of the profession with a range of benefits and services which include.">
                                     Member benefits and services
                                 </button>
 
@@ -216,12 +216,12 @@
                                         data-container="body"
                                         data-bs-toggle="popover"
                                         data-bs-placement="top"
-                                        data-bs-title="ARIMAS keeps you at the
+                                        data-bs-title="SoRil keeps you at the
                                     leading-edge of the profession with a
                                     range of benefits and services which include.
                                     "
                                 >
-                                    The ARIMAS designation - the choice among employers
+                                    The SoRil designation - the choice among employers
                                 </button>
                             </div>
                         </div>

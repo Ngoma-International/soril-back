@@ -73,7 +73,7 @@
                         Why Become a Corporate Member?
                     </h2>
                     <p style="color: black">
-                        Taking up a corporate membership is an economical but effective way for organisations to derive maximum benefits and value for their employees through ARiMaS’ varied services, programmes and seminars.
+                        Taking up a corporate membership is an economical but effective way for organisations to derive maximum benefits and value for their employees through SoRIl’ varied services, programmes and seminars.
                         <br><br>
                         <b>Eligibility</b>
                         <br>
@@ -81,17 +81,17 @@
 
                         Corporate Membership is open to all corporations, institutions, societies, statutory bodies and government agencies.
                         <br>
-                        However, the acceptance of Corporate Membership is at the sole discretion of ARiMaS.
+                        However, the acceptance of Corporate Membership is at the sole discretion of SoRil.
                         <br>
                         Through the group scheme your organisation will benefit from:
                         <br>
                     <ul style="color: black">
                         <li>
-                            Use of the description ‘ARiMaS’ Member’ and use of the ARiMaS’ logo on website, stationery and publications
+                            Use of the description ‘SoRil’ Member’ and use of the SoRil’ logo on website, stationery and publications
                         </li>
 
                         <li>
-                            Free company listing in the ARiMaS’ Corporate Members Directory
+                            Free company listing in the SoRil’ Corporate Members Directory
                         </li>
 
                         <li>
@@ -99,7 +99,7 @@
                         </li>
 
                         <li>
-                            Priority involvement in ARiMaS’ projects and activities
+                            Priority involvement in SoRil’ projects and activities
                         </li>
 
                         <li>
@@ -111,11 +111,11 @@
                         </li>
 
                         <li>
-                            Savings on ARiMaS’ events and training courses
+                            Savings on SoRIl’ events and training courses
                         </li>
 
                         <li>
-                            Access to Talent: Free job posting on ARiMaS Job Offers page.
+                            Access to Talent: Free job posting on SoRil Job Offers page.
                         </li>
                     </ul>
                     </p>
@@ -285,7 +285,7 @@
                                 <br>
                                 Upon approval your will be able to add Corporate Representatives to the system who will be granted access to the members area.
                                 <br>
-                                However, the acceptance of Corporate Membership is at the sole discretion of ARiMaS.
+                                However, the acceptance of Corporate Membership is at the sole discretion of SoRil.
                             </p>
 
                             <button type="button" class="btn btn-dark w-auto me-1 mb-0">Register</button>
