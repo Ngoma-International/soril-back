@@ -10,7 +10,7 @@
         SORIL
     </title>
     <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+{{--    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700" rel="stylesheet" />--}}
     <!-- Nucleo Icons -->
     <link href="{{asset('assets/css/nucleo-icons.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/nucleo-svg.css')}}" rel="stylesheet" />
@@ -22,6 +22,16 @@
 </head>
 
 <body class="index-page">
+
+<style>
+    html{
+        font-family: Helvetica;
+    }
+
+    body {
+        font-family: Helvetica;
+    }
+</style>
 <!-- Navbar -->
 <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
