@@ -48,9 +48,9 @@
             <div class="row">
                 <div class="col-lg-5">
                     <h2 class="text-gradient text-danger mb-0 mt-2">Who We Are</h2>
-                    <p style="color: black">The African Risk Management Society (ARiMaS) is a Non-Profit Organisation representing risk leaders from around the African continent and provides them with professional support. ARiMaS also partners with African national and regional risk management associations, institutes and academic institutions to advance risk leadership in Africa.
+                    <p style="color: black">Society of Risk Leadership (SoRil) is a Non-Profit Organisation representing risk leaders from around the African continent and provides them with professional support. SoRil also partners with African national and regional risk management associations, institutes and academic institutions to advance risk leadership in Africa.
                         <br><br>
-                        ARiMAs also operates as a coalition of national risk management associations to advance in Africa both the risk management practice and risk leadership.
+                        SoRil also operates as a coalition of national risk management associations to advance in Africa both the risk management practice and risk leadership.
                     </p>
                 </div>
                 <div class="col-lg-1"></div>
@@ -94,7 +94,7 @@
                 <div class="col-lg-6">
                     <h2 class="text-gradient text-danger mb-0 mt-2">What Guide Us</h2>
                     <p style="color: black">
-                        With the expiry of the previous Strategic Plan in 2019, ARiMaS decided to embark on the development of a new Strategic Plan which would transform the Organisation and created added value for its members and other stakeholders. The new Plan is for the period 2020-2025 and it is based on the Purpose Statement introduced by the new President, Mr Mimile Maisha.
+                        With the expiry of the previous Strategic Plan in 2019, SoRil decided to embark on the development of a new Strategic Plan which would transform the Organisation and created added value for its members and other stakeholders. The new Plan is for the period 2020-2025 and it is based on the Purpose Statement introduced by the new President, Mr Mimile Maisha.
                     </p>
 
                     <div class="row">
@@ -377,7 +377,7 @@
                     <h2 class="text-gradient text-danger mb-0 mt-3">Partnering With Us</h2>
                     <br>
                     <p style="color: black">
-                        One of the most important strategic objectives of ARiMAS is to create and lead a coalition with African Risk Management Associations, Institutes and Academic Institutions advance risk leadership in Africa.
+                        One of the most important strategic objectives of SoRil is to create and lead a coalition with African Risk Management Associations, Institutes and Academic Institutions advance risk leadership in Africa.
                         <br>
                         <br>
                         Should you wish to be counted among our valued partners, please register below. Our administration office will then contact you by phone or email to finalise the registration process.
@@ -388,21 +388,21 @@
 
                     <ul style="color: black">
                         <li>
-                            Use of the description ‘ARiMaS’ Partnerr’ and use of the ARiMaS’ logo on website, stationery and publications
+                            Use of the description ‘SoRil’ Partnerr’ and use of the SoRil’ logo on website, stationery and publications
                         </li>
                         <li>
-                            Listing as an ARiMaS’ Partners on our website and promotional materials
+                            Listing as an SoRil’ Partners on our website and promotional materials
                         </li>
                         <li>
                             Priority access to exhibition and sponsorship opportunities
                         </li>
-                        <li>Priority involvement in ARiMaS’ projects and activities</li>
+                        <li>Priority involvement in SoRil’ projects and activities</li>
 
                         <li>Stand for election to the Board of Directors and invitation to join our Advisory Board</li>
                         <li>Invitation to submit articles</li>
                         <li> Invitation to speak</li>
                         <li>Free access to the African Journal of Risk Management</li>
-                        <li>Savings on ARiMaS’ events and training courses for your delegates</li>
+                        <li>Savings on SoRil’ events and training courses for your delegates</li>
                     </ul>
 
                     <div class="container">
