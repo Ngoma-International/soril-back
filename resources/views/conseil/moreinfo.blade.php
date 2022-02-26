@@ -44,7 +44,7 @@
             </h2>
             <br>
             <p style="color:black">
-                The 5 modules below have been selected to ensure the topics covered in CARM represents the professional knowledge and competencies required by risk managers in Africa in today’s dynamic and complex world.
+                The 5 modules below have been selected to ensure the topics covered in CARL represents the professional knowledge and competencies required by risk managers in Africa in today’s dynamic and complex world.
             </p>
             <div class="row text-center py-3 mt-3">
                 <div class="col-md-12 mx-auto">
@@ -92,7 +92,7 @@
                 <h2 class="text-gradient text-danger mb-0 mt-2">Enrolment and Fees</h2>
                 <div class="col-lg-6">
                     <p style="color: black">
-                        The CARM is a direct registration program. There are no formal entry requirements. Simply enrol in the session of your choice to get started.
+                        The CARL is a direct registration program. There are no formal entry requirements. Simply enrol in the session of your choice to get started.
                         <br>
                         However, participants are expected to have some basic. knowledge of risk management tools and techniques.
                         <br>
@@ -197,7 +197,7 @@
                 <div class="col-lg-4">
                     <p style="color: black">
                         <b>Enrolling for a qualification</b> <br>
-                        All applicants wishing to enrol on the CARM Course must complete the appropriate online application form and pay the relevant fees. All applications must be received within the specified enrolment period. Applicants must satisfy the entry requirements for their selected qualification programme and, where required, submit appropriate evidence of these as part of their application.
+                        All applicants wishing to enrol on the CARL Course must complete the appropriate online application form and pay the relevant fees. All applications must be received within the specified enrolment period. Applicants must satisfy the entry requirements for their selected qualification programme and, where required, submit appropriate evidence of these as part of their application.
                         <br> <br>
                         <b>Qualification Completion Time Limit</b>
                         Students undertaking the International Certificate in Financial Services Risk Management qualification must complete the qualification within two years of enrolling as a student.
@@ -280,9 +280,9 @@
                         <b>Vinco</b> <br>
                         Vinco is ARiMaS’ virtual learning environment and is a key method of communication. For each module you take there will be a corresponding module and module materials on Vinco. Assessments questions will also be released electronically via Vinco and you will be required to submit electronic copies there.
                         <br>
-                        You will also have access to the “CARM Hub” page on Vinco where results for the coursework will be released via this module.
+                        You will also have access to the “CARL Hub” page on Vinco where results for the coursework will be released via this module.
                         <br>
-                        Because the CARM programme is a course delivered entirely online, library resources will be made up of ebooks, digitised chapters or pages from books, and links to materials like journal articles via existing databases.
+                        Because the CARL programme is a course delivered entirely online, library resources will be made up of ebooks, digitised chapters or pages from books, and links to materials like journal articles via existing databases.
                     </p>
                 </div>
             </div>

@@ -99,7 +99,7 @@
                 </div>
 
                 <div class="col-lg-3">
-                    <img src="assets/img/logos/carl-badge.svg" alt="" style="width: 100%">
+                    <img src="{{asset('assets/img/logos/badge.png')}}" alt="" style="width: 100%">
 
                     <h6 style="color:black">Who is it for?</h6>
 
@@ -182,7 +182,7 @@
                                 </div>
                                 <div class="flex-column">
                                     <p><small>
-                                            Upon passing, successful candidates will receive their certification card and acknowledged as a CARM holder!
+                                            Upon passing, successful candidates will receive their certification card and acknowledged as a CARL holder!
                                         </small></p>
                                 </div>
                             </a>
@@ -202,7 +202,7 @@
                                 <div class="flex-column">
                                     Relevant
                                     <p><small>
-                                            CARM is created by risk professionals in Africa for the risks relevant to this region. We use Asia Pacific case studies and the syllabus is crafted based on what risk managers in the region are most concerned with.
+                                            CARL is created by risk professionals in Africa for the risks relevant to this region. We use Asia Pacific case studies and the syllabus is crafted based on what risk managers in the region are most concerned with.
                                         </small></p>
                                 </div>
                             </a>
@@ -226,7 +226,7 @@
                                 <div class="flex-column">
                                     Supportive
                                     <p><small>
-                                            CARM comes with online training courses for each of the 5 modules, should the candidate wish to practice. We ensure that you will be equipped with the tools and training needed to successfully complete the CARM.
+                                            CARL comes with online training courses for each of the 5 modules, should the candidate wish to practice. We ensure that you will be equipped with the tools and training needed to successfully complete the CARL.
                                         </small></p>
                                 </div>
                             </a>
@@ -236,11 +236,11 @@
 
                 <div class="col-lg-3">
                     <div>
-                        <h5>Non-ARiMaS Members</h5>
+                        <h5>Non-SoRil Members</h5>
 
                         <div class="card" style="padding: 10px">
                             <p>
-                                Enroling for the CARM means you join ARiMaS as a member and become part of our African risk management Community. The additional fee you pay on top of your application fee goes toward the payment of your membership.
+                                Enroling for the CARL means you join SoRil as a member and become part of our African risk management Community. The additional fee you pay on top of your application fee goes toward the payment of your membership.
                             </p>
                         </div>
                     </div>
@@ -253,12 +253,12 @@
                             <b>Editorial</b> <br> <br>
                             Dwayne J. Williams <br>
                             Phone: 011 312 54334 <br>
-                            Email: fcharney@arimas.org <br>
+                            Email: fcharney@soril.org <br>
                             <br>
                             <b>Publications</b> <br><br>
                             Don Richards <br>
                             Phone: 011 312 54334 <br>
-                            Email: richard@arimas.org
+                            Email: richard@soril.org
                         </p>
                     </div>
                 </div>
