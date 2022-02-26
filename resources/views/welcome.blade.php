@@ -20,7 +20,9 @@
 {{--                            Making African Organisations and Institutions <br>--}}
 {{--                            More Effective and resilient through risk leadership.--}}
                             <br>
-                            <a style="color:white" href="#learnMore">
+                            <a style="color:white" onmouseover="this.style.color='#6092fe';"
+                               onmouseout="this.style.color='white';"
+                               href="#learnMore">
                                 Learn more about Risk Leadership
                                 <br>
                                 in the President's Coner.
