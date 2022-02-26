@@ -85,10 +85,10 @@
                                 <p class="text-sm mb-0" style="color: black">
                                     The Certified African Risk Leader course (CARL)
                                     is designed to equip participants with the knowledge
-                                    and skillset required to become risk leaders in their organisations.
-                                    The course is will immerse you in dynamic case studies,
-                                    tail-risk stress tests, scenario planning, and wargaming exercises,
-                                    as you explore how to make informed risk management decisions.
+                                    and skillset required to become risk leaders in their
+                                    organisations or institutions. The course is will immerse
+                                    you in dynamic case studies, tail-risk stress tests, scenario
+                                    planning, and wargaming exercises, as you explore how to make informed risk leadership decisions.
                                 </p>
 
                                 <br>
