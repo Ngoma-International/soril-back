@@ -114,9 +114,13 @@
                             <hr class="vertical dark">
                             <div class="card-body">
                                 <p class="text-sm mb-0" style="color: black">
-                                    The African Journal of Risk Management (AJRM) is published quarterly online only on behalf of on behalf of the African Risk Management Society.
-                                    <br>
-                                    The mission of the ARJM is to create, stimulate and perpetuate a culture of information sharing and publishing amongst researchers and practitioners of risk management in African in ways that will contribute.
+                                    The African Journal of Risk Leadership (AJRL)
+                                    is published quarterly online only on behalf of
+                                    on behalf of the Society of Risk Leadership.
+                                    The mission of the ARJL is to create, stimulate
+                                    and perpetuate a culture of information sharing
+                                    and publishing amongst researchers
+                                    and practitioners of risk leadership in Africa in ways that will contribute …
                                 </p>
 
                                 <br>
