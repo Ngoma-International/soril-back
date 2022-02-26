@@ -60,7 +60,7 @@
                     </h4>
                     <br>
                     <p style="color: black">
-                        This space is free and is not controlled by ARIMAS. ARIMAS declines
+                        This space is free and is not controlled by SoRil. SoRil declines
                         all responsibility <br> for the accuracy of the information and data and the
                         use that is made of it.
                     </p>
