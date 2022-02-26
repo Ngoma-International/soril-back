@@ -217,7 +217,8 @@
                                              src="{{asset('assets/img/mimile.png')}}" alt="bruce">
                                     </div>
                                     <div class="col-lg-6 col-md-7 position-relative my-auto">
-                                        <p class="text-lg mb-0" style="color: black">
+                                        <p class="text-lg mb-0"
+                                           style="color: black; line-height: normal">
                                             <a
                                                style="border-color: transparent;
                                                     background-color: transparent">
@@ -230,7 +231,7 @@
                                                data-bs-toggle="modal" data-bs-target="#biographieModal"
                                                style="border-color: transparent;
                                                     background-color: transparent">
-                                                <em>Biography</em>
+                                                <em>Bio</em>
                                             </a>
                                         </p>
                                         <div class="modal fade" id="biographieModal" tabindex="-1" aria-labelledby="biographieModalLabel" aria-hidden="true">
@@ -242,12 +243,17 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         Mimile is an expert in International Business Law and International Business Risk Management.
+                                                        <br>
                                                         Since 2013, he has been CEO of First Continental Legal and Risk Consulting where he advises on
                                                         International Business Law, International Business Risk Management and on international financing
                                                         transactions.
+                                                        <br>
+                                                        <br>
                                                         His expertise has been sought by transnational companies, governments and professional bodies.
                                                         He previously spent 20 years in the insurance/risk finance industry where he occupied executive
                                                         positions in various companies in different African countries.
+                                                        <br>
+                                                        <br>
                                                         He is a regular speaker at conferences and seminars on International Business Risk Management
                                                         and international investment/trade law topics and has made it his mission to promote the principle
                                                         and practice of risk leadership in the business world. he is the author of the book titled "Why
@@ -266,13 +272,14 @@
                                         <hr style="color:white">
                                         @forelse (\App\Models\MessagePresident::all() as $item)
                                             <div class="">
-                                                <p class="text-lg mb-0" style="color: black">
-                                                    {{$item->titreMessage}}
+                                                <p class="text-lg mb-0" style="color: black; line-height: normal">
+                                                    <b>{{$item->titreMessage}}</b>
                                                     <br>
                                                     <em>{{ Carbon\Carbon::parse($item->date)->format('F, d Y') }}</em>
                                                     <br>
-                                                    <a href="javascript:;" class="text-info icon-move-right"
-                                                       data-bs-toggle="modal" data-bs-target="#messageModal-{{$item->id}}">Read Full Message
+                                                    <a href="javascript:;" class="text-blue-900 icon-move-right"
+                                                       data-bs-toggle="modal"
+                                                       data-bs-target="#messageModal-{{$item->id}}">Read Full Message
                                                         <i class="fas fa-arrow-right text-sm ms-1"></i>
                                                     </a>
                                                 </p>
@@ -291,6 +298,7 @@
                                                             <div>
                                                                 <h6 class="mb-0">{{$item->introduction}}</h6>
                                                             </div>
+                                                            <br>
                                                             <em>{{ Carbon\Carbon::parse($item->date)->format('F, d Y') }}</em>
                                                             <br>
                                                             <br>
@@ -298,6 +306,8 @@
                                                             <p class="text-sm mb-0">
                                                                 {{$item->message}}
                                                             </p>
+                                                            <br>
+                                                            <br>
 
                                                             <p>
                                                                 {{$item->about}}
