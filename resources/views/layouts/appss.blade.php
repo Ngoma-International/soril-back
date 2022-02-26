@@ -383,7 +383,8 @@
                     <p class="my-4 text-sm">
                         All rights reserved. Copyright © <script>
                             document.write(new Date().getFullYear())
-                        </script> -- Created & Powered by <a href="https://www.ngomadigitech.com/" target="_blank">NGOMBA DigiTech (Pty) Ltd.</a>.
+                        </script> -- Created & Powered by
+                        <a href="https://www.ngomadigitech.com/" target="_blank">NgomaDigiTech (Pty) Ltd.</a>.
                     </p>
                 </div>
             </div>
