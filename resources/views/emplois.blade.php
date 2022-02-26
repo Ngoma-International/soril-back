@@ -72,7 +72,7 @@
                     <div class="form-group">
                         <script>
                             function myFunction(value){
-                                var url = 'http://localhost/soril-back/public/offresEmploi';
+                                var url = 'https://soril.org/public/offresEmploi';
                                 if (url.indexOf('?') > -1){
                                     url = urls + '?pays' +value
                                 }else{

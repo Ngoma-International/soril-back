@@ -52,7 +52,7 @@
                                style="margin:20px!important;
                                 background-color: #6092fe;
                                 color:white!important;" target="_blank"
-                               class="btn btn-outline-white mt-5 up btn-rounded">View More ...</a>
+                               class="btn mt-5 up btn-rounded">View More ...</a>
                             <br>
                         </div>
                     </div>
