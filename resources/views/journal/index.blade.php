@@ -7,12 +7,13 @@
 @section('content')
     <!-- -------- START HEADER 7 w/ text and video ------- -->
     <header class="bg-gradient-dark">
-        <div class="page-header min-vh-75" style="background-image: url('assets/img/office-dark.jpg');">
+        <div class="page-header min-vh-100" style="background-image: url('assets/img/office-dark.jpg');">
             <span class="mask bg-gradient-dark opacity-8"></span>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-6 text-center mx-auto my-auto">
-                        <h1 class="text-white">The African Journal of Risk Leadership</h1>
+                    <div class="col-lg-6 text-center mx-auto my-auto bg-white">
+                        <img src="{{asset('assets/img/journal.png')}}" width="75%;"
+                             style="margin: 10px" alt="">
                     </div>
                     <div class="col-lg-6 text-center">
                         @php
@@ -82,9 +83,9 @@
                         The Journal Overview
                     </h2>
                     <p style="color: black; margin-left: 30.0px">
-                        The African Journal of Risk Management (AJRM) is published quarterly online only on behalf of on behalf of the African Risk Management Society.
+                        The African Journal of Risk Leadership (AJRL) is published quarterly online only on behalf of on behalf of the African Risk Management Society.
                         <br><br>
-                        The mission of the ARJM is to create, stimulate and perpetuate a culture of information sharing and publishing amongst researchers and practitioners of risk management in African in ways that will contribute to availability of Africa related risk and risk management information, better understanding of Africa risk and risk management particularities and, overall, to the purpose of ARiMaS.
+                        The mission of the ARJL is to create, stimulate and perpetuate a culture of information sharing and publishing amongst researchers and practitioners of risk management in African in ways that will contribute to availability of Africa related risk and risk management information, better understanding of Africa risk and risk management particularities and, overall, to the purpose of ARiMaS.
 
                         <b>The Scope</b>
                         <br>
@@ -103,80 +104,40 @@
                 <div class="col-lg-4 ms-auto mt-lg-0 mt-4">
 
                     <div class="row">
-                        <!-- Navbar -->
-                        <div class="container position-sticky z-index-sticky top-0">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <nav class="navbar navbar-expand  blur blur-rounded top-0 z-index-fixed shadow position-relative my-3 py-2 start-0 end-0 mx-4">
-                                        <div class="container-fluid">
-                                            <div class="collapse navbar-collapse pt-1 pb-1 py-lg-0" id="navigation">
-                                                <ul class="navbar-nav navbar-nav-hover ms-lg-0 ps-lg-0 w-50">
-                                                    <!--
-                                                    <li class="nav-item dropdown dropdown-hover mx-0">
-                                                        <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                                                          style="color: black;"
-                                                          id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
-                                                          About
-                                                          <img src="./assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-1">
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-animation dropdown-md p-3 border-radius-lg mt-0 mt-lg-3" aria-labelledby="dropdownMenuPages">
-                                                          <div class="d-none d-lg-block">
-                                                            <a href="#overview" class="dropdown-item border-radius-md">
-                                                              Overview
-                                                            </a>
-                                                            <a href="#edito" class="dropdown-item border-radius-md">
-                                                              Editorial Boards
-                                                            </a>
-                                                            <a href="#contacts" class="dropdown-item border-radius-md">
-                                                              Contacts
-                                                            </a>
-                                                          </div>
+                        <nav class="navbar navbar-expand
+                                        blur blur-rounded top-0 z-index-fixed
+                                        shadow position-relative start-0 end-0 mb-3">
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse pt-1 pb-1 py-lg-0" id="navigation">
+                                    <ul class="navbar-nav navbar-nav-hover ms-lg-0 ps-lg-0 w-100">
 
-                                                          <div class="d-lg-none">
-                                                            <a href="#overview" class="dropdown-item border-radius-md">
-                                                              Overview
-                                                            </a>
-                                                            <a href="#edito" class="dropdown-item border-radius-md">
-                                                              Editorial Boards
-                                                            </a>
-                                                            <a href="#contacts" class="dropdown-item border-radius-md">
-                                                              Contacts
-                                                            </a>
-                                                          </div>
+                                        <li class="nav-item dropdown dropdown-hover mx-0">
+                                            <a class="nav-link ps-2 d-flex justify-content-between align-items-center"
+                                               href="{{route('journal-articles')}}"
+                                               style="color: black;">
+                                                Articles
+                                            </a>
+                                        </li>
 
-                                                        </div>
-                                                    </li> -->
+                                        <li class="nav-item dropdown dropdown-hover mx-0">
+                                            <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                                               href="{{route('submit')}}"
+                                               style="color: black;">
+                                                Submit
+                                            </a>
+                                        </li>
 
-                                                    <li class="nav-item dropdown dropdown-hover mx-0">
-                                                        <a class="nav-link ps-2 d-flex justify-content-between align-items-center"
-                                                           href="{{route('journal-articles')}}"
-                                                           style="color: black;">
-                                                            Articles
-                                                        </a>
-                                                    </li>
+                                        <li class="nav-item dropdown dropdown-hover mx-0">
+                                            <a href="{{route('author.create')}}"
+                                               class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
+                                                Author Login
+                                            </a>
+                                        </li>
 
-                                                    <li class="nav-item dropdown dropdown-hover mx-0">
-                                                        <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                                                           href="{{route('submit')}}"
-                                                           style="color: black;">
-                                                            Submit
-                                                        </a>
-                                                    </li>
-
-                                                    <li class="nav-item dropdown dropdown-hover mx-0">
-                                                        <a href="{{route('author.create')}}"
-                                                            class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center">
-                                                            Author Login
-                                                            </a>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </nav>
+                                    </ul>
                                 </div>
                             </div>
-                        </div>
+                        </nav>
                     </div>
                     <div class="row">
                         <div class="card shadow-lg">

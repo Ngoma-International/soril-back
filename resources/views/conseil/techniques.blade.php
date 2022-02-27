@@ -12,7 +12,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center mx-auto my-auto">
-                        <img src="{{asset('assets/img/logos/carl-logo.png')}}" width="75%;" style="margin: 0px" alt="">
+                        <img src="{{asset('assets/img/logos/carl-logo.png')}}" width="75%;"
+                             style="margin: 0px" alt="">
                     </div>
                     <div class="col-lg-6 text-center">
                         @php
