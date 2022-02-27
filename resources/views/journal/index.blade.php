@@ -8,10 +8,10 @@
     <!-- -------- START HEADER 7 w/ text and video ------- -->
     <header class="bg-gradient-dark">
         <div class="page-header min-vh-100" style="background-image: url('assets/img/office-dark.jpg');">
-            <span class="mask bg-gradient-dark opacity-8"></span>
+            <span class="mask bg-gradient-light opacity-8"></span>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-6 text-center mx-auto my-auto bg-white">
+                    <div class="col-lg-6 text-center mx-auto my-auto">
                         <img src="{{asset('assets/img/journal.png')}}" width="75%;"
                              style="margin: 10px" alt="">
                     </div>
